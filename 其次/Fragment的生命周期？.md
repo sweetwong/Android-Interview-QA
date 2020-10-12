@@ -1,0 +1,11 @@
+1. onAttach
+2. onCreate
+3. onCreateView
+4. onActivityCreated
+5. onStart
+6. onResume
+7. onPause
+8. onStop
+9. onDestroyView
+10. onDestroy
+11. onDetach

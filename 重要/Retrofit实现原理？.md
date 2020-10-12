@@ -16,7 +16,8 @@ Retrofit通过**动态代理**，创建声明service接口的实现对象。当�
 策略模式
 
 ### 原理图
-![bf4c3513589ee77bd5028681040f79f0.png](en-resource://database/1997:1)
+
+<img src="../assets/Retrofit原理图.png"  />
 
 ### 链接
 [拆轮子系列: 拆Retrofit:](https://blog.piasy.com/2016/06/25/Understand-Retrofit/index.html)

@@ -57,7 +57,7 @@ PS：JDK1.6以后，为了减少获得锁和释放锁所带来的性能消耗，
 
 
 ### synchronized锁的原理图
-![](../图片/synchronized原理图.jpg)
+![](../assets/synchronized原理图.jpg)
 
 ### 链接
 

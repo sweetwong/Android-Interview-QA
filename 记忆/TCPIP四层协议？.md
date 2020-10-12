@@ -1,1 +1,1 @@
-![](../图片/TCPIP四层模型.png)
+![](../assets/TCPIP四层模型.png)

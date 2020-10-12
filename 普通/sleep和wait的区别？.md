@@ -1,5 +1,5 @@
 ### 区别
-![](../图片/sleep和wait的区别.png)
+![](../assets/sleep和wait的区别.png)
 
 ### 注意
 1. sleep不会释放锁，wait会释放锁

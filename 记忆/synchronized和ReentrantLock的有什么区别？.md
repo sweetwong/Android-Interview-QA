@@ -1,5 +1,5 @@
 ### 对比图
-<img src="../图片/ReentrantLock和synchronized对比图.png" style="zoom: 80%;" />
+<img src="../assets/ReentrantLock和synchronized对比图.png" style="zoom: 80%;" />
 
 ### 区别
 

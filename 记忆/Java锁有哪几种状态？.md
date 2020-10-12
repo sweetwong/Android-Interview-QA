@@ -24,7 +24,7 @@
 
 
 ### 状态图
-![](../图片/Java锁状态图.png)
+![](../assets/Java锁状态图.png)
 
 ### 链接
 [知乎：Java线程中wait状态和block状态的区别?](https://www.zhihu.com/question/27654579)

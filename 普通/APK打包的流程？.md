@@ -33,7 +33,7 @@ dx工具生成可供Android系统Dalvik虚拟机执行的classes.dex文件，该
 对齐的主要过程是将APK包中所有的资源文件距离文件起始偏移为4字节整数倍，这样通过内存映射访问apk文件时的速度会更快。对齐的作用就是减少运行时内存的使用。
 
 ### 流程图
-![](../图片/Apk打包流程.png)
+![](../assets/Apk打包流程.png)
 
 ### 链接
 [CSDN：Android APK打包流程](https://blog.csdn.net/wangzhongshun/article/details/96160984)

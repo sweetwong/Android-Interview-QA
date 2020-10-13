@@ -1,9 +1,9 @@
-### 事件从手指点击到产生然后分发的全过程
+## 事件从手指点击到产生然后分发的全过程
 
 事件分发的传递顺序：用户点击 -> 手机硬件 -> 传递到ViewRootImpl<u>（通过InputEventReceiver来接收事件通知）</u> -> DecorView-> Activity(从这里开始常规的分发) -> PhoneWindow-> DecorView<u>（本质上也是ViewGroup，最顶层的ViewGroup ）</u> -> ViewGroup -> View
 
 
-### MotionEvent事件分发
+## MotionEvent事件分发
 
 ##### 三大方法：
 
@@ -33,13 +33,14 @@
 
 3. View 的onTouchEvent 方法默认都会消费掉事件（返回true），除非它是不可点击的（clickable和longClickable同时为false），View的longClickable默认为false，clickable需要区分情况，如Button的clickable默认为true，而TextView的clickable默认为false
 
-### 事件从点击到产生到分发的过程
-![2326f78365fda5ed0d8a6307aa0b50d6.png](en-resource://database/1702:1)
+## 事件从点击到产生到分发的过程
+<img src="../assets/事件从点击到产生到分发的过程.png" style="zoom:80%;" />
 
-### MotionEvent的时间分发
+## MotionEvent的时间分发
 
-![2f7f13dfd74c9f46afaccac961222915.png](en-resource://database/1703:1)
-### 链接
+<img src="../assets/MotionEvent的时间分发.png" style="zoom:80%;" />
+
+## 链接
 [GitHub：Android事件分发机制](https://github.com/LRH1993/android_interview/blob/master/android/basis/Event-Dispatch.md)
 
 

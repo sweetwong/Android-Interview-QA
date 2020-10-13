@@ -1,4 +1,4 @@
-### 回答要点
+## 回答要点
 
 1. Handler最终都会调用sendMessageAtTime
 2. MessageQueue的实现是单链表
@@ -6,7 +6,7 @@
 4. 要讲到native层，特别是epoll相关的方法，以及几个native方法调用的时机
 5. 要讲到native层的MessageQueue，native层的Looper
 
-### 原理
+## 原理
 
 1. **Looper**：有两个重要的方法，分别是prepare()和loop()，prepare()方法会调用构造函数，创建对应的MessageQueue和保存当前的线程，并把Looper放入ThreadLocal中；loop()方法，会无限从MessageQueue中取出消息，通过调用queue.next()的方法，当队列中没有消息时，next()会无限循环，造成阻塞，等来MessageQueue中加入新消息，然后再唤醒；Looper从队列中取到消息后，会拿到当前Message的target指向的Handler，并调用Handler的dispatchMessage()进行分发，进而调用我们重写的handleMessage或者handleCallback()。主线程的Looper在ActivityThread中被初始化和开始循环
 
@@ -18,15 +18,12 @@
 
 5. **ThreadLocal**：在Looper的成员变量中创建，在prepare()时，会把Looper存进ThreadLocal中，使用ThreadLocal的set()或者get()方法时，需要传入当前的线程t作为参数，ThreadLocal是属于线程的。因此get()的语义是获得属于当前线程的变量。注意：ThreadLocalMap的引用由Thread唯一持有，意思就是ThreadLocalMap跟随Thread对象一起被回收。
 
-### 重新总结
+## 原理图
+
+![](../assets/Handler的原理.png)
 
 
-### 原理图
-
-![4c2688b1b5fe868d674a6808bfbe3f24.png](en-resource://database/2000:1)
-
-
-### 链接
+## 链接
 [简书：Android消息机制的原理及源码解析](https://www.jianshu.com/p/f10)
 
 [慕课网：Handler发送消息的Delay靠谱吗？](https://coding.imooc.com/lesson/317.html#mid=22311"%3Ehttps://coding.imooc.com/lesson/317.html)

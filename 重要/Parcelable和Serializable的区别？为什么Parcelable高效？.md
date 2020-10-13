@@ -1,4 +1,4 @@
-### 回答
+## 回答
 1. 类型不同：Seiralizable 是 Java 通用的序列化方法，Parcelable 是 Android 特有的序列化方法；
 
 2. 作用不同：Serializable 是用来**保存数据**的，Parcelable 是用来**高效传输数据**的
@@ -11,5 +11,5 @@
 
 6. 不要用 Parcelable 做数据持久化，因为 Android 不同版本的 Parcelable 实现可能不同 
 
-### 链接
+## 链接
 [Android Parcelable原理分析](https://juejin.im/post/6844904050702434311)

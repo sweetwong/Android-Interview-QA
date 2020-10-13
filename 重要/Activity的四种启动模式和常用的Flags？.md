@@ -1,4 +1,4 @@
-### 启动模式
+## 启动模式
 
 1. standard 标准模式：每次启动一个Activity就会创建一个新的实例
 
@@ -8,7 +8,7 @@
 
 4. singleInstance 单实例模式：具有此模式的Activity只能单独位于一个任务栈中（**一定会启动一个新的任务栈**），且此任务栈中只有唯一一个实例
 
-### FLAG
+## FLAG
 
 1. FLAG_ACTIVITY_SINGLE_TOP：与launchMode = "singleTop"行为一致
 
@@ -18,7 +18,7 @@
 
 4. FLAG_ACTIVITY_CLEAR_TASK：只能组合使用，`FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK`，用来清除目前所有的任务，并打开新任务
 
-### 应用场景
+## 应用场景
 1. standard 标准模式：同一个Activity会显示不同的场景的时候，例如套壳Activity
 
 2. singleTop 栈顶复用模式：大部分的Activity都会使用这个，为了防止重复点击
@@ -27,7 +27,7 @@
 
 4. singleInstance 单实例模式：用于独立站操作的页面，例如闹钟提醒页面
 
-### 链接
+## 链接
 
 [简书：2019校招Android面试题解1.0（上篇）](https://www.jianshu.com/p/718aa3c1a70b)
 

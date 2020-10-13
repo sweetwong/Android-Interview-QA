@@ -1,4 +1,4 @@
-### IPC的6种方式
+## IPC的6种方式
 1. AIDL：AIDL是IPC的一个轻量级实现
 
 2. Messenger（信使）： Messenger本质也是AIDL，只是进行了封装，开发的时候不用再写.aidl文件，所以相对于AIDL较于简单。
@@ -11,9 +11,9 @@
 
 6. Bundle（Intent的形式）：一般用于四大组件间的进程间通信，简单易用
 
-### 对比图
+## 对比图
 ![](../assets/IPC对比图.png)
 
-### 链接
+## 链接
 
 [简书：浅谈IPC通信之各方式对比使用及场景（四）](%3Ca href="https://www.jianshu.com/p/7abdead13e2b"%3Ehttps://www.jianshu.com/p/7abdead13e2b%3C/a%3E)

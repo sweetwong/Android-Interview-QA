@@ -1,4 +1,4 @@
-### 流程
+## 流程
 1. Client 端通过 getService 或者 bindService 获取到远程的 Binder 对象
 
 2. 创建两个 Parcel 对象，分别是 data 和 reply ，一个是传递参数的数据，另一个是收到回复的数据
@@ -10,7 +10,7 @@
 8. 服务端会在 BBinder 的 onTransact 方法收到回调
 9. waitForResponse 会一直 talkWithDriver 与驱动交互，实际上是通过 ioctl 命令实现的
 
-### 要点
+## 要点
 
 1. 要说到 IPCThreadState，里面维护了两个 Parcel ，分别是 mIn 和 mOut ，写数据和读数据都是通过这两个Parcel实现的
 

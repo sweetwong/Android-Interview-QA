@@ -1,11 +1,11 @@
-### 回答
+## 回答
 1. 对于public的代码，直接编译frameworks.jar到项目下，骗过编译器，直接调用
 
 2. 对于private或者其他被限制的代码，通过反射Hook系统的API
 
 3. 关于如何绕过Android 9.0对反射的限制，使用FreeReflection框架，描述其实现细节
 
-### Android P做了哪些限制？
+## Android P做了哪些限制？
 限制了系统反射的调用
 
 * 白名单：可以直接调用
@@ -13,10 +13,10 @@
 * 深灰名单：API28以下通过反射可以调用，API28以上不可以调用
 * 黑名单：任何时候都不能调用
 
-### FreeReflection框架的原理？
+## FreeReflection框架的原理？
 Hook了反射相关的native代码
 
-### 链接
+## 链接
 [Github：FreeReflection](https://github.com/tiann/FreeReflection)
 
 [一种绕过Android P对非SDK接口限制的简单方法](http://weishu.me/2018/06/07/free-reflection-above-android-p/)

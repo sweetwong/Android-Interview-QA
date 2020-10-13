@@ -1,7 +1,7 @@
-#### 1. 外部拦截法
+## 1. 外部拦截法
 即父View根据需要对事件进行拦截。逻辑处理放在**父View**的**onInterceptTouchEvent**方法中。我们只需要重写父View的onInterceptTouchEvent方法，并根据逻辑需要做相应的拦截即可。
 
-#### 2. 内部拦截法
+## 2. 内部拦截法
 即父View不拦截任何事件，所有事件都传递给子View，子View根据需要决定是自己消费事件还是给父View处理。这需要子**View**使用**requestDisallowInterceptTouchEvent**方法才能正常工作。
 
 #### 使用外部拦截法需要注意：
@@ -17,5 +17,5 @@
 
 2. <u>滑动策略的逻辑放在子View的dispatchTouchEvent方法的ACTION_MOVE中，如果父容器需要获取点击事件则调用 parent.requestDisallowInterceptTouchEvent(false)方法，让父容器去拦截事件</u>。
 
-### 链接
+## 链接
 [简书：一文解决Android View滑动冲突](https://www.jianshu.com/p/982a83271327)

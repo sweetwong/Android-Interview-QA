@@ -1,4 +1,4 @@
-### HTTP1.0与HTTP1.1有什么区别？
+## HTTP1.0与HTTP1.1有什么区别？
 
 1. **长连接**：HTTP1.0需要keep-alive参数来告知服务器长连接，HTTP1.1默认开启**Connection： keep-alive**长连接。
 （在HTTP/1.0中，默认使用的是短连接。也就是说，浏览器和服务器每进行一次HTTP操作，就建立一次连接，但任务结束就中断连接。如果客户端浏览器访问的某个HTML或其他类型的 Web页中包含有其他的Web资源，如JavaScript文件、图像文件、CSS文件等；当浏览器每遇到这样一个Web资源，就会建立一个HTTP会话）
@@ -12,7 +12,7 @@
 5. **错误通知的管理**：在HTTP1.1中新增了24个错误状态响应码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。
 
 
-### HTTP1.1与HTTP2.0有什么区别？
+## HTTP1.1与HTTP2.0有什么区别？
 
 1. **二进制格式**：HTTP1.x的解析是基于文本。基于文本协议的格式解析存在天然缺陷，文本的表现形式有多样性，要做到健壮性考虑的场景必然很多，二进制则不同，只认0和1的组合。基于这种考虑HTTP2.0的协议解析决定采用二进制格式，实现方便且健壮
 
@@ -22,7 +22,7 @@
 
 4. **服务器推送**：同SPDY一样，HTTP2.0也具有server push功能。例如我的网页有一个sytle.css的请求，在客户端收到sytle.css数据的同时，服务端会将sytle.js的文件推送给客户端，当客户端再次尝试获取sytle.js时就可以直接从缓存中获取到
 
-### 链接
+## 链接
 [掘金：HTTP1.0、HTTP1.1 和 HTTP2.0 的区别（好文章）](https://juejin.im/entry/5981c5df518825359a2b9476)
 [CSDN：HTTP1.0 HTTP 1.1 HTTP 2.0主要区别：](https://blog.csdn.net/linsongbin1/article/details/54980801)
 [StackOverflow：HTTP 1.0 vs 1.1](https://stackoverflow.com/questions/246859/http-1-0-vs-1-1)

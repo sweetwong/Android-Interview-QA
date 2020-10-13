@@ -1,9 +1,9 @@
-### 原理
+## 原理
 
 ButterKnife的原理就是利用注解和**注解处理器**针对每个Activity**生成一个相对应的类**，将原本需要手动编写的findViewById的view绑定代码和点击事件监听及资源id的绑定逻辑，利用注解处理器自动生成代码。
 
 
-### ButterKnife的实现步骤
+## ButterKnife的实现步骤
 
 1. 定义注解
 

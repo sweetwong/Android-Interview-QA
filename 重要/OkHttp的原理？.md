@@ -1,4 +1,4 @@
-### 回答要点
+## 回答要点
 
 1. Okhttp在初始化OkhttpClient时，建造者模式和外观模式(隐藏掉系统的复杂性，对外部提供接口)
 
@@ -9,13 +9,13 @@
 4. OkHttp底层封装了okio进行Socket相关的操作
 
 
-### 流程
+## 流程
 
 1. OkHttpClient 实现 Call.Factory，负责为 Request 创建 Call；
 2. RealCall 为具体的Call实现，其enqueue()异步接口通过 Dispatcher 利用ExecutorService实现，而最终进行网络请求时和同步execute()接口一致，都是通过 **getResponseWithInterceptorChain**() 函数实现；
 3. getResponseWithInterceptorChain() 中利用 Interceptor 链条，分层实现缓存、透明压缩、网络 IO 等功能；
 
-### 拦截器
+## 拦截器
 
 1. **RetryAndFollowUpInterceptor**：负责失败重试以及重定向
 2. **BridgeInterceptor**：负责把用户构造的请求转换为发送到服务器的请求、把服务器返回的响应转换为用户友好的响应
@@ -23,6 +23,6 @@
 4. **ConnectInterceptor**：负责和服务器建立连接
 5. **CallServerInterceptor**：向服务器发送请求数据、从服务器读取响应数据
 
-### 链接
+## 链接
 
 [拆轮子系列: 拆 OkHttp（终极好文）](https://blog.piasy.com/2016/07/11/Understand-OkHttp/index.html)

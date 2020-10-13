@@ -1,4 +1,4 @@
-### 如何进行WebView的性能优化
+## 如何进行WebView的性能优化
 Android端：
 
 1. **为WebView单开一个进程**，通过AIDL与应用的主进程进行通讯
@@ -23,22 +23,20 @@ Android端：
 
 3. 前端图片采用webp
 
-
-
-### WebView的原理是什么？（Java如何实现和Js通讯的？）
+## WebView的原理是什么？（Java如何实现和Js通讯的？）
 
 
 待完成...
 
 
-### 如何解决WebView内存泄漏的问题？
+## 如何解决WebView内存泄漏的问题？
 
 1. 为WebView单独开一个进程
 
 2. 不在XML中定义WebView，每次使用前new出来，传入applicationContext
 
 
-### 使用WebView的过程中遇到哪些难点？
+## 使用WebView的过程中遇到哪些难点？
 
 1. 需要处理登录状态同步的问题，用户在客户端登录，需要把登录状态同步到WebView，避免二次登录；通过OKHttp的CookieJar获取到Cookie，保存到SharedPreferences，然后通过CookieSyncManager同步到WebView
 
@@ -47,7 +45,7 @@ Android端：
 3. 关于提高WebView的首屏加载速度，采用了js本地化的方案
 
 
-### 链接
+## 链接
 [QQ：70%以上业务由H5开发，手机QQ Hybrid 的架构如何优化演进？（深入）](https://mp.weixin.qq.com/s/evzDnTsHrAr2b9jcevwBzA?)
 
 

@@ -1,8 +1,8 @@
-### 要点
+## 要点
 1. 要讲到几个重要的类和关键词，Choreographer、Vsync信号、SurfaceFlinger、ViewRootImpl、WindowManagerImpl、WindowManagerGlobal、Surface
 
 
-### 流程
+## 流程
 
 1. View的绘制始于ViewRootImpl的performTraversal()开始遍历，会先从根视图开始测量
 
@@ -15,7 +15,7 @@
 5. onMeasure：传入一个Canvas，1. 绘制背景 2. 绘制自己 3. 绘制children 4. 绘制装饰
 
 
-### 自定义View
+## 自定义View
 
 1. 自绘控件：一般通过重写onDraw()，自己画出控件，例如文字的跑马灯效果，比较少用
 
@@ -23,7 +23,7 @@
 
 3. 继承控件：继承已有的空间，添加额外的效果。例如继承ImageView，添加点击预览的效果。继承一个View，使它的通过比例设置宽高。
 
-### View绘制相关重要的类
+## View绘制相关重要的类
 
 * View
 * ViewGroup
@@ -40,7 +40,7 @@
 * Choreographer
 
 
-### 链接
+## 链接
 [GitHub：View测量、布局及绘制原理](https://github.com/LRH1993/android_interview/blob/master/android/basis/custom_view.md)
 
 [CSDN（郭霖）：Android LayoutInflater原理分析，带你一步步深入了解View(一)](https://blog.csdn.net/guolin_blog/article/details/12921889)

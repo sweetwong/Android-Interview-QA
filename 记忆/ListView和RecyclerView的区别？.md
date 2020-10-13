@@ -1,4 +1,4 @@
-### 区别
+## 区别
 
 1. 缓存层级不同，ListView是两级缓存，RecyclerView是四级缓存；因为这个的关系，RecyclerView的性能优于ListView
 

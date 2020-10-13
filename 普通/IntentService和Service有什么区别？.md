@@ -1,7 +1,7 @@
-### IntentService实现原理
+## IntentService实现原理
 在Service中封装了HandlerThread相关的操作
 
-### IntentService与Service的区别在于
+## IntentService与Service的区别在于
 
 1. IntentService运行在**工作线程,** 而Service运行在主线程
 
@@ -11,7 +11,7 @@
 
 4. 一次处理一个请求，**串行操作**，当有多个请求的时候会加入队列
 
-### 其他描述
+## 其他描述
 
 This is a subclass of Service that uses a worker thread to handle all of the start requests, one at a time. This is the best option if you don't require that your service handle multiple requests simultaneously. Implement onHandleIntent(), which receives the intent for each start request so that you can complete the background work.
 

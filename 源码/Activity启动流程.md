@@ -1,4 +1,4 @@
-### 流程
+## 流程
 
 1. 首先startActivity
 
@@ -10,10 +10,10 @@
 
 也就是说启动Activity其实是经过了两次跨进程通讯才将Activity启动起来的。
 
-### 注意细节
+## 注意细节
 1. Android Q以后把很多ActivityManagerService的逻辑移到了ActivityTaskManagerService
 
-### 链接
+## 链接
 
 [【基于Android Q】Activity启动流程源码分析【一】](https://www.jianshu.com/p/827fd152a804)
 

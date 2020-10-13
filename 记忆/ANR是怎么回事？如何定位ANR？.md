@@ -21,6 +21,7 @@ ANR 是一个问题，因为<u>负责更新界面的应用主线程无法处理�
 ## 诊断方法
 
 #### 1. 严格模式
+
 使用 StrictMode 有助于您在开发应用时发现主线程上的意外 I/O 操作。您可以在应用级别或 Activity 级别使用 。
 
 #### 2. 启用后台 ANR 对话框
@@ -32,5 +33,5 @@ ANR 是一个问题，因为<u>负责更新界面的应用主线程无法处理�
 #### 4. 拉取跟踪信息文件
 Android 会在遇到 ANR 时存储跟踪信息。在较低的操作系统版本中，设备上只有一个 /data/anr/traces.txt 文件。在较新的操作系统版本中，有多个 /data/anr/anr_* 文件
 
-### 链接
+## 链接
 [Android Developer：ANR](https://developer.android.google.cn/topic/performance/vitals/anr#top_of_page)

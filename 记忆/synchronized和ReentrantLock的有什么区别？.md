@@ -1,7 +1,7 @@
-### 对比图
+## 对比图
 <img src="../assets/ReentrantLock和synchronized对比图.png" style="zoom: 80%;" />
 
-### 区别
+## 区别
 
 1. Lock是一个接口，而synchronized是Java中的关键字，synchronized是内置的语言实现；
 
@@ -10,7 +10,7 @@
 4. 通过Lock可以知道有没有成功获取锁，而synchronized却无法办到。
 5. Lock可以提高多个线程进行读操作的效率。
 
-### 链接
+## 链接
 [CSDN：ReenTrantLock可重入锁（和synchronized的区别）总结](https://blog.csdn.net/qq838642798/article/details/65441415)
 
 [美团：从ReentrantLock的实现看AQS的原理及应用](https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html)

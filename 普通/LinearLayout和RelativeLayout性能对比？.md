@@ -1,2 +1,2 @@
-### LinearLayout和RelativeLayout性能对比？
+## LinearLayout和RelativeLayout性能对比？
 LinearLayout比RelativeLayout快，因为RelativeLayout会在onMeasure方法中调用两次子View的measure(横向纵向分别进行一次排序测量)；而LinearLayout只用一次，但是当LinearLayout有weight属性时，也会measure两次

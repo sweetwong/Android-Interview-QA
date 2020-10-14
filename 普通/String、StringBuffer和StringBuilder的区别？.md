@@ -10,7 +10,7 @@ String 是 Java 语言非常基础和重要的类，提供了构造和管理字�
 
 StringBuffer 是为解决上面提到拼接产生太多中间对象的问题而提供的一个类，我们可以用 append 或者 add 方法，把字符串添加到已有序列的末尾或者指定位置。StringBuffer 本质是一个线程安全的可修改字符序列，它保证了线程安全，也随之带来了额外的性能开销，所以除非有线程安全的需要，不然还是推荐使用它的后继者，也就是StringBuilder。
 
-StringBuilder 是 Java 1.5 中新增的，在能力上和 StringBuffer 没有本质区别，但是它去掉了线程安全的部分(synchronized)，有效减小了开销，是绝大部分情况下进行字符串拼接的首选。
+StringBuilder 是 Java 1.5 中新增的，在能力上和 StringBuffer 没有本质区别，但是它去掉了线程安全的部分（synchronized），有效减小了开销，是绝大部分情况下进行字符串拼接的首选。
 
 ## 链接
 [每日一题：请简述一下String、StringBuffer和StringBuilder的区别？](https://github.com/Moosphan/Android-Daily-Interview/issues/22)

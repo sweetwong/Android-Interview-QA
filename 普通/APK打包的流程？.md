@@ -1,7 +1,7 @@
 ## 流程
-#### 1. 打包资源文件，生成R.java文件
+#### 1. 打包资源文件，生成 R.java 文件
 
-打包资源的工具是aapt（Android Asset Packaging Tool），位于android-sdk/platform-tools目录下。在这个过程中，项目中的AndroidManifest.xml文件和布局文件XML都会编译，然后生成相应的R.java。
+打包资源的工具是 aapt（Android Asset Packaging Tool），位于 android-sdk/platform-tools 目录下。在这个过程中，项目中的 AndroidManifest.xml 文件和布局文件XML都会编译，然后生成相应的R.java。
 
 #### 2. 处理AIDL文件，生成相应的Java文件
 

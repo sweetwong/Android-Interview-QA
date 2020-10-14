@@ -9,8 +9,8 @@
 |    效率    |            低            | 高（因为读写分离）  |
 
 ## 问题
-#### 为什么ArrayBlockingQueue使用单锁，LinkedBlockingQueue使用双锁？
-ABS的实现是基于数组，LBS的实现基于链表。LBS链表头尾节点互不干扰，可以同时读写，提升效率，只要保证count的原子性既可以；而ABS无论读和写都是针对于同一个数组，是一个循环数组，而位置的选择是无法原子化的，因此只能加锁来解决。
+#### 为什么 ArrayBlockingQueue 使用单锁，LinkedBlockingQueue 使用双锁？
+ABS 的实现是基于数组，LBS 的实现基于链表。LBS 链表头尾节点互不干扰，可以同时读写，提升效率，只要保证 count 的原子性既可以；而 ABS 无论读和写都是针对于同一个数组，是一个循环数组，而位置的选择是无法原子化的，因此只能加锁来解决。
 
 ## 链接
 [Java并发面试常识之LinkedBlockingQueue](https://my.oschina.net/xpbob/blog/995836)

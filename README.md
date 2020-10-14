@@ -1,6 +1,6 @@
 # 重要
 
-[Activity的四种启动模式和常用的Flags？](./重要/Activity的四种启动模式和常用的Flags？.md)
+[Activity的四种启动模式和常用的Flags？](/重要/Activity的四种启动模式和常用的Flags？.md)
 
 [Binder的优点？Binder的原理？Binder的通讯模型？](../重要/Binder的优点？Binder的原理？Binder的通讯模型？.md)
 

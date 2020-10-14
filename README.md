@@ -46,7 +46,7 @@
 
 [Android系统启动流程？](/源码/Android系统启动流程？.md)
 
-[Binder transact流程？](/源码/Binder transact流程？.md)
+[Binder的transact流程？](/源码/Binder的transact流程？.md)
 
 [Framework中有什么你觉得设计很巧妙的地方？请举例说明](/源码/Framework中有什么你觉得设计很巧妙的地方？请举例说明.md)
 
@@ -114,7 +114,7 @@
 
 [SurfaceView和普通View的区别？](/普通/SurfaceView和普通View的区别？.md)
 
-[View的onAttachedToWindow，onDetachedFromWindow 调用时机，使用场景是什么？](/普通/View的onAttachedToWindow，onDetachedFromWindow 调用时机，使用场景是什么？.md)
+[View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？](/普通/View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？.md)
 
 [什么是APK？APK文件都由那些组成？](/普通/什么是APK？APK文件都由那些组成？.md)
 
@@ -140,7 +140,7 @@
 
 [如何获取Android设备唯一ID？](/普通/如何获取Android设备唯一ID？.md)
 
-[如何规避Android P对访问私有API的限制？](/普通/如何规避Android P对访问私有API的限制？.md)
+[如何规避Android-P对访问私有API的限制？](/普通/如何规避Android-P对访问私有API的限制？.md)
 
 [如何跨App启动Activity？](/普通/如何跨App启动Activity？.md)
 

@@ -2,10 +2,9 @@
 
 事件分发的传递顺序：用户点击 -> 手机硬件 -> 传递到ViewRootImpl<u>（通过InputEventReceiver来接收事件通知）</u> -> DecorView-> Activity(从这里开始常规的分发) -> PhoneWindow-> DecorView<u>（本质上也是ViewGroup，最顶层的ViewGroup ）</u> -> ViewGroup -> View
 
-
 ## MotionEvent事件分发
 
-##### 三大方法：
+#### 三大方法
 
 1. **dispatchTouchEvent**：它就是事件分发的重要方法。那么很明显，如果一个MotionEvent传递给了View，那么dispatchTouchEvent方法一定会被调用。返回值：表示是否消费了当前事件 。可能是View本身的onTouchEvent方法消费，也可能是子View的dispatchTouchEvent方法中消费。返回true表示事件被消费，本次的事件终止。返回false表示View以及子View均没有消费事件，将调用父View的onTouchEvent方法
 
@@ -13,7 +12,7 @@
 
 3. **onTouchEvent**：真正对MotionEvent进行处理或者说消费的方法。在dispatchTouchEvent进行调用。返回值：返回true表示事件被消费，本次的事件终止。返回false表示事件没有被消费，将调用父View的onTouchEvent方法
 
-##### 伪代码：
+#### 伪代码
 ```
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean consume = false; // 事件是否被消费
@@ -25,7 +24,7 @@
         return consume; // 返回值表示事件是否被消费，true事件终止，false调用父View的onTouchEvent方法
     }
 ```
-##### 特别强调：
+#### 特别强调
 
 1. 子ViewGroup可以通过**requestDisallowInterceptTouchEvent**方法干预父ViewGroup的事件分发过程（ACTION_DOWN事件除外），而这就是我们处理滑动冲突常用的关键方法
 

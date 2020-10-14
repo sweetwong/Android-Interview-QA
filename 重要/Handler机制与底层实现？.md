@@ -1,10 +1,10 @@
 ## 回答要点
 
-1. Handler最终都会调用sendMessageAtTime
-2. MessageQueue的实现是单链表
-3. 要提到Looper在准备时到ThreadLocal
-4. 要讲到native层，特别是epoll相关的方法，以及几个native方法调用的时机
-5. 要讲到native层的MessageQueue，native层的Looper
+1. Handler 最终都会调用 sendMessageAtTime()
+2. MessageQueue 的实现是单链表
+3. 要提到 Looper 在准备时到 ThreadLocal
+4. 要讲到 native 层，特别是 epoll 相关的方法，以及几个 native 方法调用的时机
+5. 要讲到 native 层的 MessageQueue ，native 层的 Looper
 
 ## 原理
 

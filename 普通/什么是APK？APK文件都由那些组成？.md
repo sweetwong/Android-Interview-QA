@@ -1,6 +1,6 @@
 ## APK简介与描述
 
-APK是Android Package的缩写，即Android安装包（apk）。APK文件其实是zip格式，但后缀名被修改为apk，通过UnZip解压后，可以看到Dex文件，Dex是Dalvik VM executable的全称，即Android Dalvik执行程序，并非Java字节码而是Dalvik字节码。在Android平台中dalvik vm的执行文件被打包为apk格式，最终运行时加载器会解压然后获取编译后的AndroidManifest.xml文件中的permission分支相关的安全访问，但仍然存在很多安全限制，如果你将apk文件到/system/app文件夹下会发现执行是不受限制的。安装的文件可能不是这个文件夹，而在android rom中系统的apk文件默认会放入这个文件夹，它们拥有着root权限。
+APK是 Android Package 的缩写，即 Android 安装包（apk）。APK 文件其实是 zip 格式，但后缀名被修改为 apk，通过 UnZip 解压后，可以看到 Dex 文件，Dex 是 Dalvik VM executable 的全称，即 Android Dalvik 执行程序，并非 Java 字节码而是 Dalvik 字节码。在 Android 平台中 dalvik vm 的执行文件被打包为 apk 格式，最终运行时加载器会解压然后获取编译后的 AndroidManifest.xml 文件中的 permission 分支相关的安全访问，但仍然存在很多安全限制，如果你将apk文件到 /system/app 文件夹下会发现执行是不受限制的。安装的文件可能不是这个文件夹，而在 android rom 中系统的 apk 文件默认会放入这个文件夹，它们拥有着 root 权限。
 
 
 ## APK的文件结构

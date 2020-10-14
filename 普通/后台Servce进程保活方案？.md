@@ -3,7 +3,7 @@
 
 2. 各厂商推送服务
 
-3. 返回START_STICKY
+3. 返回 START_STICKY
 
 4. 另起一个进程
 

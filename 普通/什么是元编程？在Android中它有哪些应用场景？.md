@@ -10,25 +10,25 @@
 
 5. 运行期 - 反射
 
-6. AspectJ（利用transform）
+6. AspectJ（利用 transform）
 
-## Java代码的三个时期(RetentionPolicy)
+## Java 代码的三个时期（RetentionPolicy）
 
-1. 源码期(SOURCE)
+1. 源码期（SOURCE）
 
-2. 编译期(CLASS)
+2. 编译期（CLASS）
 
-3. 运行时(RUNTIME)
+3. 运行时（RUNTIME）
 
-## Android代码的四个时期(RetentionPolicy)
+## Android 代码的四个时期（RetentionPolicy）
 
-1. 源码期(SOURCE)
+1. 源码期（SOURCE）
 
 2. .class文件
 
 3. .dex文件
 
-4. 运行时(RUNTIME)
+4. 运行时（RUNTIME）
 
 
 ## 链接

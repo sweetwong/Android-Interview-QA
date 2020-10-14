@@ -1,20 +1,20 @@
 ## 回答
-1. 对于public的代码，直接编译frameworks.jar到项目下，骗过编译器，直接调用
+1. 对于 public 的代码，直接编译 frameworks.jar 到项目下，骗过编译器，直接调用
 
-2. 对于private或者其他被限制的代码，通过反射Hook系统的API
+2. 对于 private 或者其他被限制的代码，通过反射 Hook 系统的 API
 
-3. 关于如何绕过Android 9.0对反射的限制，使用FreeReflection框架，描述其实现细节
+3. 关于如何绕过 Android 9.0 对反射的限制，使用 FreeReflection 框架，描述其实现细节
 
-## Android P做了哪些限制？
+## Android P 做了哪些限制？
 限制了系统反射的调用
 
 * 白名单：可以直接调用
 * 浅灰名单：通过反射可以调用
-* 深灰名单：API28以下通过反射可以调用，API28以上不可以调用
+* 深灰名单：API 28 以下通过反射可以调用，API 28 以上不可以调用
 * 黑名单：任何时候都不能调用
 
-## FreeReflection框架的原理？
-Hook了反射相关的native代码
+## FreeReflection 框架的原理？
+Hook 了反射相关的 native 代码
 
 ## 链接
 [Github：FreeReflection](https://github.com/tiann/FreeReflection)

@@ -1,5 +1,5 @@
 ## IPC的6种方式
-1. AIDL：AIDL是IPC的一个轻量级实现
+1. AIDL：AIDL 是 IPC 的一个轻量级实现
 
 2. Messenger（信使）： Messenger本质也是AIDL，只是进行了封装，开发的时候不用再写.aidl文件，所以相对于AIDL较于简单。
 

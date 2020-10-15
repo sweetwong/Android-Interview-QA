@@ -1,22 +1,22 @@
 ## 一次完整的IPC流程
 #### 客户端：
 
-1. 通过bindService或者getService获取到BinderProxy
-2. 把数据写入到Parcel中，调用BinderProxy的transact方法，最后调到native层
-3. 调到BpBinder的transact，最后调用IPCThreadState的transact方法
-4. 最后把数据写到mOut中
+1. 通过 bindService 或者 getService 获取到 BinderProxy
+2. 把数据写入到 Parcel 中，调用 BinderProxy 的 transact 方法，最后调到 native 层
+3. 调到 BpBinder 的 transact，最后调用 IPCThreadState 的 transact 方法
+4. 最后把数据写到 mOut 中
 
 #### 服务端：
 
-1. 在BBinder的onTransact方法中，监听到客户端的消息
+1. 在 BBinder 的 onTransact 方法中，监听到客户端的消息
 
 ## 优点
 
-1. **传输效率高**：传输效率的主要影响因素是内存拷贝次数，<u>内存拷贝次数越少，传输效率越高</u>。像对于消息队列、Socket、管道这些，数据从发送方的缓存区拷贝到内核的缓存区，再从内核的缓存区拷贝到接收方的缓存区，一共拷贝了两次；而对于Binder，数据从发送方的缓存区拷贝到内核的缓存区，而接收方的缓存区与内核的缓存区是在同一物理地址的，节省了一次拷贝的过程；
+1. **传输效率高**：传输效率的主要影响因素是内存拷贝次数，**内存拷贝次数越少，传输效率越高**。像对于消息队列、Socket、管道这些，数据从发送方的缓存区拷贝到内核的缓存区，再从内核的缓存区拷贝到接收方的缓存区，一共拷贝了两次；而对于 Binder，数据从发送方的缓存区拷贝到内核的缓存区，而接收方的缓存区与内核的缓存区是在同一物理地址的，节省了一次拷贝的过程；
 
-2. **实现了C/S架构**：Linux的IPC除了Socket之外都不是基于C/S架构的，Socket主要用于网络传输效率低。Binder基于C/S架构，Service端与Client端独立，耦合度低，稳定性高
+2. **实现了C/S架构**：Linux 的 IPC 除了 Socket 之外都不是基于 C/S 架构的，Socket 主要用于网络传输效率低。Binder 基于 C/S 架构，Service 端与 Client 端独立，耦合度低，稳定性高
 
-3. **安全性高**： 传统Linux IPC的接收方无法获得对方进程可靠的UID/PID，从而无法鉴别对方身份；而Binder机制为每个进程分配了UID/PID且在Binder通信时会根据UID/PID进行有效性检测。
+3. **安全性高**： 传统 Linux IPC 的接收方无法获得对方进程可靠的 UID/PID，从而无法鉴别对方身份；而Binder机制为每个进程分配了 UID/PID 且在 Binder 通信时会根据 UID/PID 进行有效性检测。
 
 
 ## 实现原理

@@ -24,3 +24,5 @@
 [Manage Your App's Memory](https://developer.android.com/topic/performance/memory#Services)
 
 [哪些情况下会导致oom问题？(好答案)](https://github.com/Moosphan/Android-Daily-Interview/issues/5)
+
+[Java节省内存的几条建议](https://blog.csdn.net/numbibi/article/details/7492808)

@@ -28,6 +28,6 @@ GET 和 POST 的请求都能使用额外的参数，但是 GET 的参数是以�
 
 ## 链接
 
-[GET 和 POST 比较](https://cyc2018.github.io/CS-Notes/#/notes/HTTP?id=%e4%b9%9d%e3%80%81get-%e5%92%8c-post-%e6%af%94%e8%be%83)
+[Github：CS-Notes：GET 和 POST 比较](https://cyc2018.github.io/CS-Notes/#/notes/HTTP?id=%e4%b9%9d%e3%80%81get-%e5%92%8c-post-%e6%af%94%e8%be%83)
 
 [知乎问题：GET 和 POST 到底有什么区别？](https://www.zhihu.com/question/28586791)

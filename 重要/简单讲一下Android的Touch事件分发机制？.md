@@ -1,16 +1,16 @@
 ## 事件从手指点击到产生然后分发的全过程
 
-事件分发的传递顺序：用户点击 -> 手机硬件 -> 传递到ViewRootImpl<u>（通过InputEventReceiver来接收事件通知）</u> -> DecorView-> Activity(从这里开始常规的分发) -> PhoneWindow-> DecorView<u>（本质上也是ViewGroup，最顶层的ViewGroup ）</u> -> ViewGroup -> View
+事件分发的传递顺序：用户点击 -> 手机硬件 -> 传递到 ViewRootImpl（通过 InputEventReceiver 来接收事件通知） -> DecorView -> Activity（从这里开始常规的分发） -> PhoneWindow -> DecorView（本质上也是 ViewGroup，最顶层的 ViewGroup ） -> ViewGroup -> View
 
 ## MotionEvent事件分发
 
 #### 三大方法
 
-1. **dispatchTouchEvent**：它就是事件分发的重要方法。那么很明显，如果一个MotionEvent传递给了View，那么dispatchTouchEvent方法一定会被调用。返回值：表示是否消费了当前事件 。可能是View本身的onTouchEvent方法消费，也可能是子View的dispatchTouchEvent方法中消费。返回true表示事件被消费，本次的事件终止。返回false表示View以及子View均没有消费事件，将调用父View的onTouchEvent方法
+1. **dispatchTouchEvent**：它就是事件分发的重要方法。那么很明显，如果一个 MotionEvent 传递给了 View，那么 dispatchTouchEvent 方法一定会被调用。返回值：表示是否消费了当前事件 。可能是 View 本身的 onTouchEvent 方法消费，也可能是子 View 的 dispatchTouchEvent方 法中消费。返回 true 表示事件被消费，本次的事件终止。返回 false 表示 View 以及子 View 均没有消费事件，将调用父 View 的 onTouchEvent 方法
 
-2. **onInterceptTouchEvent**：事件拦截，当一个ViewGroup在接到MotionEvent事件序列时候，首先会调用此方法判断是否需要拦截。特别注意，这是ViewGroup特有的方法，View并没有拦截方法返回值：是否拦截事件传递，返回true表示拦截了事件，那么事件将不再向下分发而是调用View本身的onTouchEvent方法。返回false表示不做拦截，事件将向下分发到子View的dispatchTouchEvent方法。
+2. **onInterceptTouchEvent**：事件拦截，当一个 ViewGroup 在接到 MotionEvent 事件序列时候，首先会调用此方法判断是否需要拦截。特别注意，这是ViewGroup 特有的方法，View 并没有拦截方法返回值：是否拦截事件传递，返回 true 表示拦截了事件，那么事件将不再向下分发而是调用 View 本身的 onTouchEvent 方法。返回 false 表示不做拦截，事件将向下分发到子 View 的 dispatchTouchEvent 方法。
 
-3. **onTouchEvent**：真正对MotionEvent进行处理或者说消费的方法。在dispatchTouchEvent进行调用。返回值：返回true表示事件被消费，本次的事件终止。返回false表示事件没有被消费，将调用父View的onTouchEvent方法
+3. **onTouchEvent**：真正对 MotionEvent 进行处理或者说消费的方法。在 dispatchTouchEvent 进行调用。返回值：返回 true 表示事件被消费，本次的事件终止。返回 false 表示事件没有被消费，将调用父 View 的 onTouchEvent 方法
 
 #### 伪代码
 ```
@@ -26,11 +26,11 @@
 ```
 #### 特别强调
 
-1. 子ViewGroup可以通过**requestDisallowInterceptTouchEvent**方法干预父ViewGroup的事件分发过程（ACTION_DOWN事件除外），而这就是我们处理滑动冲突常用的关键方法
+1. 子 ViewGroup 可以通过 **requestDisallowInterceptTouchEvent** 方法干预父 ViewGroup 的事件分发过程（ACTION_DOWN 事件除外），而这就是我们处理滑动冲突常用的关键方法
 
-2. 对于View（注意！ViewGroup也是View）而言，如果设置了onTouchListener，那么OnTouchListener方法中的onTouch方法会被回调。onTouch方法返回true，则onTouchEvent方法不会被调用（onClick事件是在onTouchEvent中调用）所以三者优先级是<u>onTouch->onTouchEvent->onClick</u>
+2. 对于 View（注意：ViewGroup 也是 View）而言，如果设置了 onTouchListener，那么 OnTouchListener 方法中的 onTouch 方法会被回调。onTouch 方法返回 true，则 onTouchEvent 方法不会被调用（onClick 事件是在 onTouchEvent 中调用）所以三者优先级是：**onTouch -> onTouchEvent -> onClick**
 
-3. View 的onTouchEvent 方法默认都会消费掉事件（返回true），除非它是不可点击的（clickable和longClickable同时为false），View的longClickable默认为false，clickable需要区分情况，如Button的clickable默认为true，而TextView的clickable默认为false
+3. View 的 onTouchEvent 方法默认都会消费掉事件（返回 true），除非它是不可点击的（clickable 和 longClickable 同时为 false），View 的 longClickable 默认为 false，clickable 需要区分情况，如 Button 的 clickable 默认为 true，而 TextView 的 clickable 默认为 false
 
 ## 事件从点击到产生到分发的过程
 <img src="../assets/事件从点击到产生到分发的过程.png" style="zoom:80%;" />

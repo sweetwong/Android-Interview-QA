@@ -1,3 +1,7 @@
+## 注意细节
+
+TODO
+
 ## 启动模式
 
 1. standard 标准模式：每次启动一个Activity就会创建一个新的实例
@@ -29,6 +33,9 @@
 
 ## 链接
 
+[Bilibili：Android 面试黑洞——当我按下 Home 键再切回来，会发生什么？（好视频）](https://www.bilibili.com/video/BV1CA41177Se)
+
 [简书：2019校招Android面试题解1.0（上篇）](https://www.jianshu.com/p/718aa3c1a70b)
 
-[LaunchMode 的应用场景？](https://github.com/Moosphan/Android-Daily-Interview/issues/4)
+[Github：每日一问：LaunchMode 的应用场景？](https://github.com/Moosphan/Android-Daily-Interview/issues/4)
+

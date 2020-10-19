@@ -1,27 +1,27 @@
 ## 如何进行WebView的性能优化
 #### Android端
 
-1. **为WebView单开一个进程**，通过AIDL与应用的主进程进行通讯
+1. **为 WebView 单开一个进程**，通过 AIDL 与应用的主进程进行通讯
 
-2. **将js本地化打包进apk中**，通过shouildInterceptRequest拦截加载，前端也配合用懒加载js脚本；
+2. **将 js 本地化打包进 apk中**，通过 shouildInterceptRequest 拦截加载，前端也配合用懒加载 js 脚本；
 
-3. 采用**X5WebView**内核，增加版本兼容性的错误，提升速度；
+3. 采用 **X5WebView** 内核，增加版本兼容性的错误，提升速度；
 
-4. 不在xml中创建WebView，而是**动态地创建**，引用applicationContext，再加入到布局；这个问题是，onJsAlert会失败
+4. 不在 xml 中创建 WebView，而是 **动态地创建**，引用 applicationContext，再加入到布局；这个问题是，onJsAlert 会失败
 
-5. 因为WebView首次加载特别慢，**在空闲的时候创建一次WebView再销毁**，来加快WebView加载的速度
+5. 因为 WebView 首次加载特别慢，**在空闲的时候创建一次 WebView 再销毁**，来加快 WebView 加载的速度
 
-6. WebSettings的setCacheMode()缓存模式，**在无网络的时候设置为LOAD_CACHE_ONLY，有网络时设置为LOAD_DEFAULT**，达到离线加载的结果
+6. WebSettings 的 setCacheMode() 缓存模式，**在无网络的时候设置为 LOAD_CACHE_ONLY，有网络时设置为 LOAD_DEFAULT**，达到离线加载的结果
 
-7. 在WebSettings几个重要的**缓存**功能都打开
+7. 在 WebSettings 几个重要的**缓存**功能都打开
 
 #### 其他端
 
-1. 让前端，使用懒加载js脚本
+1. 让前端，使用懒加载 js 脚本
 
-2. 使用CDN服务
+2. 使用 CDN 服务
 
-3. 前端图片采用webp
+3. 前端图片采用 webp
 
 ## WebView的原理是什么？（Java如何实现和Js通讯的？）
 
@@ -31,18 +31,18 @@
 
 ## 如何解决WebView内存泄漏的问题？
 
-1. 为WebView单独开一个进程
+1. 为 WebView 单独开一个进程
 
-2. 不在XML中定义WebView，每次使用前new出来，传入applicationContext
+2. 不在 XML 中定义 WebView，每次使用前 new 出来，传入 applicationContext
 
 
 ## 使用WebView的过程中遇到哪些难点？
 
-1. 需要处理登录状态同步的问题，用户在客户端登录，需要把登录状态同步到WebView，避免二次登录；通过OKHttp的CookieJar获取到Cookie，保存到SharedPreferences，然后通过CookieSyncManager同步到WebView
+1. 需要处理登录状态同步的问题，用户在客户端登录，需要把登录状态同步到 WebView，避免二次登录；通过 OkHttp 的 CookieJar 获取到 Cookie，保存到 SharedPreferences，然后通过 CookieSyncManager 同步到 WebView
 
-2. 对于WebView内存泄露的问题，采用了两个措施，↑↑↑
+2. 对于 WebView 内存泄露的问题，采用了两个措施，如上述
 
-3. 关于提高WebView的首屏加载速度，采用了js本地化的方案
+3. 关于提高 WebView 的首屏加载速度，采用了 js 本地化的方案
 
 
 ## 链接

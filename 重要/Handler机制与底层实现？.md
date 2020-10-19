@@ -1,14 +1,14 @@
 ## 回答要点
 
-1. Handler 最终都会调用 sendMessageAtTime()
-2. MessageQueue 的实现是单链表
-3. 要提到 Looper 在准备时到 ThreadLocal
-4. 要讲到 native 层，特别是 `epoll` 相关的方法，以及几个 native 方法调用的时机
-5. 要讲到 native 层的 MessageQueue ，native 层的 Looper
+1. Handler 最终都会调用 **sendMessageAtTime** 方法
+2. MessageQueue 的实现是**单链表**
+3. 要提到 Looper 在准备时到 **ThreadLocal**
+4. 要讲到 native 层，特别是 **epoll** 相关的方法（epoll_wait、epoll_create、epoll_ctl 三个方法），以及几个 native 方法调用的时机
+5. 要讲到 native 层的 MessageQueue ，native 层的 Looper（主要实现的地方）
 
 ## 原理
 
-1. **Looper**：有两个重要的方法，分别是 prepare() 和 loop()，prepare() 方法会调用构造函数，创建对应的 MessageQueue 和保存当前的线程，并把 Looper 放入 ThreadLocal 中；loop() 方法，会无限从 MessageQueue 中取出消息，通过调用 queue.next() 的方法，当队列中没有消息时，next() 会无限循环，造成阻塞，等来 MessageQueue 中加入新消息，然后再唤醒；Looper 从队列中取到消息后，会拿到当前 Message的target 指向的 Handler，并调用 Handler 的 dispatchMessage() 进行分发，进而调用我们重写的 handleMessage 或 者handleCallback()。主线程的 Looper 在 ActivityThread 中被初始化和开始循环
+1. **Looper**：有两个重要的方法，分别是 prepare() 和 loop()，prepare() 方法会调用构造函数，创建对应的 MessageQueue 和保存当前的线程，并把 Looper 放入 ThreadLocal 中；loop() 方法，会无限从 MessageQueue 中取出消息，通过调用 queue.next() 的方法，当队列中没有消息时，next() 会无限循环，造成阻塞，等来 MessageQueue 中加入新消息，然后再唤醒；Looper 从队列中取到消息后，会拿到当前 Message的 target 指向的 Handler，并调用 Handler 的 dispatchMessage() 进行分发，进而调用我们重写的 handleMessage 或 者 handleCallback()，主线程的 Looper 在 ActivityThread 中被初始化和开始循环
 
 2. **Handler**：Handler 依附于创建 Handler 的线程，因为它持有当前线程的 Looper。不论是调用 post 方法还是 send 方法，最终都会调用 sendMessageAtTime(Message msg, long uptimeMillis)，然后调用 Handler 的 enqueueMessage(Messagequeue queue, Message msg, long uptimeMillis) 方法，实际调用 MessageQueue 的 enqueueMessage(Message msg, long when) 方法
 
@@ -20,7 +20,7 @@
 
 ## 原理图
 
-![](../assets/Handler的原理.png)
+<img src="../assets/Handler的原理.png" style="zoom:80%;" />
 
 
 ## 链接

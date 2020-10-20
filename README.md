@@ -60,6 +60,8 @@
 
 ## 记忆
 
+[(待整理)做了哪些Apk体积优化？](记忆/(待整理)做了哪些Apk体积优化？.md)
+
 [Android开发有哪些节约内存的编码习惯？](记忆/Android开发有哪些节约内存的编码习惯？.md)
 
 [ANR是怎么回事？如何定位ANR？](记忆/ANR是怎么回事？如何定位ANR？.md)
@@ -86,8 +88,6 @@
 
 [TCPIP四层协议？](记忆/TCPIP四层协议？.md)
 
-[做了哪些Apk体积优化？](记忆/做了哪些Apk体积优化？.md)
-
 [如何保证线程安全？](记忆/如何保证线程安全？.md)
 
 [如何避免OOM的产生？](记忆/如何避免OOM的产生？.md)
@@ -97,8 +97,6 @@
 [报文、报文段、分组、包、数据报、帧、数据流的概念区别？](记忆/报文、报文段、分组、包、数据报、帧、数据流的概念区别？.md)
 
 [有哪些多线程开发良好的实践？](记忆/有哪些多线程开发良好的实践？.md)
-
-[点击Launcher图标打开app的过程？](记忆/点击Launcher图标打开app的过程？.md)
 
 [红黑树特性？](记忆/红黑树特性？.md)
 
@@ -127,6 +125,8 @@
 [SystemServer启动流程？](源码/SystemServer启动流程？.md)
 
 [如何跨进程传递大的Bitmap？](源码/如何跨进程传递大的Bitmap？.md)
+
+[点击Launcher图标打开app的过程？](源码/点击Launcher图标打开app的过程？.md)
 
 [说说动态广播的注册和收发原理？](源码/说说动态广播的注册和收发原理？.md)
 
@@ -176,8 +176,6 @@
 
 [requestLayout，invalidate，postInvalidate区别与联系？](普通/requestLayout，invalidate，postInvalidate区别与联系？.md)
 
-[session、cookie、token的区别？](普通/session、cookie、token的区别？.md)
-
 [sleep和wait的区别？](普通/sleep和wait的区别？.md)
 
 [String、StringBuffer和StringBuilder的区别？](普通/String、StringBuffer和StringBuilder的区别？.md)
@@ -185,8 +183,6 @@
 [SurfaceView和普通View的区别？](普通/SurfaceView和普通View的区别？.md)
 
 [View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？](普通/View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？.md)
-
-[什么是APK？APK文件都由那些组成？](普通/什么是APK？APK文件都由那些组成？.md)
 
 [什么是MeasureSpec？](普通/什么是MeasureSpec？.md)
 
@@ -228,11 +224,17 @@
 
 ## 其次
 
+[(汇总)易错警告](其次/(汇总)易错警告.md)
+
+[(汇总)算法解题要点](其次/(汇总)算法解题要点.md)
+
 [APK打包的流程？](其次/APK打包的流程？.md)
 
 [Fragment之间通讯的方式？](其次/Fragment之间通讯的方式？.md)
 
 [Fragment的生命周期？](其次/Fragment的生命周期？.md)
+
+[session、cookie、token的区别？](其次/session、cookie、token的区别？.md)
 
 [什么是APK？APK文件都由那些组成？](其次/什么是APK？APK文件都由那些组成？.md)
 
@@ -256,11 +258,11 @@
 
 [Shadow插件化的原理？对比其他框架的优势？](待整理/Shadow插件化的原理？对比其他框架的优势？.md)
 
+[Shadow的原理？](待整理/Shadow的原理？.md)
+
 [Socket编程面试题？](待整理/Socket编程面试题？.md)
 
 [主题切换的方案？](待整理/主题切换的方案？.md)
-
-[做了哪些Apk体积优化？](待整理/做了哪些Apk体积优化？.md)
 
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
 

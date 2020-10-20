@@ -19,4 +19,4 @@
 ![](../assets/Activity Window DecorView关系.png)
 
 ## 链接
-[说说Activity的显示原理](https://coding.imooc.com/lesson/340.html#mid=24588)
+[慕课网：说说Activity的显示原理](https://coding.imooc.com/lesson/340.html#mid=24588)

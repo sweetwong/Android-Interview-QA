@@ -12,7 +12,7 @@ public class CreateREADME {
     // TODO 在此处输入你要输出的文件名
     static final String 输出文件名 = "README.md";
     // TODO 是否随机排序
-    static final boolean 是否随机排序 = true;
+    static final boolean 是否随机排序 = false;
 
     public static void main(String[] args) throws Exception {
         输出 = new PrintWriter(根路径 + '/' + 输出文件名);

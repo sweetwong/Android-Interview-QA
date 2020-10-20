@@ -6,7 +6,7 @@
 3. 使用它可以更加方便的执行后台任务以及在主线程访问 UI，但他不适合进行特别耗时的后台任务；
 
 ## 多个 AsyncTask 任务是串行还是并行？
-从 Android 1.6 到 2.3(Gingerbread) AsyncTask 是并行的，即上面我们提到的有5个核心线程的线程池（ThreadPoolExecutor）负责调度任务。从 Android 3.0 开始，Android 团队又把 AsyncTask 改成了串行，默认的 Executor 被指定为 SERIAL_EXECUTOR。
+从 Android 1.6 到 2.3 AsyncTask 是并行的，即上面我们提到的有5个核心线程的线程池（ThreadPoolExecutor）负责调度任务。从 Android 3.0 开始，Android 团队又把 AsyncTask 改成了串行，默认的 Executor 被指定为 SERIAL_EXECUTOR。
 
 ## AsyncTask 容易引发的 Activity 内存泄露
 如果 AsyncTask 被声明为 Activity 的**非静态的内部类**，那么 AsyncTask 会保留一个对创建了 AsyncTask 的 Activity 的引用。如果 Activity 已经被销毁，AsyncTask 的后台线程还在执行，它将继续在内存里保留这个引用，导致 Activity 无法被回收，引起内存泄露。

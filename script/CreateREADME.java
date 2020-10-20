@@ -17,6 +17,7 @@ public class CreateREADME {
     public static void main(String[] args) throws Exception {
         输出 = new PrintWriter(根路径 + '/' + 输出文件名);
         写("重要");
+        写("记忆");
         写("源码");
         写("普通");
         写("其次");

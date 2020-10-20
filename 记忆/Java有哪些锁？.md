@@ -62,5 +62,7 @@ PS：JDK1.6以后，为了减少获得锁和释放锁所带来的性能消耗，
 ## 链接
 
 [思否：Java中15种锁介绍](https://segmentfault.com/a/1190000017766364#item-8)
+
 [博客园：Java并发编程：Synchronized底层优化](https://www.cnblogs.com/paddix/p/5405678.html)
+
 [CSDN：偏向锁，轻量级锁与重量级锁的区别与膨胀（讲得特别明白易懂）](https://blog.csdn.net/choukekai/article/details/63688332)

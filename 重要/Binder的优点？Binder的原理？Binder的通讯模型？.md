@@ -1,14 +1,6 @@
 ## 一次完整的IPC流程
-#### 客户端：
 
-1. 通过 bindService 或者 getService 获取到 BinderProxy
-2. 把数据写入到 Parcel 中，调用 BinderProxy 的 transact 方法，最后调到 native 层
-3. 调到 BpBinder 的 transact，最后调用 IPCThreadState 的 transact 方法
-4. 最后把数据写到 mOut 中
-
-#### 服务端：
-
-1. 在 BBinder 的 onTransact 方法中，监听到客户端的消息
+[Binder的transact流程？](../源码/Binder的transact流程？.md)
 
 ## 优点
 

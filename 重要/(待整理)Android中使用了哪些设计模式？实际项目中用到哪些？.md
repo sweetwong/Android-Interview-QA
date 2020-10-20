@@ -1,10 +1,10 @@
 
 ## 在 Android 源码中的实现
 
-1. **建造者模式**：AlertDialog，Retrofit，OkHttp
-2. **观察者模式**：ContentObsever，LiveData，RxJava，各种Listener（例如点击事件），EventBus
+1. **建造者模式**：AlertDialog、Retrofit、OkHttp
+2. **观察者模式**：ContentObsever、LiveData、RxJava、各种Listener（例如点击事件）、EventBus、广播注册
 3. **单例模式**：无处不在，Kotlin 没有静态方法，都是通过单例模式实现的；Android 中各种系统级的全局变量都用了单例模式，如Application，各种Manager（例如WindowManager），SharedPreferences，状态栏，输入法，EventBus
-4. **适配器模式**：RecyclerView，ListView，Retrofit
+4. **适配器模式**：RecyclerView、ListView、**Retrofit**
 5. **命令模式**：Android 中两个典型的使用命令模式的类是 Handler 和 ExecutorService。Handler 类提供了 post 方法发送命令，ExecutorService 类通过submit方法提交命令。EventBus
 6. **代理模式**：WindowManagerImp l和 WindowManagerGlobal，ActivityManager 通过代理与 AMS 交互。AIDL 通过产生代理类来进行进程间通讯。
 7. **备忘录模式**：备忘录模式主要功能是实现状态或数据的备份和恢复。那么，很容易想到在 Android 中有与它对应的一套机制，即 onSaveInstanceState 和 onRestoreInstanceState，这两个方法分别实现 View 或者 Activity 关键状态的保存和恢复，具体用法相信大家已经很清楚了；Canvas 类中的 save 和 restore 两个方法也是使用了备忘录模式。

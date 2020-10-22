@@ -8,6 +8,3 @@
 
 ## 其他
 基本上 Application、Service、BroadcastReceiver、ContentProvider 等组件的创建步骤都很类似
-
-
-## 链接

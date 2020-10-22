@@ -14,7 +14,7 @@
 
 1. 要说到 IPCThreadState，里面维护了两个 Parcel，分别是 mIn 和 mOut，写数据和读数据都是通过这两个 Parcel 实现的
 2. talkWithDriver() 实际上是通过底层的 ioctl 实现的的
-3. oneway 在 waitForResponse() 方法传入的参数是 null，这是最大的区别
+3. oneway 机制在 waitForResponse() 方法传入的参数是 null，这是最大的区别
 4. IBinder 有两个实现，分别是 BpBinder 对应客户端，BBinder对应服务端
 
 ## 链接

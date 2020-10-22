@@ -1,6 +1,6 @@
 ## Android 调用JS代码
 
-1. 通过 WebView 的l oadUrl()
+1. 通过 WebView 的 loadUrl()
 
 2. 通过 WebView 的 evaluateJavascript()
 
@@ -15,3 +15,4 @@
 
 ## 链接
 [简书：最全面总结 Android WebView与 JS 的交互方式](https://www.jianshu.com/p/345f4d8a5cfa)
+

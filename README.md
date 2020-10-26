@@ -1,11 +1,5 @@
 ## 重要
 
-[(待整理)Android中使用了哪些设计模式？实际项目中用到哪些？](重要/(待整理)Android中使用了哪些设计模式？实际项目中用到哪些？.md)
-
-[(待整理)IdleHandler的原理？](重要/(待整理)IdleHandler的原理？.md)
-
-[(待整理)Java的泛型实现机制是怎样的？什么是类型擦除？](重要/(待整理)Java的泛型实现机制是怎样的？什么是类型擦除？.md)
-
 [Activity的四种启动模式和常用的Flags？](重要/Activity的四种启动模式和常用的Flags？.md)
 
 [Binder的优点？Binder的原理？Binder的通讯模型？](重要/Binder的优点？Binder的原理？Binder的通讯模型？.md)
@@ -29,6 +23,8 @@
 [synchronized的原理？](重要/synchronized的原理？.md)
 
 [volatile的原理？](重要/volatile的原理？.md)
+
+[主题切换的方案？](重要/主题切换的方案？.md)
 
 [什么是强、软、弱、虚引用以及它们之间的区别？](重要/什么是强、软、弱、虚引用以及它们之间的区别？.md)
 
@@ -59,8 +55,6 @@
 [设计模式的6大原则是什么？](重要/设计模式的6大原则是什么？.md)
 
 ## 记忆
-
-[(待整理)做了哪些Apk体积优化？](记忆/(待整理)做了哪些Apk体积优化？.md)
 
 [Android开发有哪些节约内存的编码习惯？](记忆/Android开发有哪些节约内存的编码习惯？.md)
 
@@ -106,8 +100,6 @@
 
 ## 源码
 
-[(待整理)Service启动流程](源码/(待整理)Service启动流程.md)
-
 [Activity启动流程？](源码/Activity启动流程？.md)
 
 [Activity的显示原理？](源码/Activity的显示原理？.md)
@@ -142,7 +134,7 @@
 
 [Android的签名机制？](普通/Android的签名机制？.md)
 
-[Android进程的类型](普通/Android进程的类型.md)
+[Android进程的类型？](普通/Android进程的类型？.md)
 
 [ArrayBlockingQueue和LinkedBlockingQueue的区别？](普通/ArrayBlockingQueue和LinkedBlockingQueue的区别？.md)
 
@@ -224,10 +216,6 @@
 
 ## 其次
 
-[(汇总)易错警告](其次/(汇总)易错警告.md)
-
-[(汇总)算法解题要点](其次/(汇总)算法解题要点.md)
-
 [APK打包的流程？](其次/APK打包的流程？.md)
 
 [Fragment之间通讯的方式？](其次/Fragment之间通讯的方式？.md)
@@ -250,11 +238,23 @@
 
 ## 待整理
 
+[Android中使用了哪些设计模式？实际项目中用到哪些？](待整理/Android中使用了哪些设计模式？实际项目中用到哪些？.md)
+
 [Android每个版本有什么主要的新特征？](待整理/Android每个版本有什么主要的新特征？.md)
 
 [EventBus原理？](待整理/EventBus原理？.md)
 
+[Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
+
 [Glide原理？](待整理/Glide原理？.md)
+
+[IdleHandler的原理？](待整理/IdleHandler的原理？.md)
+
+[Java的泛型实现机制是怎样的？什么是类型擦除？](待整理/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
+
+[Java线程池的问题](待整理/Java线程池的问题.md)
+
+[Service启动流程](待整理/Service启动流程.md)
 
 [Shadow插件化的原理？对比其他框架的优势？](待整理/Shadow插件化的原理？对比其他框架的优势？.md)
 
@@ -262,7 +262,7 @@
 
 [Socket编程面试题？](待整理/Socket编程面试题？.md)
 
-[主题切换的方案？](待整理/主题切换的方案？.md)
+[做了哪些Apk体积优化？](待整理/做了哪些Apk体积优化？.md)
 
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
 

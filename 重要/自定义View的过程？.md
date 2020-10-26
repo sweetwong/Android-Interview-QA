@@ -1,16 +1,16 @@
 ## 步骤
 
-1. 自定义属性(attr)的声明
-2. 在构造函数中获取attr和初始化
-2. 重写onMeasure
-3. 重写onLayout
-4. 重写onDraw
-5. 重写onTouchEvent
+1. 自定义属性（attr）的声明
+2. 在构造函数中获取 attr 和初始化
+2. 重写 onMeasure
+3. 重写 onLayout
+4. 重写 onDraw
+5. 重写 onTouchEvent
 
 ## 自定义控件的类型
-1. 自绘控件
-2. 组合控件
-3. 继承控件
+1. 自绘控件（ImageView、TextView）
+2. 组合控件（如设置的 Item，Launcher 的 Item）
+3. 继承控件（拓展、修改某些功能）
 
 ## 为什么要自定义控件?
 
@@ -23,27 +23,27 @@
 
 #### 自定义属性的声明与获取
 1. 分析需要的自定义属性
-2. 在res/values/attr.xml定义声明
-3. 在layout.xml中使用
-4. 在View的构造方法中获取
-TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyTextViewStyle);
+2. 在 res/values/attr.xml 定义声明
+3. 在 layout.xml 中使用
+4. 在 View 的构造方法中获取
+`TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyTextViewStyle);`
 
 #### 测量onMeasure
-1. 测量模式分三种, EXACTLY, AT_MOST, UNSPECIFIED
-2. MeasureSpec
-3. setMeasuredDimentsion
-4. requestLayout()
+1. 测量模式分三种：EXACTLY、AT_MOST、UNSPECIFIED
+2. 注意 MeasureSpec（测量规格）的内容
+3. 需要设置 setMeasuredDimentsion
+4. 通过 requestLayout() 触发
 
-#### 布局onLayout
-1. onLayout是父控件决定子View的位置, 如果是重写View而不是ViewGroup可以不考虑onLayout
-2. 尽可能将onMeasure的一些操作移到此方法中, 因为onLayout只会触发一次, onLayout会触发两次
-3. requestLayout()来触发
+#### 布局 onLayout
+1. onLayout() 是父控件决定子View的位置，如果是重写 View 而不是 ViewGroup 可以不考虑 onLayout()
+2. 尽可能将 onMeasure() 的一些操作移到此方法中，因为 onLayout() 只会触发一次，而 onMeasure() 会触发两次
+3. 通过 requestLayout() 来触发
 
 #### 绘制onDraw
 1. 绘制内容区域
-2. invalidate(), postInvalidate()
-3. Canvas.drawXX()的方法
-4. save, restore()
+2. 通过invalidate()、postInvalidate() 触发
+3. Canvas.drawXX() 的方法
+4. save、restore()
 
 ## 链接
 [慕课：自定义View](https://www.imooc.com/video/10768)

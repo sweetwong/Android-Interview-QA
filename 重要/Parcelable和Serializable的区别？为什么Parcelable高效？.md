@@ -5,9 +5,9 @@
 
 3. Parcelable 比 Serializable 实现起来更复杂，因为**手动实现了一些序列化的过程**
 
-4. Serializable 实现的原理是**反射**，并频繁在磁盘进行进行**I/O操作**，因此会产生大量临时对象，导致垃圾回收频繁调用；而 Parcelable 是直接在内存中读写
+4. Serializable 实现的原理是**反射**，并频繁在**磁盘**进行进行**I/O操作**，因此会产生大量临时对象，导致垃圾回收频繁调用；而 Parcelable 是直接在**内存**中读写
 
-5. Parcel 对应一个 native 的 Parcel 对象，具体实现都是 native 层代码，一般最后会调用 Parcel.cpp 的 write 方法，write 方法会直接调用 **memcpy** 内存复制
+5. Parcel 对应一个原生的 Parcel 对象，具体实现都是原生代码，一般最后会调用 Parcel.cpp 的 write 方法，write 方法会直接调用 **memcpy** 内存复制
 
 6. 不要用 Parcelable 做数据持久化，因为 Android 不同版本的 Parcelable 实现可能不同 
 

@@ -10,6 +10,10 @@
 
 [HashMap的原理？](重要/HashMap的原理？.md)
 
+[IdleHandler的原理？](重要/IdleHandler的原理？.md)
+
+[Java的泛型实现机制是怎样的？什么是类型擦除？](重要/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
+
 [MVC、MVP、MVVM的优缺点？](重要/MVC、MVP、MVVM的优缺点？.md)
 
 [OkHttp的原理？](重要/OkHttp的原理？.md)
@@ -248,15 +252,9 @@
 
 [Glide原理？](待整理/Glide原理？.md)
 
-[IdleHandler的原理？](待整理/IdleHandler的原理？.md)
-
-[Java的泛型实现机制是怎样的？什么是类型擦除？](待整理/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
-
 [Java线程池的问题](待整理/Java线程池的问题.md)
 
-[Service启动流程](待整理/Service启动流程.md)
-
-[Shadow插件化的原理？对比其他框架的优势？](待整理/Shadow插件化的原理？对比其他框架的优势？.md)
+[Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
 

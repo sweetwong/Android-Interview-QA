@@ -23,6 +23,7 @@ public class CreateREADME {
         写("其次");
         写("待整理");
         输出.close();
+        System.out.println("完成");
     }
 
     static final String 换行符 = System.lineSeparator();

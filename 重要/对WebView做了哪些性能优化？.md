@@ -23,37 +23,37 @@
 
 3. 前端图片采用 webp
 
-## WebView的原理是什么？（Java如何实现和Js通讯的？）
+## WebView 的原理是什么？（Java 如何实现和 JavaScript 通讯的？）
 
 
 待完成...
 
 
-## 如何解决WebView内存泄漏的问题？
+## 如何解决 WebView 内存泄漏的问题？
 
 1. 为 WebView 单独开一个进程
 
 2. 不在 XML 中定义 WebView，每次使用前 new 出来，传入 applicationContext
 
 
-## 使用WebView的过程中遇到哪些难点？
+## 使用 WebView 的过程中遇到哪些难点？
 
 1. 需要处理登录状态同步的问题，用户在客户端登录，需要把登录状态同步到 WebView，避免二次登录；通过 OkHttp 的 CookieJar 获取到 Cookie，保存到 SharedPreferences，然后通过 CookieSyncManager 同步到 WebView
-
 2. 对于 WebView 内存泄露的问题，采用了两个措施，如上述
-
 3. 关于提高 WebView 的首屏加载速度，采用了 js 本地化的方案
+
+## Android和JS交互有哪些方式？
+
+[Android和JS交互有哪些方式？](../普通/Android和JS交互有哪些方式？.md)
 
 
 ## 链接
 [QQ：70%以上业务由H5开发，手机QQ Hybrid 的架构如何优化演进？（深入）](https://mp.weixin.qq.com/s/evzDnTsHrAr2b9jcevwBzA?)
 
-
 [美团：WebView性能、体验分析与优化（深入）](https://tech.meituan.com/2017/06/09/webviewperf.html)
 
 
 [CSDN：腾讯祭出大招VasSonic，让你的H5页面首屏秒开（不错）](https://blog.csdn.net/tencent__open/article/details/77324952)
-
 
 [CSDN：VasSonic简单介绍](https://blog.csdn.net/oqzuser1587576/article/details/87975943)
 

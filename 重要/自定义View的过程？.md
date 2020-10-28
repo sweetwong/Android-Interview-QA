@@ -7,6 +7,10 @@
 4. 重写 onDraw
 5. 重写 onTouchEvent
 
+## 注意点
+
+TODO
+
 ## 自定义控件的类型
 1. 自绘控件（ImageView、TextView）
 2. 组合控件（如设置的 Item，Launcher 的 Item）

@@ -50,6 +50,8 @@
 
 [性能优化的种类有哪些？](重要/性能优化的种类有哪些？.md)
 
+[知道哪些单例模式？](重要/知道哪些单例模式？.md)
+
 [知道哪些排序算法？都有什么特性？](重要/知道哪些排序算法？都有什么特性？.md)
 
 [简单讲一下Android的Touch事件分发机制？](重要/简单讲一下Android的Touch事件分发机制？.md)
@@ -230,6 +232,8 @@
 
 [Fragment的生命周期？](其次/Fragment的生命周期？.md)
 
+[Object有哪些方法？](其次/Object有哪些方法？.md)
+
 [session、cookie、token的区别？](其次/session、cookie、token的区别？.md)
 
 [什么是APK？APK文件都由那些组成？](其次/什么是APK？APK文件都由那些组成？.md)
@@ -266,6 +270,8 @@
 
 [ArrayMap的原理？](待整理/ArrayMap的原理？.md)
 
+[ConcurrentHashMap原理？](待整理/ConcurrentHashMap原理？.md)
+
 [EventBus原理？](待整理/EventBus原理？.md)
 
 [Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
@@ -273,8 +279,6 @@
 [Glide原理？](待整理/Glide原理？.md)
 
 [Java线程池的问题](待整理/Java线程池的问题.md)
-
-[Object有哪些方法](待整理/Object有哪些方法.md)
 
 [Service启动流程？](待整理/Service启动流程？.md)
 

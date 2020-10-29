@@ -2,6 +2,8 @@
 
 [Activity的四种启动模式和常用的Flags？](重要/Activity的四种启动模式和常用的Flags？.md)
 
+[AsyncTask实现原理？](重要/AsyncTask实现原理？.md)
+
 [Binder的优点？Binder的原理？Binder的通讯模型？](重要/Binder的优点？Binder的原理？Binder的通讯模型？.md)
 
 [ClassLoader类加载机制？](重要/ClassLoader类加载机制？.md)
@@ -44,6 +46,8 @@
 
 [对WebView做了哪些性能优化？](重要/对WebView做了哪些性能优化？.md)
 
+[常用的数据结构有哪些？](重要/常用的数据结构有哪些？.md)
+
 [性能优化的种类有哪些？](重要/性能优化的种类有哪些？.md)
 
 [知道哪些排序算法？都有什么特性？](重要/知道哪些排序算法？都有什么特性？.md)
@@ -61,6 +65,8 @@
 ## 记忆
 
 [Android开发有哪些节约内存的编码习惯？](记忆/Android开发有哪些节约内存的编码习惯？.md)
+
+[Android每个版本有什么主要的新特征？](记忆/Android每个版本有什么主要的新特征？.md)
 
 [ANR是怎么回事？如何定位ANR？](记忆/ANR是怎么回事？如何定位ANR？.md)
 
@@ -143,8 +149,6 @@
 [ArrayBlockingQueue和LinkedBlockingQueue的区别？](普通/ArrayBlockingQueue和LinkedBlockingQueue的区别？.md)
 
 [ART和Dalvik的区别？](普通/ART和Dalvik的区别？.md)
-
-[AsyncTask实现原理？](普通/AsyncTask实现原理？.md)
 
 [ButterKnife的原理？](普通/ButterKnife的原理？.md)
 
@@ -244,7 +248,9 @@
 
 [Android中使用了哪些设计模式？实际项目中用到哪些？](待整理/Android中使用了哪些设计模式？实际项目中用到哪些？.md)
 
-[Android每个版本有什么主要的新特征？](待整理/Android每个版本有什么主要的新特征？.md)
+[APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
+
+[ArrayMap的原理？](待整理/ArrayMap的原理？.md)
 
 [EventBus原理？](待整理/EventBus原理？.md)
 
@@ -254,13 +260,29 @@
 
 [Java线程池的问题](待整理/Java线程池的问题.md)
 
+[Object有哪些方法](待整理/Object有哪些方法.md)
+
 [Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
 
 [Socket编程面试题？](待整理/Socket编程面试题？.md)
 
+[SparseArray的原理？](待整理/SparseArray的原理？.md)
+
+[ThreadLocal原理？](待整理/ThreadLocal原理？.md)
+
+[你觉得什么是JVM？md](待整理/你觉得什么是JVM？md)
+
 [做了哪些Apk体积优化？](待整理/做了哪些Apk体积优化？.md)
 
+[如果要设计一个大量图片下载的方法，如何确定并发量，有哪些指标](待整理/如果要设计一个大量图片下载的方法，如何确定并发量，有哪些指标.md)
+
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
+
+[手写生产者消费者模式](待整理/手写生产者消费者模式.md)
+
+[自己去设计一个网络请求框架，怎么做？](待整理/自己去设计一个网络请求框架，怎么做？.md)
+
+[进程调度算法？](待整理/进程调度算法？.md)
 

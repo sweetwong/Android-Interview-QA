@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 一个生成 README.md 的脚本
+ */
 public class CreateREADME {
 
     // TODO 在此处输入你项目的根路径
@@ -21,6 +24,7 @@ public class CreateREADME {
         写("源码");
         写("普通");
         写("其次");
+        写("汇总");
         写("待整理");
         输出.close();
         System.out.println("完成");

@@ -13,6 +13,7 @@
 3. **onTouchEvent**：真正对 MotionEvent 进行处理或者说消费的方法。在 dispatchTouchEvent 进行调用。返回值：返回 true 表示事件被消费，本次的事件终止。返回 false 表示事件没有被消费，将调用父 View 的 onTouchEvent 方法
 
 #### 伪代码
+
 ```
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean consume = false; // 事件是否被消费
@@ -27,10 +28,12 @@
 #### 特别强调
 
 1. 子 ViewGroup 可以通过 **requestDisallowInterceptTouchEvent** 方法干预父 ViewGroup 的事件分发过程（ACTION_DOWN 事件除外），而这就是我们处理滑动冲突常用的关键方法
-
 2. 对于 View（注意：ViewGroup 也是 View）而言，如果设置了 onTouchListener，那么 OnTouchListener 方法中的 onTouch 方法会被回调。onTouch 方法返回 true，则 onTouchEvent 方法不会被调用（onClick 事件是在 onTouchEvent 中调用）所以三者优先级是：**onTouch -> onTouchEvent -> onClick**
-
 3. View 的 onTouchEvent 方法默认都会消费掉事件（返回 true），除非它是不可点击的（clickable 和 longClickable 同时为 false），View 的 longClickable 默认为 false，clickable 需要区分情况，如 Button 的 clickable 默认为 true，而 TextView 的 clickable 默认为 false
+
+## 如何解决滑动冲突？
+
+TODO
 
 ## 事件从点击到产生到分发的过程
 <img src="../assets/事件从点击到产生到分发的过程.png" style="zoom:80%;" />

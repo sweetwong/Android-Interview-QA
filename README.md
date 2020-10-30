@@ -28,6 +28,8 @@
 
 [synchronized的原理？](重要/synchronized的原理？.md)
 
+[ThreadLocal原理？](重要/ThreadLocal原理？.md)
+
 [volatile的原理？](重要/volatile的原理？.md)
 
 [主题切换的方案？](重要/主题切换的方案？.md)
@@ -45,8 +47,6 @@
 [如何理解Java的三大特性封装、继承和多态？](重要/如何理解Java的三大特性封装、继承和多态？.md)
 
 [对WebView做了哪些性能优化？](重要/对WebView做了哪些性能优化？.md)
-
-[常用的数据结构有哪些？](重要/常用的数据结构有哪些？.md)
 
 [性能优化的种类有哪些？](重要/性能优化的种类有哪些？.md)
 
@@ -71,6 +71,8 @@
 [Android每个版本有什么主要的新特征？](记忆/Android每个版本有什么主要的新特征？.md)
 
 [ANR是怎么回事？如何定位ANR？](记忆/ANR是怎么回事？如何定位ANR？.md)
+
+[GET与POST的区别？](记忆/GET与POST的区别？.md)
 
 [HTTP1.0与HTTP1.1与HTTP2.0有什么区别？](记忆/HTTP1.0与HTTP1.1与HTTP2.0有什么区别？.md)
 
@@ -97,6 +99,8 @@
 [如何保证线程安全？](记忆/如何保证线程安全？.md)
 
 [如何避免OOM的产生？](记忆/如何避免OOM的产生？.md)
+
+[常用的数据结构有哪些？](记忆/常用的数据结构有哪些？.md)
 
 [常见的内存泄漏的场景？](记忆/常见的内存泄漏的场景？.md)
 
@@ -150,13 +154,13 @@
 
 [ArrayBlockingQueue和LinkedBlockingQueue的区别？](普通/ArrayBlockingQueue和LinkedBlockingQueue的区别？.md)
 
+[ArrayMap的原理？](普通/ArrayMap的原理？.md)
+
 [ART和Dalvik的区别？](普通/ART和Dalvik的区别？.md)
 
 [ButterKnife的原理？](普通/ButterKnife的原理？.md)
 
 [CAS实现原子操作会出现什么问题？](普通/CAS实现原子操作会出现什么问题？.md)
-
-[GET与POST的区别？](普通/GET与POST的区别？.md)
 
 [IntentService和Service有什么区别？](普通/IntentService和Service有什么区别？.md)
 
@@ -268,8 +272,6 @@
 
 [APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
 
-[ArrayMap的原理？](待整理/ArrayMap的原理？.md)
-
 [ConcurrentHashMap原理？](待整理/ConcurrentHashMap原理？.md)
 
 [EventBus原理？](待整理/EventBus原理？.md)
@@ -280,6 +282,8 @@
 
 [Java线程池的问题](待整理/Java线程池的问题.md)
 
+[JUC用过哪些类？](待整理/JUC用过哪些类？.md)
+
 [Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
@@ -287,8 +291,6 @@
 [Socket编程面试题？](待整理/Socket编程面试题？.md)
 
 [SparseArray的原理？](待整理/SparseArray的原理？.md)
-
-[ThreadLocal原理？](待整理/ThreadLocal原理？.md)
 
 [你觉得什么是JVM？md](待整理/你觉得什么是JVM？md)
 

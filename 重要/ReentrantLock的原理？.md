@@ -12,6 +12,10 @@ AQS 的实现依赖内部的同步队列，也就是 FIFO 的双向队列，**�
 
 AQS 队列内部维护的是一个 FIFO 的双向链表，这种结构的特点是每个数据结构都有两个指针，分别指向直接的后继节点和直接前驱节点。所以双向链表可以从任意一个节点开始很方便的访问前驱和后继。每个 Node 其实是由线程封装，当线程争抢锁失败后会封装成 Node 加入到 AQS 队列中去
 
+## ReentrantLock 如何实现公平锁和非公平锁？
+
+TODO
+
 ## 链接
 
 [美团：从ReentrantLock的实现看AQS的原理及应用（终极好文）](https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html)

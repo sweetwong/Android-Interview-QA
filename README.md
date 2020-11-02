@@ -172,6 +172,8 @@
 
 [Java的String可以有多长？](普通/Java的String可以有多长？.md)
 
+[JUC用过哪些类？](普通/JUC用过哪些类？.md)
+
 [JVM怎么判断对象是否已死？](普通/JVM怎么判断对象是否已死？.md)
 
 [LinearLayout和RelativeLayout性能对比？](普通/LinearLayout和RelativeLayout性能对比？.md)
@@ -184,11 +186,15 @@
 
 [sleep和wait的区别？](普通/sleep和wait的区别？.md)
 
+[SparseArray的原理？](普通/SparseArray的原理？.md)
+
 [String、StringBuffer和StringBuilder的区别？](普通/String、StringBuffer和StringBuilder的区别？.md)
 
 [SurfaceView和普通View的区别？](普通/SurfaceView和普通View的区别？.md)
 
 [View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？](普通/View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？.md)
+
+[为什么wait需要搭配synchronized关键字使用？](普通/为什么wait需要搭配synchronized关键字使用？.md)
 
 [什么是MeasureSpec？](普通/什么是MeasureSpec？.md)
 
@@ -248,8 +254,6 @@
 
 [对称加密和非对称加密和哈希算法有什么区别？简单列举一下](其次/对称加密和非对称加密和哈希算法有什么区别？简单列举一下.md)
 
-[数据结构的扩容？](其次/数据结构的扩容？.md)
-
 [直播的流程？](其次/直播的流程？.md)
 
 ## 汇总
@@ -282,15 +286,11 @@
 
 [Java线程池的问题](待整理/Java线程池的问题.md)
 
-[JUC用过哪些类？](待整理/JUC用过哪些类？.md)
-
 [Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
 
 [Socket编程面试题？](待整理/Socket编程面试题？.md)
-
-[SparseArray的原理？](待整理/SparseArray的原理？.md)
 
 [你觉得什么是JVM？md](待整理/你觉得什么是JVM？md)
 

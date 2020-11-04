@@ -4,7 +4,7 @@ nativePollOnce() 返回之后，且当前没有消息可以分发了
 
 nativePollOnce() 返回的三个条件：
 
-1. 获取到 Message
+1. 成功获取到 Message
 2. 超时
 3. 出错
 

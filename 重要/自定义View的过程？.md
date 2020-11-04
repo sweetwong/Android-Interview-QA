@@ -6,6 +6,7 @@
 3. 重写 onLayout
 4. 重写 onDraw
 5. 重写 onTouchEvent
+7. 开放一些接口
 
 ## 注意点
 

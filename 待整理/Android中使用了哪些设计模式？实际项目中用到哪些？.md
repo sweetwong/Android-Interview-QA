@@ -2,64 +2,57 @@
 
 1. **代理模式**：在项目中会用到动态代理，在一些比较关键的类，会通过动态代理的方式代理所有方法，在方法的前后进行埋点，以及异常处理；
 
-TODO
-
-## 在 Android 源码中的实现
-
-1. **建造者模式**：AlertDialog、Retrofit、OkHttp
-2. **观察者模式**：ContentObsever、LiveData、RxJava、各种Listener（例如点击事件）、EventBus、BroadcastRece
-3. **单例模式**：无处不在，Kotlin 没有静态方法，都是通过单例模式实现的；Android 中各种系统级的全局变量都用了单例模式，如Application，各种Manager（例如WindowManager），SharedPreferences，状态栏，输入法，EventBus
-4. **适配器模式**：RecyclerView、ListView、**Retrofit**
-5. **命令模式**：Android 中两个典型的使用命令模式的类是 Handler 和 ExecutorService。Handler 类提供了 post 方法发送命令，ExecutorService 类通过submit方法提交命令。EventBus
-6. **代理模式**：BinderProxy、ContextImpl、ViewRootImpl、WindowManager、Retrofit
-7. **备忘录模式**：备忘录模式主要功能是实现状态或数据的备份和恢复。那么，很容易想到在 Android 中有与它对应的一套机制，即 onSaveInstanceState 和 onRestoreInstanceState，这两个方法分别实现 View 或者 Activity 关键状态的保存和恢复，具体用法相信大家已经很清楚了；Canvas 类中的 save 和 restore 两个方法也是使用了备忘录模式。
-8. **责任链模式**：OkHttp 的 Interceptor，Touch 事件的分发
-9. **外观模式**：Android 源码和各种第三方库大部分都用了外观模式，例 如Glide、OkHttp、Retrofit、EventBus，隐藏其复杂的逻辑，暴露出简单的接口
-10. **简单工厂模式**：getSystemService()
-11. **享元模式**：享元模式用于重复对象的复用，例如各种“池”，防止频繁的创建对象。Message 的 obtainMessage方法可以实现 Message 对象的重用，以避免大量的 Message 对象被频繁的创建和销毁。线程池。
-12. **装饰模式**：动态地给一个对象添加一些额外的职责。就扩展功能而言， 它比生成子类方式更为灵活；例如一些列 Wrapper，ContextWrapper，例如 AppCompatActivity
-13. 组合模式：将对象组合成树形结构以表示“部分-整体”的层次结构，View 和 ViewGroup 的组合。我们平时写 UI 的时候，就一直会用到组合模式。
-14. **中介者模式**：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。最典型的就是 Binder 机制，通过 Binder 来连通 Client、Service、ServiceManager 这个三个进程。我们平时构建项目的时候，稍微大型一点的，会使用 MVP 或者 MVVM 这种模式来代替传统的 MVC，MVP 就是典型的中介者模式，Presenter 是纯 Java代码，作为中介者，来调度 View 和 Model
-15. **策略模式**：定义了一系列封装了算法、行为的对象，他们可以相互替换，策略模式本身就是Java多态最直接的表现。ava.util.List 就是定义了一个增（add）、删（remove）、改（set）、查（indexOf）策略，至于实现这个策略的ArrayList、LinkedList等类，只是在具体实现时采用了不同的算法。但因为它们策略一样，不考虑速度的情况下，使用时完全可以互相替换使用
-
 ## 23种设计模式
 
-#### 创建型模式
+### 创建型模式
 
-1. 单例模式
-2. 工厂方法模式
-3. 抽象工厂模式
-4. 建造者模式
-5. 原型模式
+1. **单例模式**：让你能够保证一个类只有一个实例， 并提供一个访问该实例的全局节点。
+   `Kotlin 的 object、系统服务各种  Manager、SharedPreferences`
+2. **简单工厂模式**：这不属于 23 种设计模式之一。
+   `getSystemService() 获取系统服务`
+3. **工厂方法模式**：其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型
+4. 抽象工厂模式：它能创建一系列相关的对象， 而无需指定其具体类
+5. **建造者模式**：使你能够分步骤创建复杂对象
+   `AlertDialog、Retrofit、OkHttp`
+6. **原型模式**：使你能够复制已有对象， 而又无需使代码依赖它们所属的类
 
-#### 结构型模式
+### 结构型模式
 
-1. 适配器模式
-2. 装饰者模式
-3. 代理模式
-4. 外观模式
-5. 桥接模式
-6. 组合模式
-7. 享元模式
+1. **适配器模式**：它能使接口不兼容的对象能够相互合作
+   `RecyclerView、ListView、Retrofit`
+2. 桥接模式：可将一个大类或一系列紧密相关的类拆分为抽象和实现两个独立的层次结构， 从而能在开发时分别使用
+3. **组合模式**：你可以使用它将对象组合成树状结构， 并且能像使用独立对象一样使用它
+4. **装饰模式**：允许你通过将对象放入包含行为的特殊封装对象中来为原对象绑定新的行为
+   `BufferedRead、InputStream 下所有的实现`
+5. **外观模式**：能为程序库、 框架或其他复杂类提供一个简单的接口
+6. **代理模式**：让你能够提供对象的替代品或其占位符。 代理控制着对于原对象的访问， 并允许在将请求提交给对象前后进行一些处理
+7. **享元模式**：它摒弃了在每个对象中保存所有数据的方式， 通过共享多个对象所共有的相同状态， 让你能在有限的内存容量中载入更多对象
 
-#### 行为型模式
+### 行为型模式
 
-1. 策略模式
-2. 模板方法模式
-3. 观察者模式
-4. 迭代子模式
-5. 责任链模式
-6. 命令模式
-7. 备忘录模式
-8. 状态模式
-9. 访问者模式
-10. 中介者模式
-11. 解释器模式
+1. **责任链模式**：允许你将请求沿着处理者链进行发送。 收到请求后， 每个处理者均可对请求进行处理， 或将其传递给链上的下个处理者
+   `OkHttp 的 Interceptor，Touch 事件的分发`
+2. **命令模式**：它可将请求转换为一个包含与请求相关的所有信息的独立对象。 该转换让你能根据不同的请求将方法参数化、 延迟请求执行或将其放入队列中， 且能实现可撤销操作
+   `Android 中两个典型的使用命令模式的类是 Handler 和 ExecutorService。Handler 类提供了 post 方法发送命令，ExecutorService 类通过submit方法提交命令。EventBus`
+3. **迭代器模式**：让你能在不暴露集合底层表现形式 （列表、 栈和树等） 的情况下遍历集合中所有的元素
+4. **中介者模式**：能让你减少对象之间混乱无序的依赖关系。 该模式会限制对象之间的直接交互， 迫使它们通过一个中介者对象进行合作
+   `Binder、MVP`
+5. **备忘录模式**：允许在不暴露对象实现细节的情况下保存和恢复对象之前的状态
+   `onSaveInstanceState、onRestoreInstanceState`
+6. **观察者模式**：允许你定义一种订阅机制， 可在对象事件发生时通知多个 “观察” 该对象的其他对象
+   `ContentObsever、LiveData、RxJava、各种Listener（例如点击事件）、EventBus、BroadcastRece`
+7. **状态模式**：让你能在一个对象的内部状态变化时改变其行为， 使其看上去就像改变了自身所属的类一样
+8. **策略模式**：它能让你定义一系列算法， 并将每种算法分别放入独立的类中， 以使算法的对象能够相互替换
+9. **模板方法模式**：它在超类中定义了一个算法的框架， 允许子类在不修改结构的情况下重写算法的特定步骤
+10. **访问者模式**：它能将算法与其所作用的对象隔离开来
+11. **解释器模式**：给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子
 
 ## 链接
 
-[菜鸟教程：设计模式](https://www.runoob.com/design-pattern/design-pattern-tutorial.html)
+[Refactoring.Guru（牛逼的网站）](https://refactoringguru.cn/)
+
+[stack overflow: Examples of GoF Design Patterns in Java's core libraries](https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries)
 
 [CSDN：Android中用到的设计模式](https://blog.csdn.net/goodlixueyong/article/details/51365294)
 
-[CSDN：Android设计模式之23种设计模式一览（写得太好了，总结得非常对）](https://blog.csdn.net/happy_horse/article/details/50908439)
+[CSDN：Android设计模式之23种设计模式一览](https://blog.csdn.net/happy_horse/article/details/50908439)

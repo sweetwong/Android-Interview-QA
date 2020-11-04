@@ -1,4 +1,5 @@
 ## MVC
+
 MVC 分为 Model、View、Controller 层
 
 #### 优点
@@ -21,7 +22,7 @@ MVP分为 Model、View、Presenter 层
 #### 缺点
 - Presenter 层的生命周期不好管理
 - 虽然 View 层和 Model 层解耦了，但是 View 层和 Presenter 层互相持有，耦合度非常高
-- 会多出很多接口和文件，使项目变得复杂
+- 会多出很多接口文件，使项目变得复杂
 - Presenter 层的代码会变得很多
 
 ## MVVM

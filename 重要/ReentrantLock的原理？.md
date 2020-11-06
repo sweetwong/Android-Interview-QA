@@ -1,7 +1,11 @@
-## 回答
+## 回答要点
 
-ReentrantLock 是基于**AQS**（**抽象队列同步器**）实现的，AQS 是基于 **CAS**（比较并交换）实现的
-AQS 中维护一个同步队列，队列是实现是通过双链表，链表每个节点用它的一个内部类 Node 表示，每个节点保存了 Thread 的信息
+- ReentrantLock 是基于**AQS**（**抽象队列同步器**）实现的，AQS 是基于 **LockSupport** 和 **各种 CAS 操作** 实现的
+- AQS 中维护了一个双向链表，每个链表的节点都包装了一个线程
+- AQS 中维护了一个状态 state，这个 state 是 volatile，各线程通过 CAS 方式去尝试改变 state，如果成功了就代表获取到了锁，如果没成功就插入到队尾
+- ReentranLock 公平锁的实现是通过每次在 tryAcquire() 方法中，查看当前线程对应的节点的前驱节点是否是头节点，如果是，则代表当前线程等待的时间最长
+- AQS 维护的队列的 head 节点是个虚节点（dummyHead）
+- AQS 的等待机制是通过 LockSupport.park() 和 LockSupport.unpark()，之所不使用 object.wait() 和 object.notify() 是因为这两个方法必须要在 synchronized 方法块中才能使用
 
 
 ## AQS 原理？
@@ -14,8 +18,71 @@ AQS 队列内部维护的是一个 FIFO 的双向链表，这种结构的特点�
 
 ## ReentrantLock 如何实现公平锁和非公平锁？
 
-TODO
+### 非公平锁
 
+```java
+        final void lock() {
+            // 与公平锁不同，会先立刻尝试获取一次锁
+            if (compareAndSetState(0, 1))
+                setExclusiveOwnerThread(Thread.currentThread());
+            else
+                acquire(1);
+        }
+
+        protected final boolean tryAcquire(int acquires) {
+            return nonfairTryAcquire(acquires);
+        }
+
+        final boolean nonfairTryAcquire(int acquires) {
+            final Thread current = Thread.currentThread();
+            int c = getState();
+            if (c == 0) {
+                if (compareAndSetState(0, acquires)) {
+                    setExclusiveOwnerThread(current);
+                    return true;
+                }
+            }
+            else if (current == getExclusiveOwnerThread()) {
+                int nextc = c + acquires;
+                if (nextc < 0) // overflow
+                    throw new Error("Maximum lock count exceeded");
+                setState(nextc);
+                return true;
+            }
+            return false;
+        }
+
+```
+
+### 公平锁
+
+```java
+        final void lock() {
+            acquire(1);
+        }
+
+        protected final boolean tryAcquire(int acquires) {
+            final Thread current = Thread.currentThread();
+            int c = getState();
+            if (c == 0) {
+                // 与非公平锁不同的地方，需要先判断有没有比当前线程等待更久的线程
+                // 如果有，就无法获取锁
+                if (!hasQueuedPredecessors() &&
+                    compareAndSetState(0, acquires)) {
+                    setExclusiveOwnerThread(current);
+                    return true;
+                }
+            }
+            else if (current == getExclusiveOwnerThread()) {
+                int nextc = c + acquires;
+                if (nextc < 0)
+                    throw new Error("Maximum lock count exceeded");
+                setState(nextc);
+                return true;
+            }
+            return false;
+        }
+```
 ## 链接
 
 [美团：从ReentrantLock的实现看AQS的原理及应用（终极好文）](https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html)

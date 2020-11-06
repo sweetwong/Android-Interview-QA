@@ -2,9 +2,7 @@
 
 ## JVM 内存模型
 
-
-
-![image](https://user-gold-cdn.xitu.io/2020/5/15/17217e5339c06701?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+<img src="https://user-gold-cdn.xitu.io/2020/5/15/17217e5339c06701?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image" style="zoom: 80%;" />
 
 
 

@@ -1,6 +1,6 @@
 ## 事件从手指点击到产生然后分发的全过程
 
-事件分发的传递顺序：用户点击 -> 手机硬件 -> 传递到 ViewRootImpl（通过 InputEventReceiver 来接收事件通知） -> DecorView -> Activity（从这里开始常规的分发） -> PhoneWindow -> DecorView（本质上也是 ViewGroup，最顶层的 ViewGroup ） -> ViewGroup -> View
+事件分发的传递顺序：用户点击 -> 手机硬件 -> WMS -> looper.cpp  -> InputEventReceiver -> 传递到 ViewRootImpl（通过 InputEventReceiver 来接收事件通知，在 setView() 时注册监听） -> DecorView -> Activity（从这里开始常规的分发） -> PhoneWindow -> DecorView（本质上也是 ViewGroup，最顶层的 ViewGroup ） -> ViewGroup -> View
 
 ## MotionEvent事件分发
 
@@ -14,7 +14,7 @@
 
 #### 伪代码
 
-```
+```java
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean consume = false; // 事件是否被消费
         if (onInterceptTouchEvent(ev)){ // 调用onInterceptTouchEvent判断是否拦截事件
@@ -27,13 +27,20 @@
 ```
 #### 特别强调
 
-1. 子 ViewGroup 可以通过 **requestDisallowInterceptTouchEvent** 方法干预父 ViewGroup 的事件分发过程（ACTION_DOWN 事件除外），而这就是我们处理滑动冲突常用的关键方法
-2. 对于 View（注意：ViewGroup 也是 View）而言，如果设置了 onTouchListener，那么 OnTouchListener 方法中的 onTouch 方法会被回调。onTouch 方法返回 true，则 onTouchEvent 方法不会被调用（onClick 事件是在 onTouchEvent 中调用）所以三者优先级是：**onTouch -> onTouchEvent -> onClick**
-3. View 的 onTouchEvent 方法默认都会消费掉事件（返回 true），除非它是不可点击的（clickable 和 longClickable 同时为 false），View 的 longClickable 默认为 false，clickable 需要区分情况，如 Button 的 clickable 默认为 true，而 TextView 的 clickable 默认为 false
+1. 对于 View（注意：ViewGroup 也是 View）而言，如果设置了 onTouchListener，那么 OnTouchListener 方法中的 onTouch 方法会被回调。onTouch 方法返回 true，则 onTouchEvent 方法不会被调用（onClick 事件是在 onTouchEvent 中调用）所以三者优先级是：
+   **onTouch（通过 setOnTouchListener() 设置） > onTouchEvent > onClick**
+2. View 的 onTouchEvent 方法默认都会消费掉事件（返回 true），除非它是不可点击的（clickable 和 longClickable 同时为 false），View 的 longClickable 默认为 false，clickable 需要区分情况，如 Button 的 clickable 默认为 true，而 TextView 的 clickable 默认为 false
 
-## 如何解决滑动冲突？
+## 如何解决View的事件冲突 ？ 举个开发中遇到的例子 ？
 
-TODO
+- 常见开发中事件冲突的有 ScrollView 与 RecyclerView 的滑动冲突、RecyclerView 内嵌同时滑动同一方向
+- 滑动冲突的处理规则：
+  - 对于由于外部滑动和内部滑动方向不一致导致的滑动冲突，可以根据滑动的方向判断谁来拦截事件。
+  - 对于由于外部滑动方向和内部滑动方向一致导致的滑动冲突，可以根据业务需求，规定何时让外部 View 拦截事件，何时由内部 View 拦截事件。
+  - 对于上面两种情况的嵌套，相对复杂，可同样根据需求在业务上找到突破点。
+- 滑动冲突的实现方法：
+  - **内部拦截法**：子 View 可以通过调用 **mParent.requestDisallowInterceptTouchEvent()** 方法干预父 ViewGroup 的事件分发过程（ACTION_DOWN 事件除外），而这就是我们处理滑动冲突常用的关键方法
+  - **外部拦截法**：指点击事件都先经过父容器的拦截处理，如果父容器需要此事件就拦截，否则就不拦截。具体方法：需要重写父容器的onInterceptTouchEvent() 方法，在内部做出相应的拦截
 
 ## 事件从点击到产生到分发的过程
 <img src="../assets/事件从点击到产生到分发的过程.png" style="zoom:80%;" />
@@ -45,7 +52,6 @@ TODO
 ## 链接
 [GitHub：Android事件分发机制](https://github.com/LRH1993/android_interview/blob/master/android/basis/Event-Dispatch.md)
 
-
 [简书：初探Android事件分发机制源码上之从硬件出发（从硬件开始分析）](https://www.jianshu.com/p/59615d0c9e7d)
 
 
@@ -53,3 +59,8 @@ TODO
 
 
 [CSDN：Android Window 机制探索](https://blog.csdn.net/qian520ao/article/details/78555397#window%E7%9A%84%E6%A6%82%E5%BF%B5)
+
+[Android Touch事件传递机制全面解析（从WMS到View树）](https://blog.csdn.net/ns_code/article/details/49848801?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242)
+
+[2020跳槽大厂，最常问的9个自定义View面试题！](https://blog.csdn.net/chuhe1989/article/details/104848602)
+

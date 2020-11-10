@@ -320,4 +320,4 @@
 
 ## HenCorder总结
 
-[HTTP 的概念、原理、工作机制、数据格式和 REST](HenCorder总结/HTTP 的概念、原理、工作机制、数据格式和 REST.md)
+[HTTP的概念、原理、工作机制、数据格式和REST](HenCorder总结/HTTP的概念、原理、工作机制、数据格式和REST.md)

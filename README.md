@@ -16,6 +16,8 @@
 
 [IdleHandler的原理？](重要/IdleHandler的原理？.md)
 
+[Java各种线程池使用的场景？](重要/Java各种线程池使用的场景？.md)
+
 [Java的String可以有多长？](重要/Java的String可以有多长？.md)
 
 [Java的泛型实现机制是怎样的？什么是类型擦除？](重要/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
@@ -266,6 +268,8 @@
 
 [Android高级面试题](汇总/Android高级面试题.md)
 
+[WireShark学习资料](汇总/WireShark学习资料.md)
+
 [完成了哪些工作？](汇总/完成了哪些工作？)
 
 [易错警告](汇总/易错警告.md)
@@ -276,27 +280,29 @@
 
 ## 待整理
 
+[(重要)ConcurrentHashMap原理？](待整理/(重要)ConcurrentHashMap原理？.md)
+
+[(重要)EventBus原理？](待整理/(重要)EventBus原理？.md)
+
+[(重要)Socket编程面试题？](待整理/(重要)Socket编程面试题？.md)
+
+[(重要)接入微信支付的流程？需要注意什么？](待整理/(重要)接入微信支付的流程？需要注意什么？.md)
+
 [APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
-
-[ConcurrentHashMap原理？](待整理/ConcurrentHashMap原理？.md)
-
-[EventBus原理？](待整理/EventBus原理？.md)
 
 [Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
 
 [Glide原理？](待整理/Glide原理？.md)
 
-[Java线程池的问题](待整理/Java线程池的问题.md)
-
 [Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
 
-[Socket编程面试题？](待整理/Socket编程面试题？.md)
-
 [你觉得什么是JVM？md](待整理/你觉得什么是JVM？md)
 
 [做了哪些Apk体积优化？](待整理/做了哪些Apk体积优化？.md)
+
+[加密相关](待整理/加密相关.md)
 
 [如果要设计一个大量图片下载的方法，如何确定并发量，有哪些指标](待整理/如果要设计一个大量图片下载的方法，如何确定并发量，有哪些指标.md)
 

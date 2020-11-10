@@ -11,11 +11,11 @@ import java.util.List;
 public class CreateREADME {
 
     // TODO 在此处输入你项目的根路径
-    static final String 根路径 = "C:\\Users\\wangsw\\Desktop\\其他\\Android-Interview-QA";
+    static final String 根路径 = "C:\\Users\\liuqZ\\Desktop\\Android-Interview-QA";
     // TODO 在此处输入你要输出的文件名
     static final String 输出文件名 = "README.md";
     // TODO 是否随机排序
-    static final boolean 是否随机排序 = false;
+    static final boolean 是否随机排序 = true;
 
     public static void main(String[] args) throws Exception {
         输出 = new PrintWriter(根路径 + '/' + 输出文件名);
@@ -26,6 +26,7 @@ public class CreateREADME {
         写("其次");
         写("汇总");
         写("待整理");
+		写("HenCorder总结");
         输出.close();
         System.out.println("完成");
     }

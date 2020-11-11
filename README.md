@@ -280,10 +280,6 @@
 
 [面试文章](汇总/面试文章.md)
 
-## HenCorder总结
-
-[HTTP的概念、原理、工作机制、数据格式和REST](HenCorder总结/HTTP的概念、原理、工作机制、数据格式和REST.md)
-
 ## 待整理
 
 [(重要)ConcurrentHashMap原理？](待整理/(重要)ConcurrentHashMap原理？.md)

@@ -25,7 +25,6 @@ public class CreateREADME {
         写("普通");
         写("其次");
         写("汇总");
-        写("HenCorder总结");
         写("待整理");
         输出.close();
         System.out.println("完成");

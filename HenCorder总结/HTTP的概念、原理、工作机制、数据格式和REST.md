@@ -2,145 +2,145 @@
 
 ### 一. Http到底是什么?
 
-​	HyperText Transfer Protocol超文本传输协议.（Http协议可以理解为传输Html的协议）
+HyperText Transfer Protocol超文本传输协议（Http协议可以理解为传输Html的协议）。
 
 ### 二. Request Methods
 
-#####      1. GET :
+#####      1. GET 
 
-​	获取资源,没有Body.
+获取资源,没有Body。
 
-#####      2. POST:
+#####      2. POST
 
-​	增加或者修改资源;有Body;
+增加或者修改资源；有Body。
 
-#####      3. PUT:
+#####      3. PUT
 
-​	修改资源；有Body;相对于POST来说，它具有幂等性，也就是说一次调用和多次调用结果一样；
+修改资源；有Body；相对于POST来说，它具有幂等性，也就是说一次调用和多次调用结果一样。
 
-#####      4. DELETE:
+#####      4. DELETE
 
-​	删除资源；没有Body;
+删除资源；没有Body。
 
-#####      5. HEAD:
+#####      5. HEAD
 
-​	没有Body
+​	没有Body。
 
-### 三.Status Code:
+### 三.Status Code
 
-​	对结果做出类型化描述(如"获取成功"、"内容未找到")
+对结果做出类型化描述(如"获取成功"、"内容未找到")。
 
-#####     1.1XX:
+#####     1. 1XX
 
-​	100,请求拆分时，客户端Header加上(Expect:100-continue),此时服务器会返回100.
+100,请求拆分时，客户端 Header 加上 **Expect:100-continue** ，此时服务器会返回100。
 
-​	101,HTTP协议切换，典型的1.1和2切换，询问是否支持HTTP2,如果支持会返回101(Upgrade:h2c);
+101， HTTP 协议切换，典型的1.1和2切换，询问是否支持 HTTP2 ，如果支持会返回101（**Upgrade:h2c**）。
 
-#####     2.2XX:
+#####     2. 2XX
 
-​	成功；
+成功。
 
-#####     3.3XX:
+#####     3. 3XX
 
-​	301,重定向；304网页无修改；
+301，重定向；304网页无修改。
 
-#####     4.4XX:
+#####     4. 4XX
 
-​	客户端错误;
+客户端错误。
 
-#####     5.5XX:
+#####     5. 5XX
 
-​	服务端错误;
+服务端错误。
 
 
 
 ### 四.Header
 
-​	HTTP消息的元数据(metadata).
+HTTP消息的元数据（metadata）。
 
-##### 1. Host:
+##### 1. Host
 
- 	服务器主机地址    eg:    GET/user/1 HTTP/1.1
+服务器主机地址 。 eg：  
 
-​                                             Host:  hencoder.com
+```java
+ GET/user/1 HTTP/1.1
+ Host:  hencoder.com                                  
+```
 
-​	**注意**:Host不是用来找寻服务器地址的,服务器的查找工作在请求之前就已经通过DNS查询(domain name system)完成，他的作用是给目标主机用来定位具体的子主机(一个主机可能包含多个服务器).
+**注意**： Host 不是用来找寻服务器地址的，服务器的查找工作在请求之前就已经通过 DNS 查询（Domain Name System）完成，他的作用是给目标主机用来定位具体的子主机（一个主机可能包含多个服务器）。
 
-##### 2. Content-Length:
+##### 2. Content-Length
 
-​	内容的长度(字节);如果内容是二进制的，需要Content-Length来判断是否结果.
+内容的长度（字节）；如果内容是二进制的，需要 Content-Length 来判断是否结果。
 
-##### 3. Content-Type :
+##### 3. Content-Type 
 
-​	内容类型;
+内容类型。
 
-- **text/html :**html文本,用于浏览器页面响应；
+- **text/html**：HTML 文本，用于浏览器页面响应。
 
-- **application/x-www-form-urlencoded**:普通表单,encoded URL格式；
+- **application/x-www-form-urlencoded**：普e通表单，encoded URL 格式。
 
-- **multipart/form-data:**多部分形式,一般用于传输包含二进制内容的多项内容,  boundary用来区分每部分,一般由浏览器自动生成;
+- **multipart/form-data**：多部分形式,一般用于传输包含二进制内容的多项内容,  boundary 用来区分每部分，一般由浏览器自动生成。
 
-- **application/json:**json形式,用于Web Api的响应或者POST/PUT请求;
+- **application/json**：JSON 形式，用于 Web Api 的响应或者POST/PUT 请求。
 
-- **image/jpeg或者application/zip:**单文件，用于Web Api相应或者POST/PUT请求;
+- **image/jpeg或者application/zip**：单文件，用于 Web Api 相应或者 POST/PUT 请求。
 
   
 
-##### 4. Chunked Transfer Encoding :
+##### 4. Chunked Transfer Encoding 
 
-​	分块内容传输
+分块内容传输
 
 - **transfer-Encoding: chunked**
 
-- **Body格式：**<length1>
+- **Body格式**
 
-  ​                     <data1>
+  ```java
+  <length1>
+  <data1>
+  <length2>
+  <data2>
+  0
+  (最后传输0表示内容结束)
+  ```
 
-  ​                     <length2>
+##### 5. Location 
 
-  ​                     <data2>
+重定向的目标URL。
 
-  ​                      0
+##### 6. User-Agent
 
-  ​                      (最后传输0表示内容结束)
+用户代理。
 
-  
+##### 7. Range/Accept-Range
 
-##### 5.Location :
+指定Body的内容范围。
 
-​	重定向的目标URL
+##### 8. Cookie/Set-Cookie
 
-##### 6.User-Agent:
+发送 Cookie / 设置 Cookie。
 
-​	用户代理
+##### 9. Authorization
 
-##### 7.Range/Accept-Range:
+授权信息。
 
-​	指定Body的内容范围
+##### 10. Accept
 
-##### 8.Cookie/Set-Cookie:
+客户端能接受的数据类型，如 text/html。
 
-​	发送Cookie/设置Cookie
+##### 11. Accept-Charset
 
-##### 9.Authorization:
+客户端能接受的字符集，如 utf-8。
 
-​	授权信息
+##### 12. Accept-Encoding
 
-##### 10.Accept:
+客户端能接受的压缩编码类型，如 gzip。
 
-​	客户端能接受的数据类型。如text/html;
+##### 13. Content-Encoding
 
-##### 11.Accept-Charset:
-
-​	客户端能接受的字符集。如utf-8;
-
-##### 12.Accept-Encoding:
-
-​	客户端能接受的压缩编码类型。如gzip;
-
-##### 13.Content-Encoding:
-
-​	压缩类型。如gzip;
+压缩类型，如 gzip。
 
 ### 五.Cache
 
@@ -155,8 +155,8 @@
 
 
 
-### 六.REST
+### 六. REST
 
-##### 1.RESTful HTTP
+##### 1. RESTful HTTP
 
 - **正确使用HTTP**

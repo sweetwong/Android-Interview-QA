@@ -13,21 +13,29 @@
 ```mermaid
 sequenceDiagram
 Activity->>Activity:startActivity
-Activity->>+Instrumentation:startActivityForResult
+Activity->>Instrumentation:startActivityForResult
 Instrumentation->>ActivityTaskManagerService:startActivity
 ActivityTaskManagerService->>ActivityTaskManagerService:startActivityAsUser
 ActivityTaskManagerService->>ActivityStarter:startActivityAsUser
 ActivityStarter->>ActivityStarter:startActivityMayWait
 ActivityStarter->>ActivityStarter:startActivity
 ActivityStarter->>RootActivityContainer:startActivityUnchecked
-RootActivityContainer->>RootActivityContainer:resumeFocusedStacksTopActivities
-RootActivityContainer->>ActivityStack:resumeTopActivityUncheckedLocked
 
+```
+
+```mermaid
+sequenceDiagram
+RootActivityContainer->>RootActivityContainer:resumeFocusedStacksTopActivities
+RootActivityContainer->>ActivityStackSupervisor:resumeTopActivityUncheckedLocked
+ActivityStackSupervisor->>ActivityManagerService.LocalService:startSpecificActivityLocked
+ActivityManagerService.LocalService->>ActivityManagerService.LocalService:startProcess
+ActivityManagerService.LocalService->>ActivityManagerService:startProcessLocked
 ```
 
 
 
 ## 注意细节
+
 1. Android Q 以后把很多 ActivityManagerService 的逻辑移到了 ActivityTaskManagerService
 
 ## 链接

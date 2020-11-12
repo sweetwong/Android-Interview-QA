@@ -12,16 +12,17 @@
 
 ```mermaid
 sequenceDiagram
-activate Activity
 Activity->>Activity:startActivity
-Activity->>Instrumentation:startActivityForResult
-activate Instrumentation
+Activity->>+Instrumentation:startActivityForResult
 Instrumentation->>ActivityTaskManagerService:startActivity
-activate ActivityTaskManagerService
-ActivityTaskManagerService->>Instrumentation:return
-deactivate ActivityTaskManagerService
-deactivate Instrumentation
-deactivate Activity
+ActivityTaskManagerService->>ActivityTaskManagerService:startActivityAsUser
+ActivityTaskManagerService->>ActivityStarter:startActivityAsUser
+ActivityStarter->>ActivityStarter:startActivityMayWait
+ActivityStarter->>ActivityStarter:startActivity
+ActivityStarter->>RootActivityContainer:startActivityUnchecked
+RootActivityContainer->>RootActivityContainer:resumeFocusedStacksTopActivities
+RootActivityContainer->>ActivityStack:resumeTopActivityUncheckedLocked
+
 ```
 
 

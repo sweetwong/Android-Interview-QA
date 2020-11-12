@@ -8,6 +8,24 @@
 
 也就是说启动 Activity 其实是经过了两次跨进程通讯（App -> SystemServer -> App）才将 Activity 启动起来的。
 
+## 时序图
+
+```mermaid
+sequenceDiagram
+activate Activity
+Activity->>Activity:startActivity
+Activity->>Instrumentation:startActivityForResult
+activate Instrumentation
+Instrumentation->>ActivityTaskManagerService:startActivity
+activate ActivityTaskManagerService
+ActivityTaskManagerService->>Instrumentation:return
+deactivate ActivityTaskManagerService
+deactivate Instrumentation
+deactivate Activity
+```
+
+
+
 ## 注意细节
 1. Android Q 以后把很多 ActivityManagerService 的逻辑移到了 ActivityTaskManagerService
 

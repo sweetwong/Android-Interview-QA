@@ -10,6 +10,8 @@
 
 ## 时序图
 
+### 从 startActivity() 到创建进程
+
 ```mermaid
 sequenceDiagram
 Activity->>Activity:startActivity
@@ -20,17 +22,14 @@ ActivityTaskManagerService->>ActivityStarter:startActivityAsUser
 ActivityStarter->>ActivityStarter:startActivityMayWait
 ActivityStarter->>ActivityStarter:startActivity
 ActivityStarter->>RootActivityContainer:startActivityUnchecked
-
-```
-
-```mermaid
-sequenceDiagram
 RootActivityContainer->>RootActivityContainer:resumeFocusedStacksTopActivities
 RootActivityContainer->>ActivityStackSupervisor:resumeTopActivityUncheckedLocked
 ActivityStackSupervisor->>ActivityManagerService.LocalService:startSpecificActivityLocked
 ActivityManagerService.LocalService->>ActivityManagerService.LocalService:startProcess
-ActivityManagerService.LocalService->>ActivityManagerService:startProcessLocked
+
 ```
+
+### AMS 创建进程
 
 
 

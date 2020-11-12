@@ -8,7 +8,33 @@
 
 也就是说启动 Activity 其实是经过了两次跨进程通讯（App -> SystemServer -> App）才将 Activity 启动起来的。
 
+## 时序图
+
+### 从 startActivity() 到创建进程
+
+```mermaid
+sequenceDiagram
+Activity->>Activity:startActivity
+Activity->>Instrumentation:startActivityForResult
+Instrumentation->>ActivityTaskManagerService:startActivity
+ActivityTaskManagerService->>ActivityTaskManagerService:startActivityAsUser
+ActivityTaskManagerService->>ActivityStarter:startActivityAsUser
+ActivityStarter->>ActivityStarter:startActivityMayWait
+ActivityStarter->>ActivityStarter:startActivity
+ActivityStarter->>RootActivityContainer:startActivityUnchecked
+RootActivityContainer->>RootActivityContainer:resumeFocusedStacksTopActivities
+RootActivityContainer->>ActivityStackSupervisor:resumeTopActivityUncheckedLocked
+ActivityStackSupervisor->>ActivityManagerService.LocalService:startSpecificActivityLocked
+ActivityManagerService.LocalService->>ActivityManagerService.LocalService:startProcess
+
+```
+
+### AMS 创建进程
+
+
+
 ## 注意细节
+
 1. Android Q 以后把很多 ActivityManagerService 的逻辑移到了 ActivityTaskManagerService
 
 ## 链接

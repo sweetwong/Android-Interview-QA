@@ -8,14 +8,16 @@ ThreadLocal是通过空间换取时间，从而实现每隔线程当中都会有
 
 ## 类的关系
 
--  [ThreadLocalMap](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/annotations/hiddenapi/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=113?q=ThreadLocalMap&gsn=ThreadLocalMap&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%23b5eb23af78f2dca77fcac44ae6009c3683fcf6ebf94248af69ffe7ef4c91fb48) 为 ThreadLocal 的静态内部类。
-- 在Thread类中，持有着一个ThreadLocalMap的变量。（[ThreadLocal](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/Thread.java;bpv=1;bpt=1;l=207?q=ThreadLocal.java&gsn=ThreadLocal&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal%236a109534fd022c2a058f701f1727353708003245e9836e634cf4d1c5a2d74610).[ThreadLocalMap](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/Thread.java;bpv=1;bpt=1;l=207?q=ThreadLocal.java&gsn=ThreadLocalMap&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%23b5eb23af78f2dca77fcac44ae6009c3683fcf6ebf94248af69ffe7ef4c91fb48) [threadLocals](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/Thread.java;bpv=1;bpt=1;l=201?q=ThreadLocal.java&gsn=threadLocals&gs=kythe%3A%2F%2Fandroid.googlesource.com%2Fplatform%2Fsuperproject%3Flang%3Djava%3Fpath%3Djava.lang.Thread%232ff56c692f8bdf7d061b330a99c5e6d7199846ff8ebc277d0f0f661cfccb4e97&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.Thread%232ff56c692f8bdf7d061b330a99c5e6d7199846ff8ebc277d0f0f661cfccb4e97)）
-- [Entry](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=308?q=ThreadLocal.java&gsn=Entry&gs=kythe%3A%2F%2Fandroid.googlesource.com%2Fplatform%2Fsuperproject%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap.Entry%238610309823795d3cf0974fb283420f5262edef3f3102958667ffb887e45d84ce&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap.Entry%238610309823795d3cf0974fb283420f5262edef3f3102958667ffb887e45d84ce)类为ThreadLocalMap类的静态内部类，并继承了[WeakReference](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ref/WeakReference.java;drc=master;bpv=1;bpt=1;l=48)<[ThreadLocal](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=308?q=ThreadLocal.java&gsn=ThreadLocal&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal%235cb9b5229390f26fbdf6bc6771f78524e87a1d73aa847b866b58474066c3e8dd)<?>>。
+-  ThreadLocalMap 为 ThreadLocal 的静态内部类。
+
+在Thread类中，持有着一个ThreadLocalMap的变量。（ThreadLocal.ThreadLocalMap threadLocals）
+
+- Entry类为ThreadLocalMap类的静态内部类，并继承了WeakReference<ThreadLocal<?>>。
 - ThreadLocalMap里面维护着一个Entry数组，初始值大小为16；
 
-private static final [int](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=321?q=ThreadLocal.java&gsn=int&gs=kythe%3A%3Flang%3Djava%23int%23builtin) [INITIAL_CAPACITY](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=321?q=ThreadLocal.java&gsn=INITIAL_CAPACITY&gs=kythe%3A%2F%2Fandroid.googlesource.com%2Fplatform%2Fsuperproject%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%237aec70917f5ef0d711e02c7c06241869b28c1ffb87415f7ee96e699043dfb010&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%237aec70917f5ef0d711e02c7c06241869b28c1ffb87415f7ee96e699043dfb010) = 16;
+private static final int INITIAL_CAPACITY = 16;
 
-private [Entry](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=327?q=ThreadLocal.java&gsn=Entry&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap.Entry%238610309823795d3cf0974fb283420f5262edef3f3102958667ffb887e45d84ce)[] [table](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=327?q=ThreadLocal.java&gsn=table&gs=kythe%3A%2F%2Fandroid.googlesource.com%2Fplatform%2Fsuperproject%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%23e6a632b0fcff933c0d7966f18b0f5b8139285870126ac97eec7a5b3e0eac80fb&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%23e6a632b0fcff933c0d7966f18b0f5b8139285870126ac97eec7a5b3e0eac80fb) = new [Entry](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=366?q=ThreadLocal.java&gsn=Entry&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap.Entry%238610309823795d3cf0974fb283420f5262edef3f3102958667ffb887e45d84ce)[[INITIAL_CAPACITY](https://cs.android.com/android/platform/superproject/+/master:libcore/ojluni/src/main/java/java/lang/ThreadLocal.java;bpv=1;bpt=1;l=366?q=ThreadLocal.java&gsn=INITIAL_CAPACITY&gs=kythe%3A%2F%2Fopenjdk11%3Flang%3Djava%3Fpath%3Djava.lang.ThreadLocal.ThreadLocalMap%237aec70917f5ef0d711e02c7c06241869b28c1ffb87415f7ee96e699043dfb010)];
+private Entry[] table = new Entry[INITIAL_CAPACITY];
 
 Entry里面保存着键值对，value为我们put的时候传入的值，key为当前的ThreadLocal。
 
@@ -186,9 +188,9 @@ Entry里面保存着键值对，value为我们put的时候传入的值，key为�
 
 但是由于该Entry为弱引用，所以下次GC扫描的时候，会将堆中的ThreadLocal给回收，此时Entry中的key将会为null。
 
+![image.png](https://cdn.nlark.com/yuque/0/2020/png/2669602/1605144476158-c80a3c67-3be8-4c61-b2b1-cccf792835ee.png)
 
 
-![image-20201112101515508](C:/Users/zhangct/AppData/Roaming/Typora/typora-user-images/image-20201112101515508.png)
 
 如果不进行处理，在table中将会出现越来越多的key为null的Entry。所以针对这种情况，ThreadLocal有进行相应的处理。
 

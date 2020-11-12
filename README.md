@@ -12,6 +12,11 @@
 - 最深入
 - 回答出最重要的关键字
 
+因此，我在写这个项目的时候，按照这个流程在走：
+
+1. 提出问题
+2. 总结出最简短、深入的回答
+
 > 举个例子，最常被问到的 `Handler 的原理？`，我们应该回答出以下几个要点
 >
 > 1. Looper、Handler、MessageQueue、Message 四个角色的关系，以及它们比较重要的方法
@@ -24,6 +29,15 @@
 # 排版
 
 笔记内容按照 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines/blob/master/README.zh-CN.md) 进行排版，以保证内容的可读性。
+
+主要是要遵循两点：
+
+1. 中文很英文之间要加空格
+2. 用全角的中文标点
+
+举个例子：
+
+> Android 框架可以管理界面控制器（如 Activity 和 Fragment）的生命周期。
 
 # 问题
 

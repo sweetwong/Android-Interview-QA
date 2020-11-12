@@ -186,9 +186,9 @@ Entry里面保存着键值对，value为我们put的时候传入的值，key为�
 
 但是由于该Entry为弱引用，所以下次GC扫描的时候，会将堆中的ThreadLocal给回收，此时Entry中的key将会为null。
 
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/2669602/1605144476158-c80a3c67-3be8-4c61-b2b1-cccf792835ee.png)
 
 
+![image-20201112101515508](C:/Users/zhangct/AppData/Roaming/Typora/typora-user-images/image-20201112101515508.png)
 
 如果不进行处理，在table中将会出现越来越多的key为null的Entry。所以针对这种情况，ThreadLocal有进行相应的处理。
 

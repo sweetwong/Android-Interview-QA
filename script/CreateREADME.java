@@ -25,6 +25,7 @@ public class CreateREADME {
         写("其次");
         写("汇总");
         写("待整理");
+        写乱序();
         输出.close();
         乱序输出.close();
         System.out.println("完成");
@@ -33,6 +34,7 @@ public class CreateREADME {
     static final String 换行符 = System.lineSeparator();
     static Writer 输出;
     static Writer 乱序输出;
+    static List<String> 乱序集合 = new ArrayList<>();
 
     static void 写介绍() throws Exception {
         BufferedReader 输入 = new BufferedReader(new FileReader(new File(根路径 + "/script/介绍.md")));
@@ -51,16 +53,10 @@ public class CreateREADME {
                 .append(文件夹名)
                 .append(换行符)
                 .append(换行符);
-        乱序输出.append("## ")
-                .append(文件夹名)
-                .append(换行符)
-                .append(换行符);
         List<File> 子文件集合 = Arrays.asList(文件夹.listFiles());
-        List<File> 乱序子文件集合 = new ArrayList<>(子文件集合.size());
-        乱序子文件集合.addAll(子文件集合);
-        Collections.shuffle(乱序子文件集合);
         for (File 子文件 : 子文件集合) {
-            输出.append('[')
+            StringBuilder 字符串 = new StringBuilder();
+            字符串.append('[')
                     .append(子文件.getName().replace(".md", ""))
                     .append(']')
                     .append('(')
@@ -70,20 +66,19 @@ public class CreateREADME {
                     .append(')')
                     .append(换行符)
                     .append(换行符);
-        }
-        for (File 子文件 : 乱序子文件集合) {
-            乱序输出.append('[')
-                    .append(子文件.getName().replace(".md", ""))
-                    .append(']')
-                    .append('(')
-                    .append(文件夹名)
-                    .append('/')
-                    .append(子文件.getName())
-                    .append(')')
-                    .append(换行符)
-                    .append(换行符);
+            输出.append(字符串.toString());
+            if (!文件夹名.equals("待整理")) {
+                乱序集合.add(字符串.toString());
+            }
         }
         输出.flush();
+    }
+
+    static void 写乱序() throws Exception {
+        Collections.shuffle(乱序集合);
+        for (String 字符串 : 乱序集合) {
+            乱序输出.append(字符串);
+        }
         乱序输出.flush();
     }
 

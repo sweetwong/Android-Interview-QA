@@ -1,6 +1,6 @@
 # HTTP 的概念、原理、工作机制、数据格式和 REST
 
-### 一. Http到底是什么?
+### 一. Http 到底是什么?
 
 HyperText Transfer Protocol超文本传输协议（Http协议可以理解为传输Html的协议）。
 
@@ -95,7 +95,7 @@ HTTP消息的元数据（metadata）。
 
 - **transfer-Encoding: chunked**
 
-- **Body格式**
+- **Body 格式**
 
   ```java
   <length1>

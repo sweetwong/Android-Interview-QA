@@ -18,5 +18,43 @@
 ## 架构图
 <img src="../assets/Activity Window DecorView关系.png" style="zoom:130%;" />
 
+## 类图
+
+```mermaid
+classDiagram
+WindowManager <|.. WindowManagerImpl : 实现
+WindowManager <|.. WindowManagerGlobal : 实现
+WindowManagerGlobal <-- WindowManagerImpl : 代理
+IWindowSession <-- WindowManagerGlobal
+Window -- WindowManager : 互相持有
+Window <|-- PhoneWindow: 唯一的实现类
+Window -- DecorView : 互相持有
+Activity -- Window : 互相持有
+Activity -- WindowManager : 互相持有
+ViewRootImpl <-- WindowManagerGlobal : 持有ArrayList<ViewRootImpl> mRoots
+DecorView <-- ViewRootImpl : 通常是这种情况，当然可能有不是DecorView的情况
+ViewGroup -- DecorView
+View -- ViewGroup
+
+class WindowManager {
+<<interface>>
+}
+
+class WindowManagerImpl {
+<<一般通过createLocalWindowManager创建，与Window一一对应>>
+}
+
+class WindowManagerGlobal {
+<<全局单例>>
+}
+
+class IWindowSession {
+<<Binder对象，通过这个与WMS通信>>
+}
+```
+
+
+
 ## 链接
+
 [慕课网：说说Activity的显示原理](https://coding.imooc.com/lesson/340.html#mid=24588)

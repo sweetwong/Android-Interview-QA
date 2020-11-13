@@ -41,15 +41,15 @@ class WindowManager {
 }
 
 class WindowManagerImpl {
-<<一般通过createLocalWindowManager创建，与Window一一对应>>
+一般通过createLocalWindowManager创建，与Window一一对应
 }
 
 class WindowManagerGlobal {
-<<全局单例>>
+全局单例
 }
 
 class IWindowSession {
-<<Binder对象，通过这个与WMS通信>>
+Binder对象，通过这个与WMS通信
 }
 ```
 

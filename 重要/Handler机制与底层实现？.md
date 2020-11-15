@@ -19,6 +19,10 @@
 - handler.sendMessageAtTime()：Handler 的所有 send 和 post 最终都会调用这个方法
 - handler.dispatchMessage()：Looper 取出消息后，交给 target 分发
 
+## IdleHandler 的原理？
+
+[IdleHandler的原理？](./重要/IdleHandler的原理？.md)
+
 ## 原理
 
 1. **Looper**：有两个重要的方法，分别是 prepare() 和 loop()，prepare() 方法会调用构造函数，创建对应的 MessageQueue 和保存当前的线程，并把 Looper 放入 ThreadLocal 中；loop() 方法，会无限从 MessageQueue 中取出消息，通过调用 queue.next() 的方法，当队列中没有消息时，next() 会无限循环，造成阻塞，等来 MessageQueue 中加入新消息，然后再唤醒；Looper 从队列中取到消息后，会拿到当前 Message的 target 指向的 Handler，并调用 Handler 的 dispatchMessage() 进行分发，进而调用我们重写的 handleMessage 或 者 handleCallback()，主线程的 Looper 在 ActivityThread 中被初始化和开始循环

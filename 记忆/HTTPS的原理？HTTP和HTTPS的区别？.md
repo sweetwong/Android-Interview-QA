@@ -1,16 +1,16 @@
 ## 区别
 
-1. HTTP协议运行在TCP之上，所有传输的内容都是**明文**，HTTPS运行在SSL/TLS之上，SSL/TLS运行在TCP之上，所有传输的内容都经过**加密**的。
+1. HTTP 协议运行在 TCP 之上，所有传输的内容都是**明文**，HTTPS 运行在 SSL/TLS 之上，SSL/TLS 运行在 TCP 之上，所有传输的内容都经过**加密**的。
 
-2. HTTPS需要**CA证书** （Certificate Authority，证书颁发机构）
+2. HTTPS 需要 **CA 证书** （Certificate Authority，证书颁发机构）
 
-3. HTTP**端口**是80，HTTPS是443
+3. HTTP **默认端口**是80，HTTPS 是443
 
 4. HTTPS 内容经过对称加密，每个连接生成一个唯一的加密密钥（对称秘钥:对称密钥加密又叫专用密钥加密，即发送和接收数据的双方必使用相同的密钥对明文进行加密和解密运算。）
 
 5. HTTPS 内容传输经过完整性校验
 
-6. HTTP 是简单的无状态的连接，HTTPS 协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议要比 HTTP 协议安全。
+6. HTTP 是简单的无状态的连接，HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议要比 HTTP 协议安全。
 
 
 ## Https设计目标

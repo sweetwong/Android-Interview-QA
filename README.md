@@ -14,7 +14,7 @@
 
 因此，我在写这个项目的时候，按照这个流程在走：
 
-1. 提出问题
+1. 筛选出热门的问题
 2. 总结出最简短、深入的回答
 
 举个例子：
@@ -24,7 +24,9 @@
 > 1. Looper、Handler、MessageQueue、Message 四个角色的关系，以及它们比较重要的方法
 > 2. ThreadLocal 在这之中起到的作用
 > 3. 原生的 MessageQueue 和 Looper，被创建的时机，以及起到的作用
-> 4. epoll 机制在原生 Looper 起到的作用
+> 4. Linux 的 epoll 机制在原生 Looper 起到的作用
+> 5. 拓展到 IdleHandler 的原理和应用
+> 6. 拓展到同步屏障的原理和应用
 
 可以看到，并不需要长篇大论几百个字，列举回答要点即可
 
@@ -159,8 +161,6 @@
 
 [ListView和RecyclerView的区别？](记忆/ListView和RecyclerView的区别？.md)
 
-[ListView和RecyclerView的缓存机制？](记忆/ListView和RecyclerView的缓存机制？.md)
-
 [RecyclerView怎么进行性能优化](记忆/RecyclerView怎么进行性能优化.md)
 
 [String为什么要设计成不可变的？](记忆/String为什么要设计成不可变的？.md)
@@ -182,6 +182,8 @@
 [有哪些多线程开发良好的实践？](记忆/有哪些多线程开发良好的实践？.md)
 
 [红黑树特性？](记忆/红黑树特性？.md)
+
+[计算机网络-Http问题总结](记忆/计算机网络-Http问题总结.md)
 
 [计算机网路-传输层问题总结](记忆/计算机网路-传输层问题总结.md)
 
@@ -265,8 +267,6 @@
 
 [SurfaceView和普通View的区别？](普通/SurfaceView和普通View的区别？.md)
 
-[View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？](普通/View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？.md)
-
 [为什么wait需要搭配synchronized关键字使用？](普通/为什么wait需要搭配synchronized关键字使用？.md)
 
 [什么是MeasureSpec？](普通/什么是MeasureSpec？.md)
@@ -319,6 +319,8 @@
 
 [session、cookie、token的区别？](其次/session、cookie、token的区别？.md)
 
+[View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？](其次/View的onAttachedToWindow，onDetachedFromWindow调用时机，使用场景是什么？.md)
+
 [什么是APK？APK文件都由那些组成？](其次/什么是APK？APK文件都由那些组成？.md)
 
 [原码、反码和补码？](其次/原码、反码和补码？.md)
@@ -345,6 +347,8 @@
 
 [算法解题要点](汇总/算法解题要点.md)
 
+[面经网整理](汇总/面经网整理.md)
+
 [面试文章](汇总/面试文章.md)
 
 ## 待整理
@@ -363,9 +367,15 @@
 
 [Glide原理？](待整理/Glide原理？.md)
 
+[RecyclerView的LayoutManager如何实现不同的布局？](待整理/RecyclerView的LayoutManager如何实现不同的布局？.md)
+
 [Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
+
+[SharedPreferences的实现原理？](待整理/SharedPreferences的实现原理？.md)
+
+[SQL学习](待整理/SQL学习.md)
 
 [你觉得什么是JVM？md](待整理/你觉得什么是JVM？md)
 
@@ -380,6 +390,8 @@
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
 
 [手写生产者消费者模式](待整理/手写生产者消费者模式.md)
+
+[死锁检测算法？](待整理/死锁检测算法？.md)
 
 [测试](待整理/测试.md)
 

@@ -67,7 +67,7 @@ public class CreateREADME {
                     .append(换行符)
                     .append(换行符);
             输出.append(字符串.toString());
-            if (!文件夹名.equals("待整理")) {
+            if (!文件夹名.equals("待整理") && !文件夹名.equals("汇总")) {
                 乱序集合.add(字符串.toString());
             }
         }

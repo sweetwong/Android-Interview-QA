@@ -25,7 +25,7 @@
 6. **享元模式（Flyweight）**：它摒弃了在每个对象中保存所有数据的方式， 通过共享多个对象所共有的相同状态， 让你能在有限的内存容量中载入更多对象
    - `Message.obtainMessage()、线程池`
 7. **代理模式（Proxy）**：让你能够提供对象的替代品或其占位符。 代理控制着对于原对象的访问， 并允许在将请求提交给对象前后进行一些处理
-   - `动态代理、BinderProxy、ContextImpl、ViewRootImpl、WindowManagerGlobal`
+   - `动态代理、BinderProxy、ContextWrapper 和 ContextImpl、ViewRootImpl、WindowManagerGlobal`
    - `在项目中会用到动态代理，在一些比较关键的类，会通过动态代理的方式代理所有方法，在方法的前后进行埋点，以及异常处理`
 
 ## 行为型模式
@@ -33,7 +33,7 @@
 1. **责任链模式（Chain Of Responsibility）**：允许你将请求沿着处理者链进行发送。 收到请求后， 每个处理者均可对请求进行处理， 或将其传递给链上的下个处理者
    - `OkHttp 的 Interceptor，Touch 事件的分发`
 2. **命令模式（Command）**：它可将请求转换为一个包含与请求相关的所有信息的独立对象。 该转换让你能根据不同的请求将方法参数化、 延迟请求执行或将其放入队列中， 且能实现可撤销操作
-   - `EventBus、Intent、Handler 机制、Runnable`
+   - `Intent、Handler 机制、Runnable`
 3. **迭代器模式（Iterator）**：让你能在不暴露集合底层表现形式 （列表、 栈和树等） 的情况下遍历集合中所有的元素
    - `Iterable、Enumeration、Cursor`
 4. **中介者模式（Mediator）**：能让你减少对象之间混乱无序的依赖关系。 该模式会限制对象之间的直接交互， 迫使它们通过一个中介者对象进行合作
@@ -44,10 +44,17 @@
    - `ContentObsever、LiveData、RxJava、各种Listener（例如点击事件）、EventBus、BroadcastReceiver`
 7. **状态模式（State）**：让你能在一个对象的内部状态变化时改变其行为， 使其看上去就像改变了自身所属的类一样
 8. **策略模式（Strategy）**：它能让你定义一系列算法， 并将每种算法分别放入独立的类中， 以使算法的对象能够相互替换
+   `RecyclerView 的 LayoutManager、动画的 Interpolator、Comparator`
 9. **模板方法模式（Template）**：它在超类中定义了一个算法的框架， 允许子类在不修改结构的情况下重写算法的特定步骤
+   `InputStream、OutputStream、Reader、Writer、List、Set、Map`
 10. **访问者模式（Visitor）**：它能将算法与其所作用的对象隔离开来
     - `Files.walkFileTree()、ElementVisitor`
 11. **解释器模式（Interpreter ）**：给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子
+
+## 可以重点说的设计模式
+
+- 代理模式：静态代理、动态代理、Binder 的实现，都是不错的点
+- 
 
 ## 注意
 

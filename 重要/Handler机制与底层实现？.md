@@ -21,7 +21,7 @@
 
 ## IdleHandler 的原理？
 
-[IdleHandler的原理？](./重要/IdleHandler的原理？.md)
+[IdleHandler的原理？](./IdleHandler的原理？.md)
 
 ## 原理
 

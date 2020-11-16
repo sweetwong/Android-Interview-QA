@@ -69,6 +69,15 @@
 ### 15.1  git log -p filename 
 查看指定文件的提交历史
 
+### 15.2  git log  --author="A\|B"
+根据作者名称查找的提交历史
+
+### 15.3  git log  --grep="关键字"
+根据关键字查找的提交历史
+
+### 15.4  git log  -- a.txt
+根据文件名查找的提交历史
+
 ### 16 git branch 或者 git branch -a
 查看当前版本库中所有的分支
 

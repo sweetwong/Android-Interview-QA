@@ -1,4 +1,7 @@
+`Android 其他`
+
 ## 回答
+
 1. 类型不同：Seiralizable 是 Java 通用的序列化方法，Parcelable 是 Android 特有的序列化方法；
 
 2. 作用不同：Serializable 是用来**保存数据**的，Parcelable 是用来**高效传输数据**的

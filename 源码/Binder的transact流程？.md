@@ -1,4 +1,7 @@
+`Binder`、`Framework 源码`
+
 ## 客户端流程
+
 1. 客户端通过 getService() 或者 bindService() 获取到远程的 Binder 对象（BinderProxy）
 2. 创建两个 Parcel 对象，分别是 data 和 reply ，一个是传递参数的数据，另一个是收到回复的数据
 3. 最后会调用到 BinderProxy 对象的 transact() 方法，然后调用 transactNative()，进入 native 层

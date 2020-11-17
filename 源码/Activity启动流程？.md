@@ -1,3 +1,5 @@
+`四大组件`、`Framework 源码`
+
 ## 流程
 
 1. 首先从 Context.startActivity() 开始，调到 ContextImpl.startActivityForResult()

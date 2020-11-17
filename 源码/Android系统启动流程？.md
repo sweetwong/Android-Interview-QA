@@ -1,4 +1,7 @@
+`Framework 源码`
+
 ## 流程
+
 1. Linux 启动，启动 init 进程，查看 init.rc 的配置文件，init 进程 fork 出 Zygote 进程（包括 ServiceManager、SurfaceFlinger 等进程）
 
 2. 进入 Zygote 进程入口函数 app_main.cpp 的 main()

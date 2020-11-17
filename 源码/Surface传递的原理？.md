@@ -1,4 +1,7 @@
+`Framework 源码`
+
 ## 要点
+
 1. Surface 的本质是其 native 层的对象，而 native 层对象的本质是 **GraphicBufferProducer** 而不是 Buffer，GraphicBufferProducer 是一个 native 的 Binder 对象；
 
 2. Surface 跨进程传递其本质是 GraphicBufferProducer 的传递；

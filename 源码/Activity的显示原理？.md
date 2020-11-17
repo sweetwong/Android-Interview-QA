@@ -1,4 +1,7 @@
+`四大组件`、`View`、`Framework 源码`
+
 ## 流程
+
 - 我们在 setContentView 会执行以下操作，创建 DecorView，和主显示区域 content，把我们定义的 layout 添加到 content 中
 
 - 在 handleResumeAcitivty() 时，会调用 WindowManager 的 addView，最终会调到 WindowManagerGlobal 的 addView

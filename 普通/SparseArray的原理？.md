@@ -1,3 +1,5 @@
+`Java 集合`
+
 ## 原理
 
 1. SparseArray 内部维护了两个数组，分别是：mKeys，按照由小到大存放；mValues，与 mKeys 有一一对应的关系

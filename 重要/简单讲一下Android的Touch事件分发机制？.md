@@ -1,6 +1,8 @@
+`View`、`Framework 源码`
+
 ## 事件从手指点击到产生然后分发的全过程
 
-事件分发的传递顺序：用户点击 -> 手机硬件 -> WMS -> looper.cpp  -> InputEventReceiver -> 传递到 ViewRootImpl（通过 InputEventReceiver 来接收事件通知，在 setView() 时注册监听） -> DecorView -> Activity（从这里开始常规的分发） -> PhoneWindow -> DecorView（本质上也是 ViewGroup，最顶层的 ViewGroup ） -> ViewGroup -> View
+事件分发的传递顺序：用户点击 -> 手机硬件 -> WMS  -> InputEventReceiver -> 传递到 ViewRootImpl（通过 InputEventReceiver 来接收事件通知，在 setView() 时注册监听） -> DecorView -> Activity（从这里开始常规的分发） -> PhoneWindow -> DecorView（本质上也是 ViewGroup，最顶层的 ViewGroup ） -> ViewGroup -> View
 
 ## MotionEvent事件分发
 

@@ -1,3 +1,5 @@
+`Java 集合`
+
 ## 原理
 
 1. 维护了两个数组（mArray 和 mHashes）。mArray 用来存放键值对，奇数放 key，偶数放 value；mHashes 用来存放 哈希值

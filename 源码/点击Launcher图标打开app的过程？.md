@@ -1,3 +1,5 @@
+`Framework 源码`
+
 ## 过程
 
 1. 点击图标后，Launcher 进程通过 Binder IPC 向 system_serve r的 AMS 发起打开 Activity 的请求（**launcher -> system_server**）

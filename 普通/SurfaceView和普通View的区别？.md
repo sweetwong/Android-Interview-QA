@@ -1,3 +1,5 @@
+`View`
+
 ## 区别
 
 1. View 底层没有双缓冲机制，SurfaceView 有**双缓冲机制**；

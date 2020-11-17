@@ -25,4 +25,7 @@
 分为新生代、老年代、永久代，新生代使用复制算法，老年代使用标记整理算法，综合了上述算法的优点。
 
 ## 链接
+
+[Github：CS-Notes：Java 虚拟机](http://www.cyc2018.xyz/Java/Java%20%E8%99%9A%E6%8B%9F%E6%9C%BA.html#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95)
+
 [JVM系列\(五\) - JVM垃圾回收算法](https://juejin.im/post/6844903639794843656#heading-12)

@@ -64,5 +64,3 @@
 [Github: CS-Notes](https://github.com/CyC2018/CS-Notes)
 
 [Github: android_interview](https://github.com/LRH1993/android_interview)
-
-如果想要体验更贴近面试的同学，可以看 [乱序版问题](/QA-shuffle.md)。

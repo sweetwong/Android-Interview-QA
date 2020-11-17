@@ -27,6 +27,7 @@ public class AutoScript {
             writeFolder("其次");
             writeFolder("汇总");
             writeFolder("待整理");
+            writeTail();
             writeShuffle();
             mWriter.close();
             mShuffleWriter.close();
@@ -39,7 +40,7 @@ public class AutoScript {
         private List<String> mShuffleList = new ArrayList<>();
 
         private void writeHeader() throws Exception {
-            BufferedReader reader = new BufferedReader(new FileReader(new File(rootPath + "/script/介绍.md")));
+            BufferedReader reader = new BufferedReader(new FileReader(new File(rootPath + "/script/header.md")));
             String line;
             while ((line = reader.readLine()) != null) {
                 mWriter.append(line);
@@ -48,6 +49,18 @@ public class AutoScript {
             mWriter.append(LINE_SEPARATOR);
             mWriter.flush();
         }
+
+        private void writeTail() throws Exception {
+            BufferedReader reader = new BufferedReader(new FileReader(new File(rootPath + "/script/tail.md")));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                mWriter.append(line);
+                mWriter.append(LINE_SEPARATOR);
+            }
+            mWriter.append(LINE_SEPARATOR);
+            mWriter.flush();
+        }
+
 
         private void writeFolder(String folderPath) throws Exception {
             File folder = new File(rootPath + '/' + folderPath);

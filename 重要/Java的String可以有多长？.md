@@ -1,4 +1,4 @@
-`Java 基础`、`字符串`
+`Java 基础`
 
 ## Java String 栈
 

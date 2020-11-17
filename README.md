@@ -147,6 +147,8 @@
 
 [ANR是怎么回事？如何定位ANR？](记忆/ANR是怎么回事？如何定位ANR？.md)
 
+[ART和Dalvik的区别？](记忆/ART和Dalvik的区别？.md)
+
 [GET与POST的区别？](记忆/GET与POST的区别？.md)
 
 [HTTP1.0与HTTP1.1与HTTP2.0有什么区别？](记忆/HTTP1.0与HTTP1.1与HTTP2.0有什么区别？.md)
@@ -159,9 +161,11 @@
 
 [Java锁有哪几种状态？](记忆/Java锁有哪几种状态？.md)
 
+[JUC用过哪些类？](记忆/JUC用过哪些类？.md)
+
 [ListView和RecyclerView的区别？](记忆/ListView和RecyclerView的区别？.md)
 
-[RecyclerView怎么进行性能优化](记忆/RecyclerView怎么进行性能优化.md)
+[RecyclerView怎么进行性能优化？](记忆/RecyclerView怎么进行性能优化？.md)
 
 [String为什么要设计成不可变的？](记忆/String为什么要设计成不可变的？.md)
 
@@ -172,6 +176,8 @@
 [如何保证线程安全？](记忆/如何保证线程安全？.md)
 
 [如何避免OOM的产生？](记忆/如何避免OOM的产生？.md)
+
+[对WebView做了哪些性能优化？](记忆/对WebView做了哪些性能优化？.md)
 
 [常用的数据结构有哪些？](记忆/常用的数据结构有哪些？.md)
 
@@ -202,6 +208,8 @@
 [Binder的transact流程？](源码/Binder的transact流程？.md)
 
 [Framework中有什么你觉得设计很巧妙的地方？请举例说明](源码/Framework中有什么你觉得设计很巧妙的地方？请举例说明.md)
+
+[Service启动流程？](源码/Service启动流程？.md)
 
 [Surface传递的原理？](源码/Surface传递的原理？.md)
 
@@ -246,8 +254,6 @@
 [Java基本数据类型有哪些？](普通/Java基本数据类型有哪些？.md)
 
 [Java的引用和C指针有什么区别？](普通/Java的引用和C指针有什么区别？.md)
-
-[JUC用过哪些类？](普通/JUC用过哪些类？.md)
 
 [JVM怎么判断对象是否已死？](普通/JVM怎么判断对象是否已死？.md)
 
@@ -361,6 +367,8 @@
 
 [(重要)接入微信支付的流程？需要注意什么？](待整理/(重要)接入微信支付的流程？需要注意什么？.md)
 
+[Android有哪些存储方式？](待整理/Android有哪些存储方式？.md)
+
 [APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
 
 [Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
@@ -368,8 +376,6 @@
 [Glide原理？](待整理/Glide原理？.md)
 
 [RecyclerView的LayoutManager如何实现不同的布局？](待整理/RecyclerView的LayoutManager如何实现不同的布局？.md)
-
-[Service启动流程？](待整理/Service启动流程？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
 
@@ -385,11 +391,11 @@
 
 [如果要设计一个大量图片下载的方法，如何确定并发量，有哪些指标](待整理/如果要设计一个大量图片下载的方法，如何确定并发量，有哪些指标.md)
 
-[对WebView做了哪些性能优化？](待整理/对WebView做了哪些性能优化？.md)
-
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
 
 [手写生产者消费者模式](待整理/手写生产者消费者模式.md)
+
+[有没有使用过AOP？哪些场景？](待整理/有没有使用过AOP？哪些场景？.md)
 
 [死锁检测算法？](待整理/死锁检测算法？.md)
 

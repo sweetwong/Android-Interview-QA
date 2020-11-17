@@ -1,4 +1,7 @@
+`View`
+
 ## 1. 外部拦截法
+
 即父 View 根据需要对事件进行拦截。逻辑处理放在**父 View **的 **onInterceptTouchEvent** 方法中。我们只需要重写父 View 的 onInterceptTouchEvent 方法，并根据逻辑需要做相应的拦截即可。
 
 ## 2. 内部拦截法

@@ -1,4 +1,7 @@
+`Android 其他`
+
 ## 回答
+
 1. 对于 public 的代码，直接编译 frameworks.jar 到项目下，骗过编译器，直接调用
 
 2. 对于 private 或者其他被限制的代码，通过反射 Hook 系统的 API

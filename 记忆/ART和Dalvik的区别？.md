@@ -1,3 +1,5 @@
+`Android 其他`
+
 # Android Runtime (ART) 和 Dalvik
 
 Android Runtime (ART) 是 Android 上的应用和部分系统服务使用的托管式运行时。ART 及其前身 Dalvik 最初是专为 Android 项目打造的。作为运行时的 ART 可执行 Dalvik 可执行文件并遵循 Dex 字节码规范。

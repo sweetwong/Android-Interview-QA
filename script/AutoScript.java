@@ -106,7 +106,7 @@ public class AutoScript {
                     "组件化/插件化/热修复",
                     "第三方库",
                     "MVC/MVP/MVVM",
-                    "Android",
+                    "AOP",
                     "Android 其他"
             );
             Map Java = createMap(

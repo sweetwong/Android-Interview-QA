@@ -1,4 +1,7 @@
+`View`
+
 ## 什么是 MeasureSpec？
+
 MeasureSpec 代表一个 32 位 int 值，**高 2 位**代表 **SpecMode**（测量模式），**低 30 位**代表 **SpecSize**（具体大小）。
 
 ## SpecMode有三类

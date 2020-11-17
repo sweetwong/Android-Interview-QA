@@ -1,4 +1,7 @@
+`Binder`
+
 ## Android IPC的 6 种方式
+
 1. AIDL：AIDL 是 IPC 的一个轻量级实现
 
 2. Messenger（信使）： Messenger 本质也是 AIDL，只是进行了封装，开发的时候不用再写 .aidl 文件，所以相对于 AIDL 较于简单。

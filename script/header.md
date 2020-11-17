@@ -1,5 +1,7 @@
-### [按照 TAG 排序](/TAG.md)
+# 其他排版
 
-### [乱序版问题](/QA-shuffle.md)。
+### [按照 TAG 分类](/TAG.md)
+
+### [乱序版](/QA-shuffle.md)
 
 # 正文

@@ -1,5 +1,3 @@
-import javas.concurrent.ThreadUtils;
-
 import java.io.*;
 import java.util.*;
 
@@ -13,7 +11,7 @@ public class AutoScript {
 
     public static void main(String[] args) throws Exception {
         new CreateREADME().create(rootPath);
-        new CreateTag().create(rootPath);
+        new CreateTAG().create(rootPath);
     }
 
     static class CreateREADME {
@@ -100,7 +98,7 @@ public class AutoScript {
         }
     }
 
-    static class CreateTag {
+    static class CreateTAG {
 
         private Map mMap = new LinkedHashMap();
 
@@ -251,17 +249,26 @@ public class AutoScript {
             BufferedReader reader = new BufferedReader(new FileReader(rootPath + "/TAG.md"));
             StringBuilder main = new StringBuilder();
             StringBuilder directory = new StringBuilder();
+            directory.append("# 目录").append(System.lineSeparator());
             directory.append("<!-- GFM-TOC -->")
                     .append(System.lineSeparator());
             String line;
             while ((line = reader.readLine()) != null) {
                 main.append(line).append(System.lineSeparator());
+                String name;
+                String path;
                 if (line.startsWith("# ")) {
-                    directory.append("* [" + line.substring(2) + "](#" + line.substring(2) + ")" + System.lineSeparator());
+                    name = line.substring(2);
+                    path = name.replace(' ', '-');
+                    directory.append("* [" + name + "](#" + path + ")" + System.lineSeparator());
                 } else if (line.startsWith("## ")) {
-                    directory.append("    * [" + line.substring(3) + "](#" + line.substring(3) + ")" + System.lineSeparator());
+                    name = line.substring(3);
+                    path = name.replace(' ', '-');
+                    directory.append("    * [" + name + "](#" + path + ")" + System.lineSeparator());
                 } else if (line.startsWith("### ")) {
-                    directory.append("        * [" + line.substring(4) + "](#" + line.substring(4) + ")" + System.lineSeparator());
+                    name = line.substring(4);
+                    path = name.replace(' ', '-');
+                    directory.append("        * [" + name + "](#" + path + ")" + System.lineSeparator());
                 }
             }
             directory.append("<!-- GFM-TOC -->").

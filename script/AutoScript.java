@@ -7,19 +7,23 @@ import java.util.*;
 public class AutoScript {
 
     // TODO 在此处输入你项目的根路径
-    static final String rootPath = "C:\\Users\\Administrator\\Desktop\\Android-Interview-QA";
+    static final String ROOT_PATH = "C:\\Users\\Administrator\\Desktop\\Android-Interview-QA";
 
     public static void main(String[] args) throws Exception {
-        new CreateREADME().create(rootPath);
-        new CreateTAG().create(rootPath);
+        new CreateQA().create(ROOT_PATH);
+        new CreateTAG().create(ROOT_PATH);
     }
 
-    static class CreateREADME {
+    private static class CreateQA {
+
+        private static final String LINE_SEPARATOR = System.lineSeparator();
+        private Writer mWriter;
+        private Writer mShuffleWriter;
+        private List<String> mShuffleList = new ArrayList<>();
 
         public void create(String rootPath) throws Exception {
-            mWriter = new PrintWriter(rootPath + "/README.md");
+            mWriter = new PrintWriter(rootPath + "/QA.md");
             mShuffleWriter = new PrintWriter(rootPath + "/QA-shuffle.md");
-            writeHeader();
             writeFolder("重要");
             writeFolder("记忆");
             writeFolder("源码");
@@ -27,20 +31,14 @@ public class AutoScript {
             writeFolder("其次");
             writeFolder("汇总");
             writeFolder("待整理");
-            writeTail();
             writeShuffle();
             mWriter.close();
             mShuffleWriter.close();
             System.out.println("CreateREADME 完成");
         }
 
-        private static final String LINE_SEPARATOR = System.lineSeparator();
-        private Writer mWriter;
-        private Writer mShuffleWriter;
-        private List<String> mShuffleList = new ArrayList<>();
-
         private void writeHeader() throws Exception {
-            BufferedReader reader = new BufferedReader(new FileReader(new File(rootPath + "/script/header.md")));
+            BufferedReader reader = new BufferedReader(new FileReader(new File(ROOT_PATH + "/script/header.md")));
             String line;
             while ((line = reader.readLine()) != null) {
                 mWriter.append(line);
@@ -51,7 +49,7 @@ public class AutoScript {
         }
 
         private void writeTail() throws Exception {
-            BufferedReader reader = new BufferedReader(new FileReader(new File(rootPath + "/script/tail.md")));
+            BufferedReader reader = new BufferedReader(new FileReader(new File(ROOT_PATH + "/script/tail.md")));
             String line;
             while ((line = reader.readLine()) != null) {
                 mWriter.append(line);
@@ -63,7 +61,7 @@ public class AutoScript {
 
 
         private void writeFolder(String folderPath) throws Exception {
-            File folder = new File(rootPath + '/' + folderPath);
+            File folder = new File(ROOT_PATH + '/' + folderPath);
             mWriter.append("## ")
                     .append(folderPath)
                     .append(LINE_SEPARATOR)
@@ -98,7 +96,7 @@ public class AutoScript {
         }
     }
 
-    static class CreateTAG {
+    private static class CreateTAG {
 
         private Map mMap = new LinkedHashMap();
 

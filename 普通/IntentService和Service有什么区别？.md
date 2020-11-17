@@ -1,4 +1,4 @@
-`Android 其他`
+`Android 其他`、`四大组件`
 
 ## IntentService 实现原理
 

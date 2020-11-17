@@ -4,6 +4,7 @@
     * [四大组件](#四大组件)
     * [View](#View)
     * [动画](#动画)
+    * [网络](#网络)
     * [图片](#图片)
     * [Handler](#Handler)
     * [Binder](#Binder)
@@ -31,11 +32,15 @@
 ## 四大组件
 [Activity的创建步骤](/普通/Activity的创建步骤.md)
 
+[IntentService和Service有什么区别？](/普通/IntentService和Service有什么区别？.md)
+
 [如何跨App启动Activity？](/普通/如何跨App启动Activity？.md)
 
 [Activity启动流程？](/源码/Activity启动流程？.md)
 
 [Activity的显示原理？](/源码/Activity的显示原理？.md)
+
+[Service启动流程？](/源码/Service启动流程？.md)
 
 [说说动态广播的注册和收发原理？](/源码/说说动态广播的注册和收发原理？.md)
 
@@ -58,6 +63,8 @@
 
 [RecyclerView怎么进行性能优化？](/记忆/RecyclerView怎么进行性能优化？.md)
 
+[主题切换的方案？](/重要/主题切换的方案？.md)
+
 [简单讲一下Android的Touch事件分发机制？](/重要/简单讲一下Android的Touch事件分发机制？.md)
 
 [自定义View的过程？](/重要/自定义View的过程？.md)
@@ -66,6 +73,9 @@
 
 ## 动画
 [使用过哪些动画？](/普通/使用过哪些动画？.md)
+
+## 网络
+[Retrofit实现原理？](/重要/Retrofit实现原理？.md)
 
 ## 图片
 [使用过什么图片加载库，Glide的源码设计哪里很微妙？](/普通/使用过什么图片加载库，Glide的源码设计哪里很微妙？.md)

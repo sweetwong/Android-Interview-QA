@@ -1,3 +1,5 @@
+import javas.concurrent.ThreadUtils;
+
 import java.io.*;
 import java.util.*;
 
@@ -7,7 +9,7 @@ import java.util.*;
 public class AutoScript {
 
     // TODO 在此处输入你项目的根路径
-    static final String rootPath = "C:\\Users\\wangsw\\Desktop\\其他\\Android-Interview-QA";
+    static final String rootPath = "C:\\Users\\Administrator\\Desktop\\Android-Interview-QA";
 
     public static void main(String[] args) throws Exception {
         new CreateREADME().create(rootPath);
@@ -100,7 +102,7 @@ public class AutoScript {
 
     static class CreateTag {
 
-        private Map sMap = new LinkedHashMap();
+        private Map mMap = new LinkedHashMap();
 
         {
             Map Android = createMap(
@@ -132,17 +134,18 @@ public class AutoScript {
                     "Java IO",
                     "Java 虚拟机"
             );
-            sMap.put("Android", Android);
-            sMap.put("Java", Java);
-            sMap.put("计算机网络", new ArrayList<>());
-            sMap.put("数据结构与算法", new ArrayList<>());
-            sMap.put("设计模式", new ArrayList<>());
+            mMap.put("Android", Android);
+            mMap.put("Java", Java);
+            mMap.put("计算机网络", new ArrayList<>());
+            mMap.put("数据结构与算法", new ArrayList<>());
+            mMap.put("设计模式", new ArrayList<>());
         }
 
 
         public void create(String rootPath) throws Exception {
             readFiles(rootPath);
             writeFiles(rootPath);
+            writeDirectory(rootPath);
             System.out.println("CreateTAG 完成");
         }
 
@@ -181,7 +184,7 @@ public class AutoScript {
                     boolean[] hasTag = new boolean[1];
                     for (String tag : tags) {
                         hasTag[0] = false;
-                        addToMapRecursive(tag, "[" + fileName + "](" + relativePath + ")", sMap, hasTag);
+                        addToMapRecursive(tag, "[" + fileName + "](" + relativePath + ")", mMap, hasTag);
                         if (!hasTag[0]) {
                             throw new RuntimeException("不是正确的TAG, tag: " + tag + ", relativePath: " + relativePath);
                         }
@@ -212,7 +215,7 @@ public class AutoScript {
 
         private void writeFiles(String rootPath) throws Exception {
             PrintWriter writer = new PrintWriter(new File(rootPath + "/TAG.md"));
-            writeFilesRecursive(writer, sMap, 1);
+            writeFilesRecursive(writer, mMap, 1);
             writer.close();
         }
 
@@ -242,6 +245,38 @@ public class AutoScript {
             }
             builder.append(" ");
             return builder.toString();
+        }
+
+        private void writeDirectory(String rootPath) throws Exception {
+            BufferedReader reader = new BufferedReader(new FileReader(rootPath + "/TAG.md"));
+            StringBuilder main = new StringBuilder();
+            StringBuilder directory = new StringBuilder();
+            directory.append("<!-- GFM-TOC -->")
+                    .append(System.lineSeparator());
+            String line;
+            while ((line = reader.readLine()) != null) {
+                main.append(line).append(System.lineSeparator());
+                if (line.startsWith("# ")) {
+                    directory.append("* [" + line.substring(2) + "](#" + line.substring(2) + ")" + System.lineSeparator());
+                } else if (line.startsWith("## ")) {
+                    directory.append("    * [" + line.substring(3) + "](#" + line.substring(3) + ")" + System.lineSeparator());
+                } else if (line.startsWith("### ")) {
+                    directory.append("        * [" + line.substring(4) + "](#" + line.substring(4) + ")" + System.lineSeparator());
+                }
+            }
+            directory.append("<!-- GFM-TOC -->").
+                    append(System.lineSeparator());
+
+            PrintWriter writer = new PrintWriter(new File(rootPath + "/TAG.md"));
+            writer.write("");
+            writer.flush();
+
+            writer.println(directory.toString());
+            writer.println(main.toString());
+            writer.flush();
+
+            reader.close();
+            writer.close();
         }
 
     }

@@ -1,3 +1,5 @@
+`Handler`
+
 ## 回答要点
 
 1. Handler 最终都会调用 **sendMessageAtTime** 方法
@@ -34,6 +36,18 @@
 ## 原理图
 
 <img src="../assets/Handler的原理.png" style="zoom:80%;" />
+
+## IdleHandler 的原理？
+
+[IdleHandler的原理？](./IdleHandler的原理？.md)
+
+## 同步屏障的原理？
+
+TODO
+
+## HandlerThread 的实现原理？
+
+TODO
 
 ## select、poll、epoll 对比？
 

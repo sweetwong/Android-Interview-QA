@@ -1,6 +1,8 @@
+`Handler`
+
 ## 调用时机？
 
-nativePollOnce() 返回之后，且当前没有消息可以分发了
+在 messageQueue.next() 方法中，messageQueue.nativePollOnce() 返回之后，且当前没有消息可以分发了
 
 nativePollOnce() 返回的三个条件：
 

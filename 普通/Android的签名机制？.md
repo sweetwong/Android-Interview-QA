@@ -1,4 +1,7 @@
+`Android 其他`
+
 ## 概念
+
 Android 的签名机制包含有消息摘要、数字签名和数字证书
 
 #### 1. 消息摘要（Message Digest）

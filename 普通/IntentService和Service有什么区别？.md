@@ -1,4 +1,7 @@
+`Android 其他`、`四大组件`
+
 ## IntentService 实现原理
+
 在 Service 中封装了 HandlerThread 相关的操作
 
 ## IntentService 与 Service 的区别在于

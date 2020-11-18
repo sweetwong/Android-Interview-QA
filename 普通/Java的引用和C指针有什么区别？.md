@@ -1,3 +1,5 @@
+`Java 基础`
+
 > **References might be implemented by storing the address.** *Usually* Java references will be implemented as pointers, but that's not required by the specification. They may be using an additional layer of indirection to enable easier garbage collection. But in the end it will (almost always) boil down to (C-style) pointers being involved in the implementation of (Java-style) references.
 >
 > **You can't do pointer arithmetic with references.** The most important difference between a pointer in C and a reference in Java is that you can't actually get to (and manipulate) the underlying value of a reference in Java. In other words: you can't do pointer arithmetic.

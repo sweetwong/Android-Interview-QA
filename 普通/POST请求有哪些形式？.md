@@ -1,9 +1,8 @@
+`计算机网络`
+
 1. application/x-www-form-urlencoded
-
 2. multipart/form-data
-
 3. application/json
-
 4. text/xml
 
 ## 链接

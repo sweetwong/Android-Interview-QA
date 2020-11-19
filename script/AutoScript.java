@@ -7,7 +7,7 @@ import java.util.*;
 public class AutoScript {
 
     // TODO 在此处输入你项目的根路径
-    static final String ROOT_PATH = "C:\\Users\\Administrator\\Desktop\\Android-Interview-QA";
+    static final String ROOT_PATH = "C:\\Users\\wangsw\\Desktop\\其他\\Android-Interview-QA";
 
     public static void main(String[] args) throws Exception {
         new CreateQA().create(ROOT_PATH);
@@ -23,7 +23,7 @@ public class AutoScript {
 
         public void create(String rootPath) throws Exception {
             mWriter = new PrintWriter(rootPath + "/QA.md");
-            mShuffleWriter = new PrintWriter(rootPath + "/QA-shuffle.md");
+//            mShuffleWriter = new PrintWriter(rootPath + "/QA-shuffle.md");
             writeFolder("重要");
             writeFolder("记忆");
             writeFolder("源码");
@@ -31,9 +31,9 @@ public class AutoScript {
             writeFolder("其次");
             writeFolder("汇总");
             writeFolder("待整理");
-            writeShuffle();
+//            writeShuffle();
             mWriter.close();
-            mShuffleWriter.close();
+//            mShuffleWriter.close();
             System.out.println("CreateREADME 完成");
         }
 
@@ -134,6 +134,7 @@ public class AutoScript {
             mMap.put("Java", Java);
             mMap.put("计算机网络", new ArrayList<>());
             mMap.put("数据结构与算法", new ArrayList<>());
+            mMap.put("操作系统", new ArrayList<>());
             mMap.put("设计模式", new ArrayList<>());
         }
 
@@ -180,7 +181,7 @@ public class AutoScript {
                     boolean[] hasTag = new boolean[1];
                     for (String tag : tags) {
                         hasTag[0] = false;
-                        addToMapRecursive(tag, "[" + fileName + "](" + relativePath + ")", mMap, hasTag);
+                        addToMapRecursive(tag, "[" + fileName + "](." + relativePath + ")", mMap, hasTag);
                         if (!hasTag[0]) {
                             throw new RuntimeException("不是正确的TAG, tag: " + tag + ", relativePath: " + relativePath);
                         }
@@ -192,7 +193,7 @@ public class AutoScript {
         private void addToMapRecursive(String tag, String s, Map map, boolean[] hasTag) {
             map.forEach((key, value) -> {
                 if (Objects.equals(tag, key)) {
-                    ((ArrayList) value).add(s);
+                    ((List) value).add(s);
                     hasTag[0] = true;
                 }
                 if (value instanceof Map) {
@@ -225,6 +226,7 @@ public class AutoScript {
                     if (list.isEmpty()) {
                         return;
                     }
+                    Collections.sort(list);
                     writer.println(getTitleByLevel(level) + key);
                     for (Object s : list) {
                         writer.println(s);

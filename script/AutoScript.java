@@ -101,6 +101,9 @@ public class AutoScript {
         private Map mMap = new LinkedHashMap();
 
         {
+            mMap.put("计算机网络", new ArrayList<>());
+            mMap.put("操作系统", new ArrayList<>());
+            mMap.put("数据结构与算法", new ArrayList<>());
             Map Android = createMap(
                     "四大组件",
                     "Fragment",
@@ -132,9 +135,6 @@ public class AutoScript {
             );
             mMap.put("Android", Android);
             mMap.put("Java", Java);
-            mMap.put("计算机网络", new ArrayList<>());
-            mMap.put("数据结构与算法", new ArrayList<>());
-            mMap.put("操作系统", new ArrayList<>());
             mMap.put("设计模式", new ArrayList<>());
         }
 

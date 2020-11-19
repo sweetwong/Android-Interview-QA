@@ -86,6 +86,8 @@
 
 [HTTPS的原理？HTTP和HTTPS的区别？](记忆/HTTPS的原理？HTTP和HTTPS的区别？.md)
 
+[HTTP有哪些状态码？](记忆/HTTP有哪些状态码？.md)
+
 [Java反射为什么比较慢？](记忆/Java反射为什么比较慢？.md)
 
 [Java有哪些锁？](记忆/Java有哪些锁？.md)
@@ -103,6 +105,14 @@
 [synchronized和ReentrantLock的有什么区别？](记忆/synchronized和ReentrantLock的有什么区别？.md)
 
 [TCPIP四层协议？](记忆/TCPIP四层协议？.md)
+
+[TCP为什么可靠？](记忆/TCP为什么可靠？.md)
+
+[TCP和UDP的区别？](记忆/TCP和UDP的区别？.md)
+
+[TCP和UDP的首部有哪些内容？](记忆/TCP和UDP的首部有哪些内容？.md)
+
+[TCP怎么进行流量控制和拥塞控制？](记忆/TCP怎么进行流量控制和拥塞控制？.md)
 
 [什么是局部性原理？](记忆/什么是局部性原理？.md)
 
@@ -128,6 +138,8 @@
 
 [报文、报文段、分组、包、数据报、帧、数据流的概念区别？](记忆/报文、报文段、分组、包、数据报、帧、数据流的概念区别？.md)
 
+[描述下三次握手和四次挥手的过程？](记忆/描述下三次握手和四次挥手的过程？.md)
+
 [操作系统的主要功能？](记忆/操作系统的主要功能？.md)
 
 [操作系统的基本特征？](记忆/操作系统的基本特征？.md)
@@ -144,7 +156,7 @@
 
 [线程间的同步的方式有哪些呢](记忆/线程间的同步的方式有哪些呢.md)
 
-[虚拟内存技术的实现呢？](记忆/虚拟内存技术的实现呢？.md)
+[虚拟内存技术的实现？](记忆/虚拟内存技术的实现？.md)
 
 [计算机网络-Http问题总结](记忆/计算机网络-Http问题总结.md)
 
@@ -224,8 +236,6 @@
 
 [Messenger和AIDL的区别？](普通/Messenger和AIDL的区别？.md)
 
-[POST请求有哪些形式？](普通/POST请求有哪些形式？.md)
-
 [requestLayout，invalidate，postInvalidate区别与联系？](普通/requestLayout，invalidate，postInvalidate区别与联系？.md)
 
 [sleep和wait的区别？](普通/sleep和wait的区别？.md)
@@ -281,6 +291,8 @@
 [Fragment的生命周期？](其次/Fragment的生命周期？.md)
 
 [Object有哪些方法？](其次/Object有哪些方法？.md)
+
+[POST请求有哪些形式？](其次/POST请求有哪些形式？.md)
 
 [session、cookie、token的区别？](其次/session、cookie、token的区别？.md)
 
@@ -363,6 +375,8 @@
 [死锁检测算法？](待整理/死锁检测算法？.md)
 
 [测试](待整理/测试.md)
+
+[知道哪些机密算法？](待整理/知道哪些机密算法？.md)
 
 [自己去设计一个网络请求框架，怎么做？](待整理/自己去设计一个网络请求框架，怎么做？.md)
 

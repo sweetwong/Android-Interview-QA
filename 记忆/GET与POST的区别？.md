@@ -26,9 +26,6 @@ GET 和 POST 的请求都能使用额外的参数，但是 GET 的参数是以�
 * 响应报文的状态码是可缓存的，包括：200, 203, 204, 206, 300, 301, 404, 405, 410, 414, and 501。
 * 响应报文的 Cache-Control 首部字段没有指定不进行缓存。
 
-## 要点
-1. 几个重要的点：安全性、幂等性、语义
-
 ## 链接
 
 [Github：CS-Notes：GET 和 POST 比较](https://cyc2018.github.io/CS-Notes/#/notes/HTTP?id=%e4%b9%9d%e3%80%81get-%e5%92%8c-post-%e6%af%94%e8%be%83)

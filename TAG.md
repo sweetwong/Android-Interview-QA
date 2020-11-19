@@ -3,6 +3,13 @@
 * [计算机网络](#计算机网络)
 * [操作系统](#操作系统)
 * [数据结构与算法](#数据结构与算法)
+* [Java](#Java)
+    * [Java 基础](#Java-基础)
+    * [Java 并发](#Java-并发)
+    * [Java 集合](#Java-集合)
+    * [Java 泛型](#Java-泛型)
+    * [Java 反射](#Java-反射)
+    * [Java 虚拟机](#Java-虚拟机)
 * [Android](#Android)
     * [四大组件](#四大组件)
     * [View](#View)
@@ -19,13 +26,6 @@
     * [MVC/MVP/MVVM](#MVC/MVP/MVVM)
     * [AOP](#AOP)
     * [Android 其他](#Android-其他)
-* [Java](#Java)
-    * [Java 基础](#Java-基础)
-    * [Java 并发](#Java-并发)
-    * [Java 集合](#Java-集合)
-    * [Java 泛型](#Java-泛型)
-    * [Java 反射](#Java-反射)
-    * [Java 虚拟机](#Java-虚拟机)
 * [设计模式](#设计模式)
 <!-- GFM-TOC -->
 
@@ -99,6 +99,93 @@
 [知道哪些排序算法？都有什么特性？](./重要/知道哪些排序算法？都有什么特性？.md)
 
 [红黑树特性？](./记忆/红黑树特性？.md)
+
+# Java
+## Java 基础
+[Java匿名内部类有哪些限制？](./普通/Java匿名内部类有哪些限制？.md)
+
+[Java基本数据类型有哪些？](./普通/Java基本数据类型有哪些？.md)
+
+[Java的String可以有多长？](./重要/Java的String可以有多长？.md)
+
+[Java的引用和C指针有什么区别？](./普通/Java的引用和C指针有什么区别？.md)
+
+[String、StringBuffer和StringBuilder的区别？](./普通/String、StringBuffer和StringBuilder的区别？.md)
+
+[String为什么要设计成不可变的？](./记忆/String为什么要设计成不可变的？.md)
+
+[如何理解Java的三大特性封装、继承和多态？](./重要/如何理解Java的三大特性封装、继承和多态？.md)
+
+[怎样理解Java的方法分派？](./普通/怎样理解Java的方法分派？.md)
+
+[知道哪些单例模式？](./重要/知道哪些单例模式？.md)
+
+## Java 并发
+[CAS实现原子操作会出现什么问题？](./普通/CAS实现原子操作会出现什么问题？.md)
+
+[JUC用过哪些类？](./记忆/JUC用过哪些类？.md)
+
+[Java各种线程池使用的场景？](./重要/Java各种线程池使用的场景？.md)
+
+[Java有哪些锁？](./记忆/Java有哪些锁？.md)
+
+[Java锁有哪几种状态？](./记忆/Java锁有哪几种状态？.md)
+
+[ReentrantLock的原理？](./重要/ReentrantLock的原理？.md)
+
+[ThreadLocal原理？](./重要/ThreadLocal原理？.md)
+
+[sleep和wait的区别？](./普通/sleep和wait的区别？.md)
+
+[synchronized和ReentrantLock的有什么区别？](./记忆/synchronized和ReentrantLock的有什么区别？.md)
+
+[synchronized的原理？](./重要/synchronized的原理？.md)
+
+[volatile的原理？](./重要/volatile的原理？.md)
+
+[为什么wait需要搭配synchronized关键字使用？](./普通/为什么wait需要搭配synchronized关键字使用？.md)
+
+[什么是原子性、有序性、可见性？](./普通/什么是原子性、有序性、可见性？.md)
+
+[创建线程有哪些方式？](./普通/创建线程有哪些方式？.md)
+
+[如何保证线程安全？](./记忆/如何保证线程安全？.md)
+
+[如何停止一个线程？](./普通/如何停止一个线程？.md)
+
+[有哪些多线程开发良好的实践？](./记忆/有哪些多线程开发良好的实践？.md)
+
+## Java 集合
+[ArrayBlockingQueue和LinkedBlockingQueue的区别？](./普通/ArrayBlockingQueue和LinkedBlockingQueue的区别？.md)
+
+[ArrayMap的原理？](./普通/ArrayMap的原理？.md)
+
+[HashMap的原理？](./重要/HashMap的原理？.md)
+
+[SparseArray的原理？](./普通/SparseArray的原理？.md)
+
+[常用的数据结构有哪些？](./记忆/常用的数据结构有哪些？.md)
+
+## Java 泛型
+[Java的泛型实现机制是怎样的？什么是类型擦除？](./重要/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
+
+## Java 反射
+[Java反射为什么比较慢？](./记忆/Java反射为什么比较慢？.md)
+
+## Java 虚拟机
+[ClassLoader类加载机制？](./重要/ClassLoader类加载机制？.md)
+
+[JVM怎么判断对象是否已死？](./普通/JVM怎么判断对象是否已死？.md)
+
+[Java内存回收算法有哪些？分别有什么优缺点？](./普通/Java内存回收算法有哪些？分别有什么优缺点？.md)
+
+[什么是强、软、弱、虚引用以及它们之间的区别？](./重要/什么是强、软、弱、虚引用以及它们之间的区别？.md)
+
+[对象创建的过程？对象由哪些部分组成？](./普通/对象创建的过程？对象由哪些部分组成？.md)
+
+[描述下Java内存模型？](./重要/描述下Java内存模型？.md)
+
+[类加载的顺序？](./普通/类加载的顺序？.md)
 
 # Android
 ## 四大组件
@@ -275,93 +362,6 @@
 [如何获取Android设备唯一ID？](./普通/如何获取Android设备唯一ID？.md)
 
 [如何规避Android-P对访问私有API的限制？](./普通/如何规避Android-P对访问私有API的限制？.md)
-
-# Java
-## Java 基础
-[Java匿名内部类有哪些限制？](./普通/Java匿名内部类有哪些限制？.md)
-
-[Java基本数据类型有哪些？](./普通/Java基本数据类型有哪些？.md)
-
-[Java的String可以有多长？](./重要/Java的String可以有多长？.md)
-
-[Java的引用和C指针有什么区别？](./普通/Java的引用和C指针有什么区别？.md)
-
-[String、StringBuffer和StringBuilder的区别？](./普通/String、StringBuffer和StringBuilder的区别？.md)
-
-[String为什么要设计成不可变的？](./记忆/String为什么要设计成不可变的？.md)
-
-[如何理解Java的三大特性封装、继承和多态？](./重要/如何理解Java的三大特性封装、继承和多态？.md)
-
-[怎样理解Java的方法分派？](./普通/怎样理解Java的方法分派？.md)
-
-[知道哪些单例模式？](./重要/知道哪些单例模式？.md)
-
-## Java 并发
-[CAS实现原子操作会出现什么问题？](./普通/CAS实现原子操作会出现什么问题？.md)
-
-[JUC用过哪些类？](./记忆/JUC用过哪些类？.md)
-
-[Java各种线程池使用的场景？](./重要/Java各种线程池使用的场景？.md)
-
-[Java有哪些锁？](./记忆/Java有哪些锁？.md)
-
-[Java锁有哪几种状态？](./记忆/Java锁有哪几种状态？.md)
-
-[ReentrantLock的原理？](./重要/ReentrantLock的原理？.md)
-
-[ThreadLocal原理？](./重要/ThreadLocal原理？.md)
-
-[sleep和wait的区别？](./普通/sleep和wait的区别？.md)
-
-[synchronized和ReentrantLock的有什么区别？](./记忆/synchronized和ReentrantLock的有什么区别？.md)
-
-[synchronized的原理？](./重要/synchronized的原理？.md)
-
-[volatile的原理？](./重要/volatile的原理？.md)
-
-[为什么wait需要搭配synchronized关键字使用？](./普通/为什么wait需要搭配synchronized关键字使用？.md)
-
-[什么是原子性、有序性、可见性？](./普通/什么是原子性、有序性、可见性？.md)
-
-[创建线程有哪些方式？](./普通/创建线程有哪些方式？.md)
-
-[如何保证线程安全？](./记忆/如何保证线程安全？.md)
-
-[如何停止一个线程？](./普通/如何停止一个线程？.md)
-
-[有哪些多线程开发良好的实践？](./记忆/有哪些多线程开发良好的实践？.md)
-
-## Java 集合
-[ArrayBlockingQueue和LinkedBlockingQueue的区别？](./普通/ArrayBlockingQueue和LinkedBlockingQueue的区别？.md)
-
-[ArrayMap的原理？](./普通/ArrayMap的原理？.md)
-
-[HashMap的原理？](./重要/HashMap的原理？.md)
-
-[SparseArray的原理？](./普通/SparseArray的原理？.md)
-
-[常用的数据结构有哪些？](./记忆/常用的数据结构有哪些？.md)
-
-## Java 泛型
-[Java的泛型实现机制是怎样的？什么是类型擦除？](./重要/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
-
-## Java 反射
-[Java反射为什么比较慢？](./记忆/Java反射为什么比较慢？.md)
-
-## Java 虚拟机
-[ClassLoader类加载机制？](./重要/ClassLoader类加载机制？.md)
-
-[JVM怎么判断对象是否已死？](./普通/JVM怎么判断对象是否已死？.md)
-
-[Java内存回收算法有哪些？分别有什么优缺点？](./普通/Java内存回收算法有哪些？分别有什么优缺点？.md)
-
-[什么是强、软、弱、虚引用以及它们之间的区别？](./重要/什么是强、软、弱、虚引用以及它们之间的区别？.md)
-
-[对象创建的过程？对象由哪些部分组成？](./普通/对象创建的过程？对象由哪些部分组成？.md)
-
-[描述下Java内存模型？](./重要/描述下Java内存模型？.md)
-
-[类加载的顺序？](./普通/类加载的顺序？.md)
 
 # 设计模式
 [Android中使用了哪些设计模式？实际项目中用到哪些？](./重要/Android中使用了哪些设计模式？实际项目中用到哪些？.md)

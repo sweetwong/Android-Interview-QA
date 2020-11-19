@@ -1,3 +1,5 @@
+import data_structure.other.Time;
+
 import java.io.*;
 import java.util.*;
 
@@ -7,11 +9,17 @@ import java.util.*;
 public class AutoScript {
 
     // TODO 在此处输入你项目的根路径
-    static final String ROOT_PATH = "C:\\Users\\wangsw\\Desktop\\其他\\Android-Interview-QA";
+    static final String ROOT_PATH = "C:\\Users\\Administrator\\Desktop\\Android-Interview-QA";
 
-    public static void main(String[] args) throws Exception {
-        new CreateQA().create(ROOT_PATH);
-        new CreateTAG().create(ROOT_PATH);
+    public static void main(String[] args) {
+        Time.watch(() -> {
+            try {
+                new CreateQA().create(ROOT_PATH);
+                new CreateTAG().create(ROOT_PATH);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private static class CreateQA {
@@ -104,6 +112,16 @@ public class AutoScript {
             mMap.put("计算机网络", new ArrayList<>());
             mMap.put("操作系统", new ArrayList<>());
             mMap.put("数据结构与算法", new ArrayList<>());
+            Map Java = createMap(
+                    "Java 基础",
+                    "Java 并发",
+                    "Java 集合",
+                    "Java 泛型",
+                    "Java 注解",
+                    "Java 反射",
+                    "Java IO",
+                    "Java 虚拟机"
+            );
             Map Android = createMap(
                     "四大组件",
                     "Fragment",
@@ -123,18 +141,9 @@ public class AutoScript {
                     "AOP",
                     "Android 其他"
             );
-            Map Java = createMap(
-                    "Java 基础",
-                    "Java 并发",
-                    "Java 集合",
-                    "Java 泛型",
-                    "Java 注解",
-                    "Java 反射",
-                    "Java IO",
-                    "Java 虚拟机"
-            );
-            mMap.put("Android", Android);
+
             mMap.put("Java", Java);
+            mMap.put("Android", Android);
             mMap.put("设计模式", new ArrayList<>());
         }
 

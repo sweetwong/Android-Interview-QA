@@ -12,36 +12,49 @@
 
 ### 1XX 信息
 
-- **100 Continue** ：表明到目前为止都很正常，客户端可以继续发送请求或者忽略这个响应。
+- **100 Continue** ：表明到目前为止都很正常，客户端可以继续发送请求或者忽略这个响应
 
 ### 2XX 成功
 
 - **200 OK**
+- **201** **Created** 请求已经被实现，而且有一个新的资源已经依据请求的需要而建立
+- **202** **Accepted** 请求已接受，但是还没执行，不保证完成请求
 - **204 No Content** ：请求已经成功处理，但是返回的响应报文不包含实体的主体部分。一般在只需要从客户端往服务器发送信息，而不需要返回数据时使用。
-- **206 Partial Content** ：表示客户端进行了范围请求，响应报文包含由 Content-Range 指定范围的实体内容。
+- **206 Partial Content** ：表示客户端进行了范围请求，响应报文包含由 Content-Range 指定范围的实体内容
 
 ### 3XX 重定向
 
-- **301 Moved Permanently** ：永久性重定向
-- **302 Found** ：临时性重定向
-- **303 See Other** ：和 302 有着相同的功能，但是 303 明确要求客户端应该采用 GET 方法获取资源。
-- 注：虽然 HTTP 协议规定 301、302 状态下重定向时不允许把 POST 方法改成 GET 方法，但是大多数浏览器都会在 301、302 和 303 状态下的重定向把 POST 方法改成 GET 方法。
-- **304 Not Modified** ：如果请求报文首部包含一些条件，例如：If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since，如果不满足条件，则服务器会返回 304 状态码。
-- **307 Temporary Redirect** ：临时重定向，与 302 的含义类似，但是 307 要求浏览器不会把重定向请求的 POST 方法改成 GET 方法。
+- **301 Moved Permanently** ：永久性重定向，表示资源已被分配了新的 URL
+- **302 Found** ：临时性重定向，表示资源临时被分配了新的 URL
+- **303 See Other** ：和 302 有着相同的功能，但是 303 明确要求客户端应该采用 GET 方法获取资源
+- 注：虽然 HTTP 协议规定 301、302 状态下重定向时不允许把 POST 方法改成 GET 方法，但是大多数浏览器都会在 301、302 和 303 状态下的重定向把 POST 方法改成 GET 方法
+- **304 Not Modified** ：如果请求报文首部包含一些条件，例如：If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since，如果不满足条件，则服务器会返回 304 状态码
+- **307 Temporary Redirect** ：临时重定向，与 302 的含义类似，但是 307 要求浏览器不会把重定向请求的 POST 方法改成 GET 方法
 
 ### 4XX 客户端错误
 
 - **400 Bad Request** ：请求报文中存在语法错误。
 - **401 Unauthorized** ：该状态码表示发送的请求需要有认证信息（BASIC 认证、DIGEST 认证）。如果之前已进行过一次请求，则表示用户认证失败。
-- **403 Forbidden** ：请求被拒绝。
+- **403 Forbidden** ：请求被拒绝
 - **404 Not Found**
+- **408 Request Timeout**：客户端请求超时
+- **409 Confict**：请求的资源可能引起冲突
 
 ### 5XX 服务器错误
 
-- **500 Internal Server Error** ：服务器正在执行请求时发生错误。
-- **503 Service Unavailable** ：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。
+- **500 Internal Server Error** ：服务器正在执行请求时发生错误
+- **501 Not Implemented**：请求超出服务器能力范围，例如服务器不支持当前请求所需要的某个功能，或者请求是服务器不支持的某个方法
+- **503 Service Unavailable** ：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求
+- **505 Http Version Not Supported**：服务器不支持，或者拒绝支持在请求中使用的 HTTP 版本
+
+## 同样是重定向 307、303、302 的区别？
+
+302 是 HTTP 1.0 的协议状态码，在 HTTP1.1 版本的时候为了细化 302 状态码又出来了 303 和 307
+
+303 明确表示客户端应当采用 GET 方法获取资源，他会把 POST 请求变为 GET 请求进行重定向。 307会遵照浏览器标准，不会从 POST 变为 GET
 
 ## 链接
 
 [Github：CS-Notes：Http](http://www.cyc2018.xyz/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/HTTP/HTTP.html#%E4%B8%89%E3%80%81http-%E7%8A%B6%E6%80%81%E7%A0%81)
 
+[掘金：面试官（9）：可能是全网最全的http面试答案](https://juejin.cn/post/6844903865410650126)

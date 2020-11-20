@@ -106,8 +106,6 @@
 
 [synchronized和ReentrantLock的有什么区别？](记忆/synchronized和ReentrantLock的有什么区别？.md)
 
-[TCPIP四层协议？](记忆/TCPIP四层协议？.md)
-
 [TCP为什么可靠？](记忆/TCP为什么可靠？.md)
 
 [TCP和UDP的区别？](记忆/TCP和UDP的区别？.md)
@@ -117,6 +115,10 @@
 [TCP怎么进行流量控制和拥塞控制？](记忆/TCP怎么进行流量控制和拥塞控制？.md)
 
 [为什么DNS使用UDP而不是TCP？](记忆/为什么DNS使用UDP而不是TCP？.md)
+
+[为何有MAC地址还要IP地址？](记忆/为何有MAC地址还要IP地址？.md)
+
+[五层协议的体系结构分别是什么？每一层都有哪些协议？](记忆/五层协议的体系结构分别是什么？每一层都有哪些协议？.md)
 
 [什么是局部性原理？](记忆/什么是局部性原理？.md)
 

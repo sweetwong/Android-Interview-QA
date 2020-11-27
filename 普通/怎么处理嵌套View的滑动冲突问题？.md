@@ -2,10 +2,12 @@
 
 ## 1. 外部拦截法
 
-即父 View 根据需要对事件进行拦截。逻辑处理放在**父 View **的 **onInterceptTouchEvent** 方法中。我们只需要重写父 View 的 onInterceptTouchEvent 方法，并根据逻辑需要做相应的拦截即可。
+即父 View 根据需要对事件进行拦截。逻辑处理放在 **父 View** 的 **onInterceptTouchEvent** 方法中。我们只需要重写父 View 的 onInterceptTouchEvent 方法，并根据逻辑需要做相应的拦截即可。
 
 ## 2. 内部拦截法
 即父 View 不拦截任何事件，所有事件都传递给子 View，子 View 根据需要决定是自己消费事件还是给父 View 处理。这需要子 **View** 使用 **requestDisallowInterceptTouchEvent** 方法才能正常工作。
+
+## 注意
 
 #### 使用外部拦截法需要注意：
 

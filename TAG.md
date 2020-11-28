@@ -135,7 +135,7 @@
 
 [Java有哪些锁？](./记忆/Java有哪些锁？.md)
 
-[Java锁有哪几种状态？](./记忆/Java锁有哪几种状态？.md)
+[Java线程有哪几种状态？](./记忆/Java线程有哪几种状态？.md)
 
 [ReentrantLock的原理？](./重要/ReentrantLock的原理？.md)
 
@@ -208,6 +208,8 @@
 [Service启动流程？](./源码/Service启动流程？.md)
 
 [如何跨App启动Activity？](./普通/如何跨App启动Activity？.md)
+
+[广播的类型有哪些？](./重要/广播的类型有哪些？.md)
 
 [说说动态广播的注册和收发原理？](./源码/说说动态广播的注册和收发原理？.md)
 
@@ -348,6 +350,8 @@
 [ART和Dalvik的区别？](./普通/ART和Dalvik的区别？.md)
 
 [ART和Dalvik的区别？](./记忆/ART和Dalvik的区别？.md)
+
+[Android开发的过程中有用哪些异步方式？](./普通/Android开发的过程中有用哪些异步方式？.md)
 
 [Android每个版本有什么主要的新特征？](./记忆/Android每个版本有什么主要的新特征？.md)
 

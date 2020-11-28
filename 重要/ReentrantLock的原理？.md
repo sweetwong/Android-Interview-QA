@@ -5,7 +5,7 @@
 - ReentrantLock 是基于**AQS**（**抽象队列同步器**）实现的，AQS 是基于 **LockSupport** 和 **各种 CAS 操作** 实现的
 - AQS 中维护了一个双向链表，每个链表的节点都包装了一个线程
 - AQS 中维护了一个状态 state，这个 state 是 volatile，各线程通过 CAS 方式去尝试改变 state，如果成功了就代表获取到了锁，如果没成功就插入到队尾
-- ReentranLock 公平锁的实现是通过每次在 tryAcquire() 方法中，查看当前线程对应的节点的前驱节点是否是头节点，如果是，则代表当前线程等待的时间最长
+- ReentranLock 公平锁的实现是通过每次在 tryAcquire() 方法中，查看当前线程对应的节点的前驱节点是否是头节点（是一个虚节点），如果是，则代表当前线程等待的时间最长
 - AQS 维护的队列的 head 节点是个虚节点（dummyHead）
 - AQS 的等待机制是通过 LockSupport.park() 和 LockSupport.unpark()，之所不使用 object.wait() 和 object.notify() 是因为这两个方法必须要在 synchronized 方法块中才能使用
 

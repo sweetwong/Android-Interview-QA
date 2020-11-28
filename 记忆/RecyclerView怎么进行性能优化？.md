@@ -58,7 +58,6 @@ mTextView.setText(Html.fromHtml(data).toString());
 * 对 `ItemView` 设置监听器，不要对每个 Item 都调用 `addXxListener`，应该大家公用一个 `XxListener`，根据 `ID` 来进行不同的操作，优化了对象的频繁创建带来的资源消耗。
 
 * 通过 getExtraLayoutSpace 来增加 RecyclerView 预留的额外空间（显示范围之外，应该额外缓存的空间），如下所示：
-* 
 ```
   new LinearLayoutManager(this) {
       @Override

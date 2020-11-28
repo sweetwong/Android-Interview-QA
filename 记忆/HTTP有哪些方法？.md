@@ -10,6 +10,22 @@
 8. **CONNECT**：HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器
 9. **TRACE**：回显服务器收到的请求，主要用于测试或诊断
 
+## 幂等/安全性
+
+幂等：一次操作和多次操作的结果相同。除了 POST、PATCH 都是幂等的。
+
+安全：不会修改服务器的资源。除了 GET、HEAD、OPTIONS 都是不安全的。
+
+| HTTP Method | Idempotent | Safe |
+| :---------- | :--------- | :--- |
+| GET         | yes        | yes  |
+| POST        | no         | no   |
+| HEAD        | yes        | yes  |
+| PUT         | yes        | no   |
+| DELETE      | yes        | no   |
+| OPTIONS     | yes        | yes  |
+| PATCH       | no         | no   |
+
 ## 链接
 
 [Github：CS-Notes：HTTP](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E4%BA%8Chttp-%E6%96%B9%E6%B3%95)

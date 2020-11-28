@@ -135,7 +135,7 @@
 
 [Java有哪些锁？](./记忆/Java有哪些锁？.md)
 
-[Java锁有哪几种状态？](./记忆/Java锁有哪几种状态？.md)
+[Java线程有哪几种状态？](./记忆/Java线程有哪几种状态？.md)
 
 [ReentrantLock的原理？](./重要/ReentrantLock的原理？.md)
 

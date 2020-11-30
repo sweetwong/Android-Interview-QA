@@ -16,15 +16,15 @@
 
 安全：不会修改服务器的资源。除了 GET、HEAD、OPTIONS 都是不安全的。
 
-| HTTP Method | Idempotent | Safe |
-| :---------- | :--------- | :--- |
-| GET         | yes        | yes  |
-| POST        | no         | no   |
-| HEAD        | yes        | yes  |
-| PUT         | yes        | no   |
-| DELETE      | yes        | no   |
-| OPTIONS     | yes        | yes  |
-| PATCH       | no         | no   |
+| HTTP Method | Idempotent（幂等） | Safe（安全） |
+| :---------- | :----------------- | :----------- |
+| GET         | yes                | **yes**      |
+| POST        | **no**             | no           |
+| HEAD        | yes                | **yes**      |
+| PUT         | yes                | no           |
+| DELETE      | yes                | no           |
+| OPTIONS     | yes                | **yes**      |
+| PATCH       | **no**             | no           |
 
 ## 链接
 

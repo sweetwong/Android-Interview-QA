@@ -1,6 +1,6 @@
 `Java 并发`
 
-# 七、J.U.C - AQS
+# J.U.C - AQS
 
 java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.U.C 的核心。
 
@@ -123,7 +123,7 @@ public class SemaphoreExample {
 2 1 2 2 2 2 2 1 2 2
 ```
 
-# 八、J.U.C - 其它组件
+# J.U.C - 其它组件
 
 ## FutureTask
 

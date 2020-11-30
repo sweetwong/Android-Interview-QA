@@ -24,6 +24,8 @@
 
 [Java的泛型实现机制是怎样的？什么是类型擦除？](重要/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
 
+[LayoutInflater的原理？](重要/LayoutInflater的原理？.md)
+
 [MVC、MVP、MVVM的优缺点？](重要/MVC、MVP、MVVM的优缺点？.md)
 
 [OkHttp的原理？](重要/OkHttp的原理？.md)
@@ -367,8 +369,6 @@
 [Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
 
 [Glide原理？](待整理/Glide原理？.md)
-
-[LayoutInflater的原理？](待整理/LayoutInflater的原理？.md)
 
 [RecyclerView的LayoutManager如何实现不同的布局？](待整理/RecyclerView的LayoutManager如何实现不同的布局？.md)
 

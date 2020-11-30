@@ -2,8 +2,8 @@
 
 ## 启动模式
 
-1. standard 标准模式：每次启动一个Activity就会创建一个新的实例
-2. singleTop 栈顶复用模式：如果新Activity已经位于任务栈的栈顶，就不会重新创建，并回调 onNewIntent() 方法
+1. standard 标准模式：每次启动一个 Activity 就会创建一个新的实例
+2. singleTop 栈顶复用模式：如果新 Activity 已经位于任务栈的栈顶，就不会重新创建，并回调 onNewIntent() 方法
    `防止重复点击；或者当前的 Activity 又要启动类似的场景，例如推送页面（我们通过第一次打开 Activity 并处理第一条，后面几条的都在 onNewIntent() 复用处理）`
 3. singleTask 栈内复用模式：如果 Activity 已存在，则复用 Activity，并清除它上面的 Activity；如果 Activity 不存在，就在对应的 Task 新建一个 Activity
    `应用首页（当你进行了很多操作，点击了主页按钮，会跳转到主页，并清除掉上面所有的 Activity）、浏览器（全局只有一个浏览器 Activity）`
@@ -17,8 +17,8 @@
 
 ## FLAG
 
-1. FLAG_ACTIVITY_SINGLE_TOP：与launchMode = "singleTop"行为一致
-2. FLAG_ACTIVITY_NEW_TASK：如果没有设置taskAffinity，就打开新的Activity；如果有设置taskAffinity，如果Activity不存在，就在指定的taskAffinity打开Activity，如果存在，则不能跳转。
+1. FLAG_ACTIVITY_SINGLE_TOP：与 singleTop 行为一致
+2. FLAG_ACTIVITY_NEW_TASK：如果没有设置 taskAffinity，就打开新的 Activity；如果有设置 taskAffinity，如果 Activity 不存在，就在指定的 taskAffinity 打开 Activity，如果存在，则不能跳转。
 3. FLAG_ACTIVITY_CLEAR_TOP：如果目标存在，直接复用，并清除目标以上的活动，否则重建。可以组合`FLAG_ACTIVITY_NEW_TASK |FLAG_ACTIVITY_CLEAR_TOP`
 4. FLAG_ACTIVITY_CLEAR_TASK：只能组合使用，`FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK`，用来清除目前所有的任务，并打开新任务
 

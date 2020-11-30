@@ -203,6 +203,8 @@
 
 [Activity的显示原理？](./源码/Activity的显示原理？.md)
 
+[ContentProvider的生命周期？](./重要/ContentProvider的生命周期？.md)
+
 [IntentService和Service有什么区别？](./普通/IntentService和Service有什么区别？.md)
 
 [Service启动流程？](./源码/Service启动流程？.md)
@@ -372,6 +374,8 @@
 [如何获取Android设备唯一ID？](./普通/如何获取Android设备唯一ID？.md)
 
 [如何规避Android-P对访问私有API的限制？](./普通/如何规避Android-P对访问私有API的限制？.md)
+
+[接入微信支付的流程？需要注意什么？](./普通/接入微信支付的流程？需要注意什么？.md)
 
 # 设计模式
 [Android中使用了哪些设计模式？实际项目中用到哪些？](./重要/Android中使用了哪些设计模式？实际项目中用到哪些？.md)

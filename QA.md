@@ -10,6 +10,8 @@
 
 [ClassLoader类加载机制？](重要/ClassLoader类加载机制？.md)
 
+[ContentProvider的生命周期？](重要/ContentProvider的生命周期？.md)
+
 [Handler机制与底层实现？](重要/Handler机制与底层实现？.md)
 
 [HashMap的原理？](重要/HashMap的原理？.md)
@@ -21,6 +23,8 @@
 [Java的String可以有多长？](重要/Java的String可以有多长？.md)
 
 [Java的泛型实现机制是怎样的？什么是类型擦除？](重要/Java的泛型实现机制是怎样的？什么是类型擦除？.md)
+
+[LayoutInflater的原理？](重要/LayoutInflater的原理？.md)
 
 [MVC、MVP、MVVM的优缺点？](重要/MVC、MVP、MVVM的优缺点？.md)
 
@@ -292,6 +296,8 @@
 
 [类加载的顺序？](普通/类加载的顺序？.md)
 
+[组合和继承的对比？](普通/组合和继承的对比？.md)
+
 [网络时延有哪些？](普通/网络时延有哪些？.md)
 
 ## 其次
@@ -352,17 +358,13 @@
 
 ## 待整理
 
-[(重要)ConcurrentHashMap原理？](待整理/(重要)ConcurrentHashMap原理？.md)
-
-[(重要)ContentProvider的生命周期？](待整理/(重要)ContentProvider的生命周期？.md)
-
-[(重要)EventBus原理？](待整理/(重要)EventBus原理？.md)
-
-[(重要)Socket编程面试题？](待整理/(重要)Socket编程面试题？.md)
-
 [Android有哪些存储方式？](待整理/Android有哪些存储方式？.md)
 
 [APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
+
+[ConcurrentHashMap原理？](待整理/ConcurrentHashMap原理？.md)
+
+[EventBus原理？](待整理/EventBus原理？.md)
 
 [Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
 
@@ -373,6 +375,8 @@
 [Shadow的原理？](待整理/Shadow的原理？.md)
 
 [SharedPreferences的实现原理？](待整理/SharedPreferences的实现原理？.md)
+
+[Socket编程面试题？](待整理/Socket编程面试题？.md)
 
 [SQL学习](待整理/SQL学习.md)
 
@@ -386,7 +390,7 @@
 
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
 
-[手写生产者消费者模式](待整理/手写生产者消费者模式.md)
+[描述下生产者消费者模式？](待整理/描述下生产者消费者模式？.md)
 
 [有没有使用过AOP？哪些场景？](待整理/有没有使用过AOP？哪些场景？.md)
 
@@ -395,8 +399,6 @@
 [用过组件化开发吗？](待整理/用过组件化开发吗？.md)
 
 [知道哪些机密算法？](待整理/知道哪些机密算法？.md)
-
-[组合和集成的对比？](待整理/组合和集成的对比？.md)
 
 [自己去设计一个网络请求框架，怎么做？](待整理/自己去设计一个网络请求框架，怎么做？.md)
 

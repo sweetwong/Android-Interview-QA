@@ -13,14 +13,14 @@
 * [Android](#Android)
     * [四大组件](#四大组件)
     * [View](#View)
-    * [Framework 源码](#Framework-源码)
-    * [性能优化](#性能优化)
     * [动画](#动画)
     * [网络](#网络)
     * [图片](#图片)
     * [Handler](#Handler)
     * [Binder](#Binder)
     * [WebView](#WebView)
+    * [Framework 源码](#Framework-源码)
+    * [性能优化](#性能优化)
     * [组件化/插件化/热修复](#组件化/插件化/热修复)
     * [第三方库](#第三方库)
     * [MVC/MVP/MVVM](#MVC/MVP/MVVM)
@@ -64,7 +64,7 @@
 
 [描述下三次握手和四次挥手的过程？](./记忆/描述下三次握手和四次挥手的过程？.md)
 
-[网络时延有哪些？](./普通/网络时延有哪些？.md)
+[网络时延有哪些？](./记忆/网络时延有哪些？.md)
 
 [说说HTTPS吧，它和HTTP有什么不同？](./记忆/说说HTTPS吧，它和HTTP有什么不同？.md)
 
@@ -211,14 +211,14 @@
 
 [如何跨App启动Activity？](./普通/如何跨App启动Activity？.md)
 
-[广播的类型有哪些？](./重要/广播的类型有哪些？.md)
+[广播的类型有哪些？](./普通/广播的类型有哪些？.md)
 
 [说说动态广播的注册和收发原理？](./源码/说说动态广播的注册和收发原理？.md)
 
 ## View
 [Activity的显示原理？](./源码/Activity的显示原理？.md)
 
-[LayoutInflater的原理？](./重要/LayoutInflater的原理？.md)
+[LayoutInflater的原理？](./普通/LayoutInflater的原理？.md)
 
 [LinearLayout和RelativeLayout性能对比？](./普通/LinearLayout和RelativeLayout性能对比？.md)
 
@@ -241,6 +241,40 @@
 [自定义View的过程？](./重要/自定义View的过程？.md)
 
 [讲一下View的绘制流程？View的测量、布局、绘制原理](./重要/讲一下View的绘制流程？View的测量、布局、绘制原理.md)
+
+## 动画
+[使用过哪些动画？](./普通/使用过哪些动画？.md)
+
+## 网络
+[OkHttp的原理？](./重要/OkHttp的原理？.md)
+
+[Retrofit实现原理？](./重要/Retrofit实现原理？.md)
+
+## 图片
+[使用过什么图片加载库，Glide的源码设计哪里很微妙？](./普通/使用过什么图片加载库，Glide的源码设计哪里很微妙？.md)
+
+[如何跨进程传递大的Bitmap？](./源码/如何跨进程传递大的Bitmap？.md)
+
+## Handler
+[Handler机制与底层实现？](./重要/Handler机制与底层实现？.md)
+
+[IdleHandler的原理？](./重要/IdleHandler的原理？.md)
+
+## Binder
+[AIDL的oneway机制？](./源码/AIDL的oneway机制？.md)
+
+[Android的IPC有哪些方式？并比较他们的优劣](./普通/Android的IPC有哪些方式？并比较他们的优劣.md)
+
+[Binder的transact流程？](./源码/Binder的transact流程？.md)
+
+[Binder的优点？Binder的原理？Binder的通讯模型？](./重要/Binder的优点？Binder的原理？Binder的通讯模型？.md)
+
+[Messenger和AIDL的区别？](./普通/Messenger和AIDL的区别？.md)
+
+## WebView
+[Android和JS交互有哪些方式？](./普通/Android和JS交互有哪些方式？.md)
+
+[对WebView做了哪些性能优化？](./记忆/对WebView做了哪些性能优化？.md)
 
 ## Framework 源码
 [AIDL的oneway机制？](./源码/AIDL的oneway机制？.md)
@@ -298,40 +332,6 @@
 
 [有哪些多线程开发良好的实践？](./记忆/有哪些多线程开发良好的实践？.md)
 
-## 动画
-[使用过哪些动画？](./普通/使用过哪些动画？.md)
-
-## 网络
-[OkHttp的原理？](./重要/OkHttp的原理？.md)
-
-[Retrofit实现原理？](./重要/Retrofit实现原理？.md)
-
-## 图片
-[使用过什么图片加载库，Glide的源码设计哪里很微妙？](./普通/使用过什么图片加载库，Glide的源码设计哪里很微妙？.md)
-
-[如何跨进程传递大的Bitmap？](./源码/如何跨进程传递大的Bitmap？.md)
-
-## Handler
-[Handler机制与底层实现？](./重要/Handler机制与底层实现？.md)
-
-[IdleHandler的原理？](./重要/IdleHandler的原理？.md)
-
-## Binder
-[AIDL的oneway机制？](./源码/AIDL的oneway机制？.md)
-
-[Android的IPC有哪些方式？并比较他们的优劣](./普通/Android的IPC有哪些方式？并比较他们的优劣.md)
-
-[Binder的transact流程？](./源码/Binder的transact流程？.md)
-
-[Binder的优点？Binder的原理？Binder的通讯模型？](./重要/Binder的优点？Binder的原理？Binder的通讯模型？.md)
-
-[Messenger和AIDL的区别？](./普通/Messenger和AIDL的区别？.md)
-
-## WebView
-[Android和JS交互有哪些方式？](./普通/Android和JS交互有哪些方式？.md)
-
-[对WebView做了哪些性能优化？](./记忆/对WebView做了哪些性能优化？.md)
-
 ## 组件化/插件化/热修复
 [用过组件化开发吗？](./待整理/用过组件化开发吗？.md)
 
@@ -385,5 +385,7 @@
 [Android中使用了哪些设计模式？实际项目中用到哪些？](./重要/Android中使用了哪些设计模式？实际项目中用到哪些？.md)
 
 [设计模式的6大原则是什么？](./重要/设计模式的6大原则是什么？.md)
+
+[项目中使用了哪些设计模式？](./重要/项目中使用了哪些设计模式？.md)
 
 

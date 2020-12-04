@@ -6,7 +6,8 @@
 3. 组合模式
 4. 适配器模式
 4. 策略模式
-5. 观察者模式
+5. 模板方法模式
+6. 观察者模式
 
 ## 创建型模式
 
@@ -76,3 +77,6 @@
 [CSDN：Android中用到的设计模式](https://blog.csdn.net/goodlixueyong/article/details/51365294)
 
 [CSDN：Android设计模式之23种设计模式一览](https://blog.csdn.net/happy_horse/article/details/50908439)
+
+[知乎：从实际项目中学设计模式：策略模式与模板模式的应用（结合了实际的案例）](https://zhuanlan.zhihu.com/p/157633600)
+

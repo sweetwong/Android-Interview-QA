@@ -10,6 +10,8 @@
 
 [ClassLoader类加载机制？](重要/ClassLoader类加载机制？.md)
 
+[ConcurrentHashMap原理？](重要/ConcurrentHashMap原理？.md)
+
 [ContentProvider的生命周期？](重要/ContentProvider的生命周期？.md)
 
 [Handler机制与底层实现？](重要/Handler机制与底层实现？.md)
@@ -57,6 +59,8 @@
 [性能优化的种类有哪些？](重要/性能优化的种类有哪些？.md)
 
 [描述下Java内存模型？](重要/描述下Java内存模型？.md)
+
+[用过Http缓存吗？](重要/用过Http缓存吗？.md)
 
 [知道哪些单例模式？](重要/知道哪些单例模式？.md)
 
@@ -364,13 +368,13 @@
 
 [APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
 
-[ConcurrentHashMap原理？](待整理/ConcurrentHashMap原理？.md)
-
 [EventBus原理？](待整理/EventBus原理？.md)
 
 [Fragment使用的时候有什么坑？怎么解决的？](待整理/Fragment使用的时候有什么坑？怎么解决的？.md)
 
 [Glide原理？](待整理/Glide原理？.md)
+
+[Java泛型的问题](待整理/Java泛型的问题.md)
 
 [RecyclerView的LayoutManager如何实现不同的布局？](待整理/RecyclerView的LayoutManager如何实现不同的布局？.md)
 
@@ -394,7 +398,7 @@
 
 [有没有使用过AOP？哪些场景？](待整理/有没有使用过AOP？哪些场景？.md)
 
-[用过组件化开发吗？](待整理/用过组件化开发吗？.md)
+[用过组件化开发吗？遇到了哪些问题？](待整理/用过组件化开发吗？遇到了哪些问题？.md)
 
 [知道哪些加密算法？](待整理/知道哪些加密算法？.md)
 

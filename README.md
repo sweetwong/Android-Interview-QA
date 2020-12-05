@@ -1,10 +1,10 @@
 # Android QA
 
-[Android QA - 按照 TAG 分类](/TAG.md)
+[Android QA - 按照 TAG 分类](./TAG.md)
 
-[Android QA - 正序版](/QA.md)
+[Android QA - 正序版](./QA.md)
 
-[Android QA - 乱序版](/QA-shuffle.md)
+[Android QA - 乱序版](./QA-shuffle.md)
 
 # 背景
 

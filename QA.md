@@ -10,6 +10,8 @@
 
 [ClassLoader类加载机制？](重要/ClassLoader类加载机制？.md)
 
+[ConcurrentHashMap原理？](重要/ConcurrentHashMap原理？.md)
+
 [ContentProvider的生命周期？](重要/ContentProvider的生命周期？.md)
 
 [Handler机制与底层实现？](重要/Handler机制与底层实现？.md)
@@ -365,8 +367,6 @@
 [Android有哪些存储方式？](待整理/Android有哪些存储方式？.md)
 
 [APP间传递消息安全吗？要怎么做才能安全呢？](待整理/APP间传递消息安全吗？要怎么做才能安全呢？.md)
-
-[ConcurrentHashMap原理？](待整理/ConcurrentHashMap原理？.md)
 
 [EventBus原理？](待整理/EventBus原理？.md)
 

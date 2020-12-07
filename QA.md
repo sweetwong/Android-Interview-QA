@@ -232,8 +232,6 @@
 
 [ArrayMap的原理？](普通/ArrayMap的原理？.md)
 
-[ART和Dalvik的区别？](普通/ART和Dalvik的区别？.md)
-
 [ButterKnife的原理？](普通/ButterKnife的原理？.md)
 
 [CAS实现原子操作会出现什么问题？](普通/CAS实现原子操作会出现什么问题？.md)
@@ -303,6 +301,8 @@
 [接入微信支付的流程？需要注意什么？](普通/接入微信支付的流程？需要注意什么？.md)
 
 [描述一次网络请求的过程？](普通/描述一次网络请求的过程？.md)
+
+[泛型extends和super的区别？](普通/泛型extends和super的区别？.md)
 
 [组合和继承的对比？](普通/组合和继承的对比？.md)
 
@@ -374,8 +374,6 @@
 
 [Glide原理？](待整理/Glide原理？.md)
 
-[Java泛型的问题](待整理/Java泛型的问题.md)
-
 [RecyclerView的LayoutManager如何实现不同的布局？](待整理/RecyclerView的LayoutManager如何实现不同的布局？.md)
 
 [Shadow的原理？](待整理/Shadow的原理？.md)
@@ -397,6 +395,8 @@
 [屏幕适配做了哪些措施？](待整理/屏幕适配做了哪些措施？.md)
 
 [描述下生产者消费者模式？](待整理/描述下生产者消费者模式？.md)
+
+[有了解过HTTP3吗？](待整理/有了解过HTTP3吗？.md)
 
 [有没有使用过AOP？哪些场景？](待整理/有没有使用过AOP？哪些场景？.md)
 

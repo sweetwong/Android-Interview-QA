@@ -26,7 +26,5 @@
 
 [Bilibili：Android 面试黑洞——当我按下 Home 键再切回来，会发生什么？（好视频）](https://www.bilibili.com/video/BV1CA41177Se)
 
-[简书：2019校招Android面试题解1.0（上篇）](https://www.jianshu.com/p/718aa3c1a70b)
-
 [Github：每日一问：LaunchMode 的应用场景？](https://github.com/Moosphan/Android-Daily-Interview/issues/4)
 

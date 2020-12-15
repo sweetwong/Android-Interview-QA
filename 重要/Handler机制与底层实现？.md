@@ -61,10 +61,14 @@ poll 本质上和 select 没有区别，它将用户传入的数组拷贝到内�
 
 #### 3. epoll：时间复杂度 O(1)
 
-epoll 可以理解为 event poll，不同于忙轮询和无差别轮询，epoll 会把哪个流发生了怎样的 I/O 事件通知我们。所以我们说 epoll 实际上是**事件驱动**（每个事件关联上 fd）的，此时我们对这些流的操作都是有意义的。（复杂度降低到了 O(1)）
+epoll 可以理解为 event poll，不同于忙轮询和无差别轮询，epoll 会把哪个流发生了怎样的 I/O 事件通知我们。所以我们说 epoll 实际上是 
+
+**事件驱动**（每个事件关联上 fd）的，此时我们对这些流的操作都是有意义的。（复杂度降低到了 O(1)）
 
 
 ## 链接
+[公众号：鸿洋：Handler 10问，你顶的住吗？（好文！）](https://mp.weixin.qq.com/s/V1xI2M8AibgB2whHSOTQGQ)
+
 [简书：Android消息机制的原理及源码解析](https://www.jianshu.com/p/f10)
 
 [慕课网：Handler发送消息的Delay靠谱吗？](https://coding.imooc.com/lesson/317.html#mid=22311"%3Ehttps://coding.imooc.com/lesson/317.html)
@@ -74,3 +78,4 @@ epoll 可以理解为 event poll，不同于忙轮询和无差别轮询，epoll 
 [Android消息机制2-Handler\(Native层\)](http://gityuan.com/2015/12/27/handler-message-native/)
 
 [select、poll、epoll之间的区别(搜狗面试)](https://www.cnblogs.com/aspirant/p/9166944.html)
+

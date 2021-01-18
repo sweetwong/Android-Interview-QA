@@ -83,7 +83,51 @@
 
   在等待返回的时候，线程处于阻塞状态。
 
+  ```java
+  public class MyCallable implements Callable<Integer> {
+      public Integer call() {
+          return 123;
+      }
+  }
+  ```
+
+  ```java
+  public static void main(String[] args) throws ExecutionException, InterruptedException {
+      MyCallable mc = new MyCallable();
+      FutureTask<Integer> ft = new FutureTask<>(mc);
+      Thread thread = new Thread(ft);
+      thread.start();
+      System.out.println(ft.get());
+  }
+  ```
+
 - #### 继承 Thread 类
+
+  同样也是需要实现 run() 方法，因为 Thread 类也实现了 Runable 接口。
+
+  当调用 start() 方法启动一个线程时，虚拟机会将该线程放入就绪队列中等待被调度，当一个线程被调度时会执行该线程的 run() 方法。
+
+  ```java
+  public class MyThread extends Thread {
+      public void run() {
+          // ...
+      }
+  }
+  ```
+
+  ```java
+  public static void main(String[] args) {
+      MyThread mt = new MyThread();
+      mt.start();
+  }
+  ```
+
+- #### 实现接口 VS 继承 Thread
+
+  实现接口会更好一些，因为：
+
+  - Java 不支持多重继承，因此继承了 Thread 类就无法继承其它类，但是可以实现多个接口；
+  - 类可能只要求可执行就行，继承整个 Thread 类开销过大。
 
 ### 四、基础线程机制
 
@@ -162,7 +206,7 @@
 
 - #### InterruptedException
 
-  通过调用一个线程的 interrupt() 来中断该线程，如果该线程处于阻塞、限期等待或者无限期等待状态，那么就会抛出 InterruptedException，从而提前结束该线程。但是不能中断 I/O 阻塞和 synchronized 锁阻塞。
+  通过调用一个线程的 interrupt() 来中断该线程，如果该线程处于阻塞、限期等待或者无限期等待状态，那么就会抛出 InterruptedException，从而提前结束当前状态，进入下个任务。但是不能中断 I/O 阻塞和 synchronized 锁阻塞。
 
   对于以下代码，在 main() 中启动一个线程之后再中断它，由于线程中调用了 Thread.sleep() 方法，因此会抛出一个 InterruptedException，从而提前结束线程，不执行之后的语句。
 
@@ -513,8 +557,8 @@ java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.
   对于一个变量来讲，多个线程同时读是不需要加锁的，多个线程写是要加锁的，如果能明确区分读和写操作，则可以把他们分别加锁。
 
   ```java
-  public class ReentrantReadWriteLockDemo{
-  ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+  public class ReentrantReadWriteLockExample{
+      ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
       ReentrantReadWriteLock.ReadLock readLock = lock.readLock();
       ReentrantReadWriteLock.WriteLock writeLock = lock.writeLock();
   
@@ -549,41 +593,30 @@ java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.
 
   ```java
   public static void main(String[] args) {
-          final ReentrantReadWriteLockDemo demo = new ReentrantReadWriteLockDemo();
+          final ReentrantReadWriteLockExample example = new ReentrantReadWriteLockExample();
           ExecutorService executorService = Executors.newCachedThreadPool();
-          for (int i = 0; i < 100; i++) {
-              executorService1.execute(new Runnable() {
-                  @Override
-                  public void run() {
-                      demo.count();
-                  }
-              });
+          int threadSize = 500;
+          final CountDownLatch countDownLatch = new CountDownLatch(threadSize);
+          for (int i = 0; i < threadSize; i++) {
               executorService.execute(() -> {
-                  System.out.print("before..");
-                  try {
-                      cyclicBarrier.await();
-                  } catch (InterruptedException | BrokenBarrierException e) {
-                      e.printStackTrace();
-                  }
-                  System.out.print("after..");
+                  example.count();
+                  countDownLatch.countDown();
               });
           }
-          executorService1.execute(new Runnable() {
-              @Override
-              public void run() {
-                  demo.print(5);
-              }
-          });
-          executorService1.shutdown();
+          try {
+              countDownLatch.await();
+          } catch (InterruptedException e) {
+              e.printStackTrace();
+          }
+          example.print(5);
+          executorService.shutdown();
   }
   ```
-
-  ```java
-  100 100 100 100 100 end
-  ```
-
   
-
+  ```java
+  500 500 500 500 500 end
+  ```
+  
 - #### CyclicBarrier
 
   用来控制多个线程互相等待，只有当多个线程都到达时，这些线程才会继续执行。
@@ -639,6 +672,44 @@ java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.
   AtomicInteger、AtomicLong、AtomicLong等。
 
   这些都能API的提供能很方便的保证在多线程的情况下数据的原子性，同时他们也比 synchronized 更加的轻量级。
+
+  ```java
+  public class AtomicExample {
+      private AtomicInteger cnt = new AtomicInteger();
+  
+      public void add() {
+          cnt.incrementAndGet();
+      }
+  
+      public int get() {
+          return cnt.get();
+      }
+  }
+  ```
+
+  ```java
+  public static void main(String[] args) throws InterruptedException {
+      final int threadSize = 1000;
+      AtomicExample example = new AtomicExample(); // 只修改这条语句
+      final CountDownLatch countDownLatch = new CountDownLatch(threadSize);
+      ExecutorService executorService = Executors.newCachedThreadPool();
+      for (int i = 0; i < threadSize; i++) {
+          executorService.execute(() -> {
+              example.add();
+              countDownLatch.countDown();
+          });
+      }
+      countDownLatch.await();
+      executorService.shutdown();
+      System.out.println(example.get());
+  }
+  ```
+
+  ```java
+  1000
+  ```
+
+  
 
 - #### BlockingQueue
 
@@ -704,7 +775,47 @@ java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.
   produce..produce..consume..consume..produce..consume..produce..consume..produce..consume..
   ```
 
-### 八、多线程开发良好的实践
+### 八、锁优化
+
+这里的锁优化主要是指 JVM 对 synchronized 的优化。
+
+- #### 自旋锁
+
+  互斥同步进入阻塞状态的开销都很大，应该尽量避免。在许多应用中，共享数据的锁定状态只会持续很短的一段时间。自旋锁的思想是让一个线程在请求一个共享数据的锁时执行忙循环（自旋）一段时间，如果在这段时间内能获得锁，就可以避免进入阻塞状态。
+
+  自旋锁虽然能避免进入阻塞状态从而减少开销，但是它需要进行忙循环操作占用 CPU 时间，它只适用于共享数据的锁定状态很短的场景。
+
+  在 JDK 1.6 中引入了自适应的自旋锁。自适应意味着自旋的次数不再固定了，而是由前一次在同一个锁上的自旋次数及锁的拥有者的状态来决定。
+
+- #### 锁消除
+
+  锁消除是指对于被检测出不可能存在竞争的共享数据的锁进行消除。
+
+  锁消除主要是通过逃逸分析来支持，如果堆上的共享数据不可能逃逸出去被其它线程访问到，那么就可以把它们当成私有数据对待，也就可以将它们的锁进行消除。
+
+  对于一些看起来没有加锁的代码，其实隐式的加了很多锁。例如下面的字符串拼接代码就隐式加了锁：
+
+  ```java
+  public static String concatString(String s1, String s2, String s3) {
+      return s1 + s2 + s3;
+  }
+  ```
+
+  String 是一个不可变的类，编译器会对 String 的拼接自动优化。在 JDK 1.5 之前，会转化为 StringBuffer 对象的连续 append() 操作：
+
+  ```java
+  public static String concatString(String s1, String s2, String s3) {
+      StringBuffer sb = new StringBuffer();
+      sb.append(s1);
+      sb.append(s2);
+      sb.append(s3);
+      return sb.toString();
+  }
+  ```
+
+  每个 append() 方法中都有一个同步块。虚拟机观察变量 sb，很快就会发现它的动态作用域被限制在 concatString() 方法内部。也就是说，sb 的所有引用永远不会逃逸到 concatString() 方法之外，其他线程无法访问到它，因此可以进行消除。
+
+### 九、多线程开发良好的实践
 
 - 给线程起个有意义的名字，这样可以方便找 Bug。
 - 缩小同步范围，从而减少锁争用。例如对于 synchronized，应该尽量使用同步块而不是同步方法。

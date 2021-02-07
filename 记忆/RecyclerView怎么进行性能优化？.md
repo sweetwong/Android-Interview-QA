@@ -1,5 +1,19 @@
 `View`
 
+## 简单回答
+
+1. 用局部刷新代替全局刷新 notifyDataSetChanged()，比如分页加载时
+2. 使用 DiffUtil 异步计算，局部刷新
+3. 在 onBindViewHolder() 避免耗时操作和创建过多的对象，比如设置监听器
+4. 使用 setHasFixedSize() 来避免 requestLayout()
+5. 使用 RecyclerViewPool 共享 ViewHolder，并把 ViewHolder 设置为静态，对外使用弱引用
+6. 增加 RecyclerView 的第二级 Cache 缓存容量
+7. 使用代码生成 View 来代替 inflate() 操作，来减少 IO 和反射消耗的额外时间
+8. 减小布局层级，避免过度绘制
+9. 添加监听器，addOnScrollListener() 来优化加载，比如滑动停止加载数据
+
+---
+
 ## 数据处理和视图加载分离
 
 我们知道，从远端拉取数据肯定是要放在异步的，在我们拉取下来数据之后可能就匆匆把数据丢给了 VH 处理，其实，数据的处理逻辑我们也应该放在异步处理，这样 Adapter 在 notify change 后，ViewHolder 就可以简单无压力地做数据与视图的绑定逻辑，比如：

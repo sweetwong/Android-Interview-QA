@@ -1,5 +1,22 @@
 `View`
 
+## 官方定义
+
+> **A MeasureSpec encapsulates the layout requirements passed from parent to child**. Each MeasureSpec represents a requirement for either the width or the height. A MeasureSpec is comprised of a size and a mode. There are three possible modes:
+>
+> UNSPECIFIED
+> The parent has not imposed any constraint on the child. It can be whatever size it wants.
+>
+> EXACTLY
+> The parent has determined an exact size for the child. The child is going to be given those bounds regardless of how big it wants to be.
+>
+> AT_MOST
+> The child can be as large as it wants up to the specified size.
+>
+> MeasureSpecs are implemented as ints to reduce object allocation. This class is provided to pack and unpack the <size, mode> tuple into the int.
+
+MeasureSpec封装了从父级传递到子级的布局**要求**
+
 ## 什么是 MeasureSpec？
 
 MeasureSpec 代表一个 32 位 int 值，**高 2 位**代表 **SpecMode**（测量模式），**低 30 位**代表 **SpecSize**（具体大小）。

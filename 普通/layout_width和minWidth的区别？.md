@@ -1,0 +1,2 @@
+- layout_width 不仅和 View 本身有关，更和 parent 有关。在 inflate 的时候，会结合 parent 赋予 LayoutParams 的值
+- 
